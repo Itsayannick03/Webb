@@ -1,7 +1,12 @@
+import '../login/style.css';
+
 export function Registration()
 {
     return(
-         <form action="#">
+  <form action="#">
+    <div className="header">
+      <h1>The Mane Attraction</h1>
+    </div>
     <div className="registration">
       <h1>Registration</h1>
       <p>Please fill out this form to create an account.</p>
