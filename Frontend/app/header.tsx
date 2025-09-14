@@ -13,7 +13,9 @@ export function Header()
                 <a href="">Booking</a>
                 <a href="">Contact</a>
             </div>
-        <hr />
+            <div className='logo'>
+                <img src="menu.png" alt="menu" width={30} />
+            </div>
         </div>
         
         
