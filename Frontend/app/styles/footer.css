@@ -7,5 +7,16 @@
     align-items: center;
     justify-content: space-between; /* left & right positioning */
     position: relative; /* allows absolute positioning inside */
+
+}
+
+.footerText
+{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+ 
+  border-left: 1px solid #444;
 }
 
