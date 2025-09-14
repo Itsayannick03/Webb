@@ -9,10 +9,10 @@ export function Header()
 
 
             <div className='buttons'>
-                <a href="">Home</a>
+                <a href="/">Home</a>
                 <a href="">Booking</a>
                 <a href="">Contact</a>
-                <a href="">Login</a>
+                <a href="login">Login</a>
             </div>
             <div className='logo'>
                 <a href="">
