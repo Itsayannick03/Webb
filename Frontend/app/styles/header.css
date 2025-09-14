@@ -1,0 +1,36 @@
+.mainDiv
+{
+    display: flex;
+  align-items: center;
+  justify-content: space-between; /* left & right positioning */
+  position: relative; /* allows absolute positioning inside */
+  height: 80px;       /* adjust header height */
+  padding: 0 20px;
+  background: #f9f9f9; /* optional background */
+    
+}
+
+.buttons
+{
+    position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* perfect horizontal centering */
+  display: flex;
+  gap: 30px; /* space between links */
+}
+
+.buttons a
+{
+    text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+.logo
+{
+    position: 'fixed';
+    top: '10px';
+  right: '10px';
+}
