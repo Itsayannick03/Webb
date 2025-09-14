@@ -6,7 +6,12 @@
   position: relative; /* allows absolute positioning inside */
   height: 80px;       /* adjust header height */
   padding: 0 20px;
-  background: #f9f9f9; /* optional background */
+  background: #f9f9f9; 
+  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  
     
 }
 
