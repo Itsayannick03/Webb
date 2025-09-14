@@ -12,9 +12,12 @@ export function Header()
                 <a href="">Home</a>
                 <a href="">Booking</a>
                 <a href="">Contact</a>
+                <a href="">Login</a>
             </div>
             <div className='logo'>
-                <img src="menu.png" alt="menu" width={30} />
+                <a href="">
+                    <img src="menu.png" alt="menu" width={30} />
+                </a>
             </div>
         </div>
         
