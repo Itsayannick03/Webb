@@ -35,9 +35,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Header/>
-        {children}
-        <Footer/>
+        
+          <Header/>
+          <div className="main">
+            {children}
+          </div>
+          
+          
+          
+          <Footer/>
+        
         <ScrollRestoration />
         <Scripts />
       </body>
