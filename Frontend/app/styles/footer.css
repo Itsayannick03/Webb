@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* vänster, mitten, höger */
+  align-items: center;
+  padding: 20px;
+  background: #f9f9f9; 
+  border-top: 1px solid #ccc;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+
+
+}
+
+.footer-text {
+  text-align: center;
+
+}
+
+.footer-row {
+    
+  display: flex;
+  justify-content: center;
+  gap: 30px;       /* mellanrum mellan textblocken */
+  margin: 5px 0;
+}
+
+.footer-row p {
+  margin: 0;
+}
