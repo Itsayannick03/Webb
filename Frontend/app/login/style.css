@@ -1,0 +1,28 @@
+.header {
+    text-align: center;
+    padding: 40px;
+    background: #eef0e3;
+    color: black; 
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
+}
+.registration {
+    color: black;
+    
+}
+body {
+  background-color: white;
+  min-height: 100vh;
+}
+label, input {
+  display: block;
+  width: 50%;      
+  margin-bottom: 12px; 
+  font-size: 16px;   
+}
+input {
+    border: 2px solid rgb(6, 6, 15, 0.3);
+    padding: 10px;
+    background-color: rgb(157, 156, 158, 0.1);
+    
+}
