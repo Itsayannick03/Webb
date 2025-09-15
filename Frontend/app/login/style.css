@@ -31,10 +31,12 @@ input {
 /* Make the page take up full viewport height */
 .registrationpage {
   display: flex;
-  justify-content: center;  /* centers horizontally */
+  flex-direction: row;
+  justify-content: space-around;  /* centers horizontally */
   align-items: center;      /* centers vertically */
   height: 100vh;            /* full height of the screen */
   background: linear-gradient(to bottom, #f5efe7, #ffffff);
+  gap:20px;
 }
 
 /* The registration box itself */
@@ -53,5 +55,24 @@ input {
 .registration h1 {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.btn
+{
+  border-radius: 10px;
+  background-color: #f5efe7;
+}
+
+.img1
+{
+  opacity: 80%;
+ 
+}
+
+.img2
+{
+  opacity: 80%;
+  
+  transform: scaleX(-1);
 }
 
