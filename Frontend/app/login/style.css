@@ -1,0 +1,53 @@
+.header {
+    text-align: center;
+    padding: 40px;
+    background: #eef0e3;
+    color: black;
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
+}
+.registration {
+    color: black;
+    text-align: center;
+    
+}
+body {
+  background-color: white;
+  min-height: 100vh;
+}
+label, input {
+  display: block;
+  width: 700px;      
+  margin-bottom: 12px; 
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;  
+  text-align: center; 
+  
+}
+input {
+    border: 2px solid rgb(6, 6, 15, 0.3);
+    padding: 10px;
+    background-color: rgb(157, 156, 158, 0.1);
+    
+}
+.registrationpage {
+  text-align: center;
+}
+.registerbtn {
+  background-color: #f5efe7;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ebebc0;
+  box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
+}
+.border {
+  border: none;
+}
+.h1 {
+  color: #0e0b09;
+}
+.icon {
+  position: relative;
+}
