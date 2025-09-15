@@ -11,8 +11,8 @@ export function Registration()
   <div className = "registrationpage">
     <img className='img1' id='1'  src="hairdresser.png" alt="Mane Attraction text" width={350} />
 
-  <form action="#">
-    <div className="registration">
+  <form className="registration" action="#">
+    <div className='poggers'>
       <div className = "h1">
       
       
@@ -55,6 +55,7 @@ export function Registration()
         <p>Already have an account? <a href="/login">Sign in</a>.</p>
       </div>
     </div>
+   
   </form>
       <img className='img2'  src="hairdresser.png" alt="Mane Attraction text" width={350} />
 
