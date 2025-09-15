@@ -23,7 +23,7 @@ input {
   display: inline-block;
   border-radius: 5px 5px 5px 5px;
   border: 2px solid rgb(6, 6, 15, 0.3);
-  box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
+  box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -80,6 +80,10 @@ input {
   opacity: 80%;
   
   transform: scaleX(-1);
+}
+.signIn
+{
+  color: blue;
 }
 
 

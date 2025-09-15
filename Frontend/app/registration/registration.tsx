@@ -52,7 +52,7 @@ export function Registration()
         </div>
 
       <div className="signin">
-        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+        <p>Already have an account? <a className='signIn' href="/login">Sign in</a>.</p>
       </div>
     </div>
    
