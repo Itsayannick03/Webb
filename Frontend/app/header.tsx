@@ -1,4 +1,5 @@
-import '/home/yyannick/Webb/Frontend/app/styles/header.css'
+//import '/home/yyannick/Webb/Frontend/app/styles/header.css'
+import "./styles/header.css";
 
 export function Header()
 {
