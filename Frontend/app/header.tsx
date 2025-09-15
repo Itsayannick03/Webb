@@ -9,11 +9,33 @@ export function Header()
 
 
             <div className='buttons'>
-                <a href="/">Home</a>
-                <a href="">Booking</a>
-                <a href="">Contact</a>
-                <a href="login">Login</a>
+                <div>
+                    <a href="/">Home</a>
+                </div>
+
+                 <div >
+                    <a href="">About us</a>
+                </div>
+
+                <div className='bookingButton'>
+                    <a href="">Booking</a>
+                </div>
+                <div >
+                    <a href="">Contact</a>
+                </div>
+                
+                <div >
+                    <a href="login">Login</a>
+                </div>
+
+                
+                
+
+                
             </div>
+
+            
+
             <div className='logo'>
                 <a href="">
                     <img src="menu.png" alt="menu" width={30} />
