@@ -1,39 +1,11 @@
-.header {
-    text-align: center;
-    padding: 40px;
-    background: #eef0e3;
-    color: black;
-    font-size: 30px;
-    font-family:'Times New Roman', Times, serif;
-}
-.registration {
-    color: black;
-    text-align: center;
-    
-}
-body {
-  background-color: white;
-  min-height: 100vh;
-}
-label, input {
-  display: block;
-  width: 700px;      
-  margin-bottom: 12px; 
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 16px;  
-  text-align: center; 
-  
-}
+
 input {
     border: 2px solid rgb(6, 6, 15, 0.3);
     padding: 10px;
     background-color: rgb(157, 156, 158, 0.1);
     
 }
-.registrationpage {
-  text-align: center;
-}
+
 .registerbtn {
   background-color: #f5efe7;
   padding: 5px 10px;
@@ -42,12 +14,38 @@ input {
   border: 1px solid #ebebc0;
   box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
 }
-.border {
+
+
+
+
+/* Make the page take up full viewport height */
+.registrationpage {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  height: 100vh;            /* full height of the screen */
+  background: linear-gradient(to bottom, #f5efe7, #ffffff);
+}
+
+/* The registration box itself */
+.registration {
+  background: #f5f5f5;  
+       /* box background */
+  padding: 2rem;
+  border-radius: 12px;     /* rounded corners */
+  border-color: black;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  width: 350px;             /* fixed width for the form */
+  max-width: 90%;           /* shrink on small screens */
+}
+
+/* Headline styling */
+.registration h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.border
+{
   border: none;
-}
-.h1 {
-  color: #0e0b09;
-}
-.icon {
-  position: relative;
 }
