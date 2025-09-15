@@ -11,7 +11,7 @@ async function connectDB()
     }
     catch(err)
     {
-        console.error("Database connection failed:",err.messege);
+        console.error("Database connection failed:",err.message);
         process.exit(1);
     }
 }

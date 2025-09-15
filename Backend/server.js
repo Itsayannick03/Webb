@@ -6,6 +6,8 @@ const User = require("./models/Users");
 const app = express();
 app.use(express.json());
 
+
+
 //Connecting to database
 connectDB();
 
@@ -37,4 +39,6 @@ app.get("/users", async (req, res) => {
 //Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
 
