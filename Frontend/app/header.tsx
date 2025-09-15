@@ -9,8 +9,14 @@ export function Header()
 
 
             <div className='buttons'>
-                <a href="/">Home</a>
-                <a href="">Booking</a>
+                <div className='homeButton'>
+                    <a href="/">Home</a>
+                </div>
+                
+                <div className='bookingButton'>
+                    <a href="">Booking</a>
+                </div>
+                
                 <a href="">Contact</a>
                 <a href="login">Login</a>
             </div>
