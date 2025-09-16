@@ -26,6 +26,12 @@ input {
   box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
   margin-top: 5px;
   margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* smooth effect */
+}
+
+.registerbtn:hover{
+  background-color: #dfd8ce; /* highlight color */
 }
 
 
@@ -84,6 +90,13 @@ input {
 .signIn
 {
   color: blue;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* smooth effect */
+}
+
+.signIn:hover
+{
+  border-bottom: 1px solid blue;
 }
 
 
