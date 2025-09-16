@@ -35,7 +35,7 @@ input {
   /*background-color: #dfd8ce; /* highlight color */
     transition: box-shadow 1s ease;
    box-shadow: 
-         0px 5px 5px inset rgba(0, 0, 0, 0.2),   /* inner shadow */
+         0px  2px 8px inset rgba(0, 0, 0, 0.2),   /* inner shadow */
         0px 5px 5px rgba(0, 0, 0, 0.2);       /* outer shadow */
 }
 
