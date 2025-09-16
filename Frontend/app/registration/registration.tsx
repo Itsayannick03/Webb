@@ -19,7 +19,7 @@ export function Registration()
       </div>
       <div className = "border">
           <div>
-            <label htmlFor="firstname"><b>First Name </b></label>
+            <label className='labelInput' htmlFor="firstname"><b>First Name </b></label>
             <input className='btn'  type="text" placeholder="Enter First Name" name="firstname" id="firstname" required/>
           </div>
           
