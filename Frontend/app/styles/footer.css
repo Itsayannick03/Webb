@@ -33,6 +33,11 @@
 
 }
 
+.footer-text a:hover
+{
+  border-bottom: 1px solid black;
+}
+
 .footer-row {
     
   display: flex;
