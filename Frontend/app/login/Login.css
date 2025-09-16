@@ -1,15 +1,16 @@
 
-/* Centrera hela login-blocket */
+
 .wrapper {
-  /* fyll tillgänglig höjd (justera om du har fast header/footer) */
-  min-height: calc(100vh - 160px); /* testa 100vh om du vill centrera exakt i viewporten */
+  
+  min-height: calc(100vh - 160px); 
   display: flex;
-  justify-content: center;  /* horisontellt */
-  align-items: center;      /* vertikalt */
+  justify-content: center;  
+  align-items: center;      
   padding: 16px 20px;
+  background: linear-gradient(to bottom, #f5efe7, #ffffff);
 }
 
-/* Formens bredd och spacing */
+
 .wrapper form {
   width: 320px;
   display: grid;
@@ -18,7 +19,7 @@
 
 .wrapper h1 { margin: 0 0 12px; font-size: 32px; }
 
-/* Input + ikon bredvid */
+
 .input-box {
   display: flex;
   align-items: center;
@@ -39,7 +40,7 @@
 }
 .icon { font-size: 20px; line-height: 1; }
 
-/* Knapp */
+
 button[type="submit"] {
   width: 84px;
   padding: 4px 10px;
@@ -47,11 +48,16 @@ button[type="submit"] {
   border-radius: 3px;
   background: #f5efe7;
 }
-button[type="submit"]:hover { background: #cfcfcf; }
+button[type="submit"]:hover { box-shadow: 0px 3px 8px inset rgba(0, 0, 0, 0.2); }
 
 
 .registrationLink {
   color: #2563eb;
+  
+}
+
+.registrationLink:hover
+{
   text-decoration: underline;
   text-underline-offset: 2px;
 }
