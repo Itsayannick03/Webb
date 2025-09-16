@@ -9,22 +9,22 @@ export function Header()
 
 
             <div className='buttons'>
-                <div>
+                <div className='button'>
                     <a href="/">Home</a>
                 </div>
 
-                 <div >
+                 <div className='button' >
                     <a href="">About us</a>
                 </div>
 
-                <div className='bookingButton'>
+                <div className='button'>
                     <a href="">Booking</a>
                 </div>
-                <div >
+                <div className='button'>
                     <a href="">Contact</a>
                 </div>
                 
-                <div >
+                <div className='button'>
                     <a href="login">Login</a>
                 </div>
 
