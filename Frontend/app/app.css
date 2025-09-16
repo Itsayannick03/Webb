@@ -12,4 +12,13 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main
+{
+  flex: 1;
 }

@@ -1,5 +1,7 @@
-//import '/home/yyannick/Webb/Frontend/app/styles/footer.css'
-import "./styles/footer.css";
+
+
+import './styles/footer.css'
+
 
 export function Footer()
 {
