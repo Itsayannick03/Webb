@@ -1,4 +1,7 @@
+
+
 import './styles/header.css'
+
 
 export function Header()
 {
@@ -17,7 +20,7 @@ export function Header()
                     <a href="">About us</a>
                 </div>
 
-                <div className='bookingButton'>
+                <div className='text'>
                     <a href="">Booking</a>
                 </div>
                 <div >

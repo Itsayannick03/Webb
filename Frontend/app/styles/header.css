@@ -6,7 +6,7 @@
   position: relative; /* allows absolute positioning inside */
   height: 80px;       /* adjust header height */
   padding: 0 20px;
-  background: #faf0e6; 
+  background: #f5efe7; 
   
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -48,7 +48,7 @@
 
 }
 
-.button
+.buttons a:hover
 {
-  
+  text-shadow: 0 5px 2px rgba(0, 0, 0, 0.2);
 }
