@@ -18,7 +18,7 @@ export function Registration()
       <div className = "border">
           <label htmlFor="firstname"><b>First Name <div className = "first"><FaIdCard /></div></b></label>
           <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required/>
-
+      
           <label htmlFor="lastname"><b>Last Name <div className = "user"><FaUser /></div></b></label>
           <input type="text" placeholder="Enter Last Name" name="lastname" id="lastname" required/>
 
@@ -37,7 +37,7 @@ export function Registration()
       <button type="submit" className="registerbtn">Register</button>
 
       <div className="signin">
-        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+        <p>Already have an account? <div className="login"><a href="/login"><u>Sign in</u></a>.</div></p>
       </div>
     </div>
   </form>
