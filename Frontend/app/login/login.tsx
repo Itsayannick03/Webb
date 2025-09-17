@@ -3,7 +3,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 export function Login()
 {
     return(
-        //<p>Login page</p>
+        
         <div className="wrapper">
             <div className="card">  
             <form action="" >
