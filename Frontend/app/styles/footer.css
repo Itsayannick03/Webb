@@ -5,7 +5,7 @@
   align-items: center;
   
   padding: 20px;
-  background: #f5efe7; 
+  background: linear-gradient(to top, #f8f9fa, #ffffff);
   border-top: 1px solid rgba(0, 0, 0, 0.4);
 
 
@@ -14,7 +14,8 @@
 
   position: relative;
   bottom: 0;
- 
+
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); 
 }
 
 
