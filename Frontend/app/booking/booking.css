@@ -1,0 +1,71 @@
+.bookingsite {
+    background-color: rgb(241, 236, 236);
+    color: black;
+    font-size: 20px;
+}
+.button {
+    color: black;
+    gap: 50px;
+    display: flex;
+    font-size: 20px;
+    margin-left: 300px;
+    margin-bottom: 300px;
+    
+}
+.button .haircut:hover,
+.button .color:hover,
+.button .hairandcolor:hover,
+.button .styling:hover {
+    background-color: rgb(255, 255, 255, 0.3); 
+    border: 2px solid #2f2929;              
+    cursor: pointer;                     
+    transform: scale(1.05);              
+    transition: all 0.3s ease; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);         
+}
+
+
+.head {
+    border: 1px solid rgb(55, 50, 50);
+    background-color: rgb(55, 50, 50);
+    padding: 10px;
+    width: 1300px;
+    margin: auto;
+    color: white;
+  
+}
+.icon {
+    position: relative;
+    font-size: 80px;
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    
+}
+.button .haircut,
+.button .color,
+.button .hairandcolor,
+.button .styling {
+    border: 2px solid rgb(13, 9, 9);
+    width: 200px;
+    height: 185px;
+    padding: 50px;
+    margin-top: 30px;
+    background-color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;    
+    gap: 30px;
+   
+}
+.icon1 {
+    position: relative;
+    font-size: 80px;
+}
+
+.text {
+    text-align: center;
+}
