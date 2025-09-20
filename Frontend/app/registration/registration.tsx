@@ -12,33 +12,37 @@ export function Registration()
   <form action="#">
     <div className="registration">
       <div className = "h1">
-      <h1>Registration</h1>
       </div>
       <hr />
       <div className = "border">
-          <label htmlFor="firstname"><b>First Name <div className = "first"><FaIdCard /></div></b></label>
+        <div className="reg">
+          <p><b>Registration</b></p>
+        </div>
+          <label htmlFor="firstname">First Name <div className = "first"><FaIdCard /></div></label>
           <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required/>
-
-          <label htmlFor="lastname"><b>Last Name <div className = "user"><FaUser /></div></b></label>
+      
+          <label htmlFor="lastname">Last Name <div className = "user"><FaUser /></div></label>
           <input type="text" placeholder="Enter Last Name" name="lastname" id="lastname" required/>
 
-          <label htmlFor="email"><b>Email <div className="mail"><IoMdMail /></div></b></label>
+          <label htmlFor="email">Email <div className="mail"><IoMdMail /></div></label>
           <input type="text" placeholder="Enter email" name="email" id="email" required/>
 
-          <label htmlFor="phonenumber"><b>Phone Number <div className="phone"><FaPhone /></div></b></label>
+          <label htmlFor="phonenumber">Phone Number <div className="phone"><FaPhone /></div></label>
           <input type="text" placeholder="Enter Phone Number" name="phonenumber" id="phonenumber" required/>
 
-          <label htmlFor="psw"><b>Password <div className="icon"><FaKey /></div></b></label> 
+          <label htmlFor="psw">Password <div className="icon"><FaKey /></div></label> 
           <input type="password" placeholder="Enter Password" name="psw" id="psw" required /> 
 
-          <label htmlFor="psw-repeat"><b>Repeat Password <div className="icon"><FaKey /></div></b></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required/>
-        </div>
-      <button type="submit" className="registerbtn">Register</button>
+          <label htmlFor="pswr">Repeat Password <div className="icon"><FaKey /></div></label>
+          <input type="password" placeholder="Repeat Password" name="pswr" id="pswr" required/>
 
-      <div className="signin">
-        <p>Already have an account? <a href="/login">Sign in</a>.</p>
-      </div>
+          <div className="signin">
+            <p>Already have an account? <span className="login"><a href="/login"><u>Sign in</u></a>.</span></p>
+          </div>
+          <div className="button">
+          <button type="submit" className="registerbtn">Register</button>
+          </div>
+        </div>
     </div>
   </form>
   </div>
