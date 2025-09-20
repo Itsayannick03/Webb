@@ -5,6 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { FaIdCard } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 
+
 export function Registration()
 {
     return(
