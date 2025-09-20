@@ -33,8 +33,8 @@ export function Registration()
           <label htmlFor="psw">Password <div className="icon"><FaKey /></div></label> 
           <input type="password" placeholder="Enter Password" name="psw" id="psw" required /> 
 
-          <label htmlFor="psw-repeat">Repeat Password <div className="icon"><FaKey /></div></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required/>
+          <label htmlFor="pswr">Repeat Password <div className="icon"><FaKey /></div></label>
+          <input type="password" placeholder="Repeat Password" name="pswr" id="pswr" required/>
 
           <div className="signin">
             <p>Already have an account? <span className="login"><a href="/login"><u>Sign in</u></a>.</span></p>
