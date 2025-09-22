@@ -41,7 +41,7 @@ export function Header()
 
             <div className='logo'>
                 <a href="">
-                    <img src="menu.png" alt="menu" width={30} />
+                    <img className='hamburgerMenu' src="menu.png" alt="menu" width={30} />
                 </a>
             </div>
         </div>

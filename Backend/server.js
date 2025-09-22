@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 //Create a new user
-app.post("/users", async (req, res) =>{
+app.post("/register", async (req, res) =>{
     try
     {
         const user = new User(req.body);
