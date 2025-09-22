@@ -44,7 +44,7 @@ app.get("/check-email/:email", async(req, res) => {
 
 
 
-app.get("/passwordcheck/", async(req, res) => {
+app.get("/passwordcheck", async(req, res) => {
     try
     {
         const email = req.body.email;
