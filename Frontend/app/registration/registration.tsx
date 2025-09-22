@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 
 export function Registration()
 {
+  //Lägg backend kod här
     return(
   <div className = "registrationpage">
   <form action="#">
