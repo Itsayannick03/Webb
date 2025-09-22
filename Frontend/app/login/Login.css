@@ -7,7 +7,7 @@
   justify-content: center;  
   align-items: center;      
   padding: 16px 20px;
-  background: linear-gradient(to bottom, #f5efe7, #ffffff);
+  background: white
 }
 
 
@@ -46,7 +46,8 @@ button[type="submit"] {
   padding: 4px 10px;
   border: 1px solid #b5b5b5;
   border-radius: 3px;
-  background: #f5efe7;
+  background: linear-gradient(#f5efe7, white);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 button[type="submit"]:hover { box-shadow: 0px 3px 8px inset rgba(0, 0, 0, 0.2); }
 
