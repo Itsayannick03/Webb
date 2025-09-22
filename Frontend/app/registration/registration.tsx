@@ -11,7 +11,7 @@ export function Registration() {
     let psw = document.getElementById("psw");
     let pswr = document.getElementById("pswr");
     if (psw != pswr) {
-      window.postMessage("Password do not match");
+      alert("Password do not match");
     }
     const userData = {
       firstName: document.getElementById("firstname"),
@@ -55,7 +55,8 @@ export function Registration() {
               <p>Already have an account? <span className="login"><a href="/login"><u>Sign in</u></a>.</span></p>
             </div>
             <div className="button">
-              <button onclick="registerUser()"type="submit" className="registerbtn">Register</button>
+              <button onClick={registerUser} type="submit" className="registerbtn">Register</button>
+ 
             </div>
           </div>
         </div>

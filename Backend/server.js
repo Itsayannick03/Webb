@@ -28,6 +28,20 @@ app.post("/register", async (req, res) =>{
     }
 });
 
+//Check if email already exists
+app.get("/check-email/:email", async(req, res) => {
+    try
+    {
+        const email = req.params.email;
+        const user = await User.findOne({email});
+        res.json({exists: !!user}); //Will send back true if email is found or false if not
+    }
+    catch
+    {
+        res.status(500).json({error: "Server error"});
+    }
+});
+
 // List all users
 app.get("/users", async (req, res) => {
     const users = await User.find();
