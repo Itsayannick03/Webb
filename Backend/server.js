@@ -44,7 +44,8 @@ app.get("/check-email/:email", async(req, res) => {
 
 
 
-app.get("/passwordcheck", async(req, res) => {
+app.get("/passwordcheck", async(req, res) => 
+{
     try
     {
         const email = req.body.email;
@@ -55,14 +56,14 @@ app.get("/passwordcheck", async(req, res) => {
             password: req.body.password
         });
 
-        res.status(200).json(exists: !!user); 
+        res.status(200).json({exists: !!user}); 
     }
     catch(err)
     {
-        res.status(500).json({err.messege});
+        res.status(500).json(err.messege);
     }
-
-})
+    
+});
 
 // List all users
 app.get("/users", async (req, res) => {
