@@ -4,15 +4,55 @@ import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
 import { FaIdCard } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import { useState } from "react";
 
+async function emailExists()
+{
+  let email = document.getElementById("email");
 
+  try
+  {
+    //Sending a json object with the email name to the api to check if it exists in the database
+    const res = await fetch('http://localhost:5000/check-email/'+ email);
+    //The api will return a exists object that is either true or false
+    const data: {exists: boolean} = await res.json();
+
+    //if the returned package i.e. the datas exists value is true we too return true
+    if(data.exists)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  catch(err)
+  {
+    console.error(err);
+  }
+}
+
+//Function that handles the entire process when the button is pressed
+export function buttonPress()
+{
+  let psw = document.getElementById("psw");
+  let pswr = document.getElementById("pswr");
+
+  //Check if the password matches the repeat password, if not alert the user with a popup window
+  if (psw != pswr) 
+  {
+    alert("Password do not match");
+    return;
+  }
+
+  //Check if the email is already in use and if so tell the user about it
+}
+
+//Function that specifically handles the registration process
 export function Registration() {
   function registerUser() {
-    let psw = document.getElementById("psw");
-    let pswr = document.getElementById("pswr");
-    if (psw != pswr) {
-      alert("Password do not match");
-    }
+    
     const userData = {
       firstName: document.getElementById("firstname"),
       lastName: document.getElementById("lastname"),
@@ -55,7 +95,7 @@ export function Registration() {
               <p>Already have an account? <span className="login"><a href="/login"><u>Sign in</u></a>.</span></p>
             </div>
             <div className="button">
-              <button onClick={registerUser} type="submit" className="registerbtn">Register</button>
+              <button onClick={buttonPress} type="submit" className="registerbtn">Register</button>
  
             </div>
           </div>
