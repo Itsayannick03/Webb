@@ -42,6 +42,29 @@ app.get("/check-email/:email", async(req, res) => {
     }
 });
 
+
+
+app.get("/passwordcheck", async(req, res) => 
+{
+    try
+    {
+        const email = req.body.email;
+        const password = req.body.password;
+
+        const user = await User.findOne({
+            name: req.body.name,
+            password: req.body.password
+        });
+
+        res.status(200).json({exists: !!user}); 
+    }
+    catch(err)
+    {
+        res.status(500).json(err.messege);
+    }
+    
+});
+
 // List all users
 app.get("/users", async (req, res) => {
     const users = await User.find();
