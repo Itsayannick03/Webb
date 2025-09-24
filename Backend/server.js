@@ -2,9 +2,12 @@ require("dotenv").config();
 const connectDB =require("./db");
 const express = require("express");
 const User = require("./models/Users");
+const cookieParser = require("cookie-parser");
+const bcrypt = require("bcrypt");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser("tempPassword"));
 
 //Connecting to database
 connectDB();
@@ -39,6 +42,46 @@ app.get("/check-email/:email", async(req, res) => {
     catch
     {
         res.status(500).json({error: "Server error"});
+    }
+});
+
+app.post("/login", async (req, res) => {
+    try
+    {
+        if(!req.body.email || !req.body.password)
+            return res.status(400).json({error: "Missing fields"})
+
+        const user = await User.findOne({
+            email: req.body.email
+        });
+
+
+        if(!user) 
+        {
+            // User does not exist in database
+            return res.status(404).json({error: "User not found" });
+        }
+
+        if(user.password !== req.body.password)
+        {
+            return res.status(401).json({error: "Invalid password"})
+        }
+
+        const userID = user.id;
+
+        res.cookie("user", userID, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            maxAge: 1000*60*60  
+        });
+
+        return res.status(200).json({error: "Login successful"})
+
+    }
+    catch(err)
+    {
+        return res.status(500).json({error: err.messege});
     }
 });
 
