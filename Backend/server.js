@@ -24,11 +24,7 @@ app.post("/register", registerUser);
 //Login
 app.post("/login", loginUser);
 
-// List all users
-app.get("/users", async (req, res) => {
-    const users = await User.find();
-    res.json(users);
-})
+
 
 //Start Server
 const PORT = process.env.PORT || 5000;
