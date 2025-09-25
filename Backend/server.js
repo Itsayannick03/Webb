@@ -2,9 +2,12 @@ require("dotenv").config();
 const connectDB =require("./db");
 const express = require("express");
 const User = require("./models/Users");
+const cookieParser = require("cookie-parser");
+const bcrypt = require("bcrypt");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser("tempPassword"));
 
 //Connecting to database
 connectDB();
@@ -18,51 +21,101 @@ app.get("/", (req, res) => {
 app.post("/register", async (req, res) =>{
     try
     {
-        const user = new User(req.body);
-        await user.save();
-        res.status(201).json(user);
-    }
-    catch(err)
-    {
-        res.status(400).json({error: err.messege});
-    }
-});
+        //Check If missing fields 
+        if(!req.body.email || !req.body.firstName || !req.body.lastName || !req.body.password || !req.body.phoneNumber)
+        {
+            //If missing fields then return fitting error
+            return res.status(409).json({error: "Missing fields"});
+        }
 
-//Check if email already exists
-app.get("/check-email/:email", async(req, res) => {
-    try
-    {
-        const email = req.params.email;
-        const user = await User.findOne({email});
-        res.json({exists: !!user}); //Will send back true if email is found or false if not
-    }
-    catch
-    {
-        res.status(500).json({error: "Server error"});
-    }
-});
+        //Check if user is already registered
+        const user = await User.findOne(req.body.email);
+        if(user)
+        {
+            // If user already in database, return a error messege
+            return res.status(409).json({error: "Email already in use"});
+        }
 
+        //generate salt
+        const salt = await bcrypt.genSalt(10); // 10 = cost factor
+        
+        //hash password
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-
-app.get("/passwordcheck", async(req, res) => 
-{
-    try
-    {
-        const email = req.body.email;
-        const password = req.body.password;
-
-        const user = await User.findOne({
-            name: req.body.name,
-            password: req.body.password
+        //Save user with hashed password
+        const newUser = new User({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            phoneNumber: req.body.phoneNumber,
+            password: hashedPassword
         });
 
-        res.status(200).json({exists: !!user}); 
+        await newUser.save();
+
+        //Get users ID
+        const userID = newUser.id;
+
+        //Create a secure cookie with userID that lasts for 1h
+         res.cookie("user", userID, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            maxAge: 1000*60*60  
+        });
+
+        return res.status(201).json("Registration successfull");
+
+
     }
     catch(err)
     {
-        res.status(500).json(err.messege);
+        // If something else went wrong we catch the error and send it back
+        res.status(500).json({error: err.messege});
     }
-    
+});
+
+app.post("/login", async (req, res) => {
+    try
+    {
+        if(!req.body.email || !req.body.password)
+            return res.status(400).json({error: "Missing fields"})
+
+        const user = await User.findOne({
+            email: req.body.email
+        });
+
+
+        if(!user) 
+        {
+            // User does not exist in database
+            return res.status(404).json({error: "User not found" });
+        }
+
+        //Matching hashed password to hashed given password
+        const isMatch = await  bcrypt.compare(req.body.password, user.password);
+
+        if(!isMatch)
+        {
+            return res.status(401).json({error: "Invalid password"})
+        }
+
+        const userID = user.id;
+
+        res.cookie("user", userID, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            maxAge: 1000*60*60  
+        });
+
+        return res.status(200).json({error: "Login successful"})
+
+    }
+    catch(err)
+    {
+        return res.status(500).json({error: err.messege});
+    }
 });
 
 // List all users
