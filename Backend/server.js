@@ -64,7 +64,7 @@ app.post("/register", async (req, res) =>{
             maxAge: 1000*60*60  
         });
 
-        return res.status(200).json("Registration successfull");
+        return res.status(201).json("Registration successfull");
 
 
     }
