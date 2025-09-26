@@ -1,15 +1,16 @@
 import "./Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 export function Login() 
 
 {
 const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
+  const navigate = useNavigate(); 
 
 
-
+//fetching 
   async function attemptLogin(email: string, password: string) {
   const response = await fetch("/login", {
     method: "POST",
@@ -17,32 +18,35 @@ const [email, setEmail] = useState<string>();
     body: JSON.stringify({ email, password }),
   });
 
-  // read the server body:  message or error
-  let data: { message?: string; error?: string } = {};
+  // read the server body:  error 
+  let data: { error?: string } = {};
   try { data = await response.json(); } 
   catch {}
 
-  
-  switch (response.status) {
-    case 200:
-      alert(data.message || "Login successful"); // message beacuse we will change it to message in the controller. 
-// Navigering till Homepage här 
-        break;
-    case 400:
-      alert(data.error || "Missing fields");
-      break;
-    case 401:
-      alert(data.error || "Invalid password");
-      break;
-    case 404:
-      alert(data.error || "User not found");
-      break;
-    case 500:
-      alert(data.error || "Server error");
-      break;
-    default:
-      alert(data.error || `Error ${response.status}`); // Other errors 
-  }
+// Take only the server's message from the parsed JSON body, in this case the controller only sends error .
+
+  const msg = data.error
+
+switch (msg) {
+  case "Login successful":
+    alert("Login successful");          // Success path: notify the user and navigate to the homepage.
+    navigate("/", { replace: true });
+    break;
+
+  case "Missing fields":
+    alert("Missing fields");    // 400 Bad Request – required fields were not provided.
+
+  case "Invalid password":
+    alert("Invalid password");    // 401 Unauthorized – password didn't match.
+    break;
+
+  case "User not found":        // 404 Not Found – no user with that email.
+    alert("User not found");
+    break;
+
+  default:
+    alert(msg|| `Error ${response.status}`);   // Fallback for any other message or unexpected response, the server sends
+    
 }
 
 
@@ -74,3 +78,4 @@ const [email, setEmail] = useState<string>();
   )
 }
 
+}
