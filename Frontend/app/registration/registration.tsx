@@ -6,8 +6,11 @@ import { FaIdCard } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 
+
+
 //Function that specifically handles the registration process
 export function Registration() {
+
   /*
   
   check if password matches repeat password
@@ -27,7 +30,7 @@ export function Registration() {
   
   */
 
- 
+  
 
   const [firstName, setFirstname] = useState<string>();
   const [lastName, setLastname] = useState<string>();
@@ -36,14 +39,14 @@ export function Registration() {
   const [password, setPassword] = useState<string>();
   const [passwordRepeat, setPasswordRepeat] = useState<string>();
 
-  const user = {firstName, lastName, email, phonenumber, password};
+  const user = { firstName, lastName, email, phonenumber, password };
 
-   if (password != passwordRepeat) {
+  if (password != passwordRepeat) {
     alert("Password do not match");
     return;
   }
 
- const respons = fetch('/registration', {
+  const respons = fetch('/registration', {
     method: 'POST',
     headers: {
       'Content Type': 'application/json'
@@ -53,15 +56,23 @@ export function Registration() {
 
   respons.then(res => {
     res.json().then(msg => {
-     console.log( msg.error)
+      console.log(msg.error)
     })
   })
+
+  respons.then(res => res.json().then(msg => {
+  if (msg.error == "Email already in use") {
+    alert("Email is already in use")
+  } else {
+    alert("Registration successful!");
+  }
+  }));
 
 
 
 
   //Function that handles the entire process when the button is pressed
- 
+
   return (
     <div className="registrationpage">
       <form action="#">
