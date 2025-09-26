@@ -5,14 +5,14 @@ import { Navigate, useNavigate } from "react-router";
 export function Login() 
 
 {
-const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const navigate = useNavigate(); 
-
-
+  
 //fetching 
-  async function attemptLogin(email: string, password: string) {
-  const response = await fetch("/login", {
+  async function attemptLogin() {
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
+  const navigate = useNavigate();
+ 
+   const response = await fetch("/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -25,7 +25,7 @@ const [email, setEmail] = useState<string>();
 
 // Take only the server's message from the parsed JSON body, in this case the controller only sends error .
 
-  const msg = data.error
+  const msg = data.error 
 
 switch (msg) {
   case "Login successful":
@@ -49,9 +49,8 @@ switch (msg) {
     
 }
 
-
+  
   return (
-
     <div className="wrapper">
       <div className="card">
         <form action="" >
@@ -67,11 +66,8 @@ switch (msg) {
           <div className="register-link">
             <span>Don't have an account?</span>
             <a className="registrationLink" href="registration"> Registration</a>
-
           </div>
-
-          <button type="submit">Login</button>
-
+          <button onClick={attemptLogin} type="submit">Login</button>
         </form>
       </div>
     </div>
