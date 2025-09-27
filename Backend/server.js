@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cookieParser("tempPassword"));
 
 //Connecting to database
-//connectDB();
+connectDB();
 
 //Simple test route
 app.get("/", (req, res) => {
@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 
 //Register
 app.post("/register", registerUser);
+
 
 //Login
 app.post("/login", loginUser);
