@@ -2,76 +2,72 @@ import "./Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router";
-export function Login() 
 
-{
-  
-//fetching 
-  async function attemptLogin() {
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const navigate = useNavigate();
- 
-   const response = await fetch("/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
+export function Login() {
 
-  // read the server body:  error 
-  let data: { error?: string } = {};
-  try { data = await response.json(); } 
-  catch {}
+    const [email, setEmail] = useState<string>();
+    const [password, setPassword] = useState<string>();
+    const navigate = useNavigate();
+    //fetching 
+    async function attemptLogin() {
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+        });
 
-// Take only the server's message from the parsed JSON body, in this case the controller only sends error .
+        // read the server body:  error 
+        let data: { error?: string } = {};
+        try { data = await response.json(); }
+        catch { }
 
-  const msg = data.error 
+        // Take only the server's message from the parsed JSON body, in this case the controller only sends error .
 
-switch (msg) {
-  case "Login successful":
-    alert("Login successful");          // Success path: notify the user and navigate to the homepage.
-    navigate("/", { replace: true });
-    break;
+        const msg = data.error
 
-  case "Missing fields":
-    alert("Missing fields");    // 400 Bad Request – required fields were not provided.
+        switch (msg) {
+            case "Login successful":
+                alert("Login successful");          // Success path: notify the user and navigate to the homepage.
+                navigate("/", { replace: true });
+                break;
 
-  case "Invalid password":
-    alert("Invalid password");    // 401 Unauthorized – password didn't match.
-    break;
+            case "Missing fields":
+                alert("Missing fields");    // 400 Bad Request – required fields were not provided.
 
-  case "User not found":        // 404 Not Found – no user with that email.
-    alert("User not found");
-    break;
+            case "Invalid password":
+                alert("Invalid password");    // 401 Unauthorized – password didn't match.
+                break;
 
-  default:
-    alert(msg|| `Error ${response.status}`);   // Fallback for any other message or unexpected response, the server sends
-    
-}
+            case "User not found":        // 404 Not Found – no user with that email.
+                alert("User not found");
+                break;
 
-  
-  return (
-    <div className="wrapper">
-      <div className="card">
-        <form action="" >
-          <h1 className="Login-title">Login</h1>
-          <div className="input-box">
-            <input id="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
-            <FaUser className="icon" />
-          </div>
-          <div className="input-box">
-            <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
-            <FaLock className="icon" />
-          </div>
-          <div className="register-link">
-            <span>Don't have an account?</span>
-            <a className="registrationLink" href="registration"> Registration</a>
-          </div>
-          <button onClick={attemptLogin} type="submit">Login</button>
-        </form>
-      </div>
-    </div>
-  )
-}
+            default:
+                alert(msg || `Error ${response.status}`);   // Fallback for any other message or unexpected response, the server sends
 
+        }
+    }
+
+    return (
+        <div className="wrapper">
+            <div className="card">
+                <form action="" >
+                    <h1 className="Login-title">Login</h1>
+                    <div className="input-box">
+                        <input id="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+                        <FaUser className="icon" />
+                    </div>
+                    <div className="input-box">
+                        <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
+                        <FaLock className="icon" />
+                    </div>
+                    <div className="register-link">
+                        <span>Don't have an account?</span>
+                        <a className="registrationLink" href="registration"> Registration</a>
+                    </div>
+                    <button onClick={attemptLogin} type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    )
 }
