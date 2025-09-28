@@ -3,7 +3,6 @@ const User = require("../models/Users");
 
 async function registerUser(req, res)
 {
-    console.log("start\n");
     try
         {
             
