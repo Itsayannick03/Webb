@@ -3,8 +3,11 @@ const User = require("../models/Users");
 
 async function registerUser(req, res)
 {
+    console.log("start\n");
     try
         {
+            console.log("Entered try block");
+            
             //Check If missing fields 
             if(!req.body.email || !req.body.firstName || !req.body.lastName || !req.body.password || !req.body.phoneNumber)
             {
@@ -13,7 +16,7 @@ async function registerUser(req, res)
             }
     
             //Check if user is already registered
-            const user = await User.findOne(req.body.email);
+            const user = await User.findOne({ email: req.body.email });
             if(user)
             {
                 // If user already in database, return a error messege
@@ -38,17 +41,22 @@ async function registerUser(req, res)
             await newUser.save();
     
             //Get users ID
-            const userID = newUser.id;
-    
+            const userID = newUser.id.toString();
+            
             //Create a secure cookie with userID that lasts for 1h
-             res.cookie("user", userID, {
+             res.cookie("user", {
                 httpOnly: true,
                 secure: true,
                 sameSite: "strict",
                 maxAge: 1000*60*60  
             });
-    
+
+            console.log("newUser.id:", newUser.id);
+            console.log("newUser._id:", newUser._id);
+
+           
             return res.status(201).json("Registration successfull");
+            console.log('registered User');
     
     
         }
@@ -87,7 +95,7 @@ async function loginUser(req, res)
 
         const userID = user.id;
 
-        res.cookie("user", userID, {
+        res.cookie("user", userID.toString(), {
             httpOnly: true,
             secure: true,
             sameSite: "strict",
@@ -99,7 +107,7 @@ async function loginUser(req, res)
     }
     catch(err)
     {
-        return res.status(500).json({error: err.messege});
+        return res.status(500).json({error: err.message});
     }
 }
 

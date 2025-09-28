@@ -11,19 +11,6 @@ import { useState } from "react";
 //Function that specifically handles the registration process
 export function Registration() {
 
-  /*
-  
-  check if password matches repeat password
-  
-  new user = {user, data, from, form}
-  
-  respons = fetch(user/to/registstration)
-  
-  if(respons = "User already exists")
-  {
-    dispay(User_already_exists_label)
-  }
-  */
   const [firstName, setFirstname] = useState<string>();
   const [lastName, setLastname] = useState<string>();
   const [email, setEmail] = useState<string>();
@@ -40,7 +27,7 @@ export function Registration() {
       return;
     }
 
-    const respons = fetch('/registration', {
+    const respons = fetch('http://localhost:5000/register', {
       method: 'POST',
       headers: {
         'Content Type': 'application/json'
