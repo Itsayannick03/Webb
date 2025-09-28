@@ -42,12 +42,12 @@ async function registerUser(req, res)
             const userID = newUser.id.toString();
             
             //Create a secure cookie with userID that lasts for 1h
-             res.cookie("user", {
-                httpOnly: true,
-                secure: true,
-                sameSite: "strict",
-                maxAge: 1000*60*60  
-            });
+            res.cookie("user", userID.toString(), {
+            httpOnly: true,
+            secure: false,        // must be false on localhost
+            sameSite: "lax",      // "strict" can block cross-origin requests
+            maxAge: 1000 * 60 * 60
+        });
 
            
             return res.status(201).json({error: "Registration Sucessfull"});
@@ -91,9 +91,9 @@ async function loginUser(req, res)
 
         res.cookie("user", userID.toString(), {
             httpOnly: true,
-            secure: true,
-            sameSite: "strict",
-            maxAge: 1000*60*60  
+            secure: false,        // must be false on localhost
+            sameSite: "lax",      // "strict" can block cross-origin requests
+            maxAge: 1000 * 60 * 60
         });
 
         return res.status(200).json({error: "Login successful"})
@@ -105,4 +105,26 @@ async function loginUser(req, res)
     }
 }
 
-module.exports = {registerUser, loginUser};
+async function getUser(req, res)
+{
+    try
+    {
+        const userID = req.cookies.user;
+
+        if(!userID)
+            return res.status(401).json({message: "Not logged in"});
+
+        const user = await User.findById(userID);
+
+        if(!user)
+            return res.status(404).json({message: "User not found"});
+
+        return res.status(200).json({firstName: user.firstName, lastName: user.lastName});
+    }
+    catch(err)
+    {
+        res.status(500).json({error: "internal server error"});
+    }
+}
+
+module.exports = {registerUser, loginUser, getUser};
