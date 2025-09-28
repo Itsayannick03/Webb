@@ -6,7 +6,6 @@ async function registerUser(req, res)
     console.log("start\n");
     try
         {
-            console.log("Entered try block");
             
             //Check If missing fields 
             if(!req.body.email || !req.body.firstName || !req.body.lastName || !req.body.password || !req.body.phoneNumber)
@@ -51,12 +50,8 @@ async function registerUser(req, res)
                 maxAge: 1000*60*60  
             });
 
-            console.log("newUser.id:", newUser.id);
-            console.log("newUser._id:", newUser._id);
-
            
-            return res.status(201).json("Registration successfull");
-            console.log('registered User');
+            return res.status(201).json({error: "Registration Sucessfull"});
     
     
         }

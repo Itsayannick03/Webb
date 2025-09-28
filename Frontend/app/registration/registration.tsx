@@ -14,13 +14,14 @@ export function Registration() {
   const [firstName, setFirstname] = useState<string>();
   const [lastName, setLastname] = useState<string>();
   const [email, setEmail] = useState<string>();
-  const [phonenumber, setPhonenumber] = useState<string>();
+  const [phoneNumber, setPhonenumber] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [passwordRepeat, setPasswordRepeat] = useState<string>();
 
-  async function tryRegistration() {
+  async function tryRegistration(e: React.FormEvent) {
+    e.preventDefault();
 
-    const user = { firstName, lastName, email, phonenumber, password };
+    const user = { firstName, lastName, email, phoneNumber, password };
 
     if (password != passwordRepeat) {
       alert("Password do not match");
@@ -30,9 +31,10 @@ export function Registration() {
     const respons = fetch('http://localhost:5000/register', {
       method: 'POST',
       headers: {
-        'Content Type': 'application/json'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
+      credentials: 'include'
     })
 
     respons.then(res => {
@@ -48,7 +50,7 @@ export function Registration() {
 
   return (
     <div className="registrationpage">
-      <form action="#">
+      <form onSubmit={tryRegistration}>
         <div className="registration">
           <div className="h1">
           </div>
@@ -67,7 +69,7 @@ export function Registration() {
             <input type="text" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} name="email" id="email" required />
 
             <label htmlFor="phonenumber">Phone Number <div className="phone"><FaPhone /></div></label>
-            <input type="text" placeholder="Enter Phone Number" value={phonenumber} onChange={e => setPhonenumber(e.target.value)} name="phonenumber" id="phonenumber" required />
+            <input type="text" placeholder="Enter Phone Number" value={phoneNumber} onChange={e => setPhonenumber(e.target.value)} name="phonenumber" id="phonenumber" required />
 
             <label htmlFor="psw">Password <div className="icon"><FaKey /></div></label>
             <input type="password" placeholder="Enter Password" value={password} onChange={e => setPassword(e.target.value)} name="psw" id="psw" required />
@@ -79,7 +81,7 @@ export function Registration() {
               <p>Already have an account? <span className="login"><a href="/login"><u>Sign in</u></a>.</span></p>
             </div>
             <div className="button">
-              <button onClick={tryRegistration} type="submit" className="registerbtn">Register</button>
+              <button type="submit" className="registerbtn">Register</button>
             </div>
           </div>
         </div>

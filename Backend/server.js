@@ -5,10 +5,16 @@ const User = require("./models/Users");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const {registerUser, loginUser} = require("./controllers/userController");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser("tempPassword"));
+app.use(cors({
+  origin: "http://localhost:5173", // frontend origin
+  credentials: true                // allow cookies
+}));
+
 
 //Connecting to database
 connectDB();
