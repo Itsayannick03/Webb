@@ -5,6 +5,7 @@ async function registerUser(req, res)
 {
     try
         {
+            
             //Check If missing fields 
             if(!req.body.email || !req.body.firstName || !req.body.lastName || !req.body.password || !req.body.phoneNumber)
             {
@@ -13,7 +14,7 @@ async function registerUser(req, res)
             }
     
             //Check if user is already registered
-            const user = await User.findOne(req.body.email);
+            const user = await User.findOne({ email: req.body.email });
             if(user)
             {
                 // If user already in database, return a error messege
@@ -38,17 +39,18 @@ async function registerUser(req, res)
             await newUser.save();
     
             //Get users ID
-            const userID = newUser.id;
-    
+            const userID = newUser.id.toString();
+            
             //Create a secure cookie with userID that lasts for 1h
-             res.cookie("user", userID, {
+             res.cookie("user", {
                 httpOnly: true,
                 secure: true,
                 sameSite: "strict",
                 maxAge: 1000*60*60  
             });
-    
-            return res.status(201).json("Registration successfull");
+
+           
+            return res.status(201).json({error: "Registration Sucessfull"});
     
     
         }
@@ -87,7 +89,7 @@ async function loginUser(req, res)
 
         const userID = user.id;
 
-        res.cookie("user", userID, {
+        res.cookie("user", userID.toString(), {
             httpOnly: true,
             secure: true,
             sameSite: "strict",
@@ -99,7 +101,7 @@ async function loginUser(req, res)
     }
     catch(err)
     {
-        return res.status(500).json({error: err.messege});
+        return res.status(500).json({error: err.message});
     }
 }
 
