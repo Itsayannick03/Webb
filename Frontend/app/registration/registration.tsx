@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { FaIdCard } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
-
+import { toast } from "react-toastify";
 
 
 //Function that specifically handles the registration process
@@ -39,7 +39,14 @@ export function Registration() {
 
     respons.then(res => {
       res.json().then(msg => {
-        alert(msg.error)
+
+        if(msg.status == 500)
+          toast.error("Error 500: Internal Server Error");
+        else if(msg.error == "Registration Sucessfull")
+          toast.success("Registration Sucessfull");
+        else
+          toast.warn(msg.error);
+      
       })
     })
   }
