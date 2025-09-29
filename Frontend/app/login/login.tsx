@@ -34,7 +34,8 @@ export function Login()
 
 switch (msg) {
   case "Login successful":
-    toast.success("Login successful")         // Success path: notify the user and navigate to the homepage.
+    toast.success("Login successful")  
+    navigate("/");        // Success path: notify the user and navigate to the homepage.
    // navigate("/", { replace: true });
     break;
 
@@ -53,6 +54,8 @@ switch (msg) {
   default:
     toast.error(`Error ${response.status}` )
        // Fallback for any other message or unexpected response, the server sends
+
+   
 } 
 }
 
