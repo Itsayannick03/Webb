@@ -4,28 +4,39 @@ import './styles/header.css'
 import { FaCircleUser } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+
+
 
 
 export function Header()
 {
     const [firstName, setFirstName] = useState("");
     const [LastName, setLastName] = useState("");
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    
 
     async function getUserCredentials()
     {
         try
         {
+            
             const res = await fetch('http://localhost:5000/name', {
                 method: 'GET',
                 credentials: "include",
             });
 
             if( res.status != 200)
+            {
+                setLoggedIn(false);
                 return setFirstName("")
+            }
+                
             const data =  await res.json()
 
             setFirstName(data.firstName);
             setLastName(data.lastName);
+            setLoggedIn(true);
             
         }
         catch
@@ -61,9 +72,7 @@ export function Header()
                     <a href="">Contact</a>
                 </div>
                 
-                <div >
-                    <a href="login">Login</a>
-                </div>
+                
 
                 
                 
@@ -74,18 +83,30 @@ export function Header()
             
 
             <div className='logo'>
-                <a href="">
-                    <div className='profile'>
-                        <FaCircleUser className='icon' size={38}/>
-                        <div className='name'>
-                            <p>{firstName ? firstName: "Login"}</p> 
-                            <p>{LastName ? LastName: "Now"}</p>
-                        </div>
+                <div>
+                { isLoggedIn?(
+                        <div className='profile'>
+
+                            <FaCircleUser className='Icon' size={38}/>
+                            <div >
+                                
+                                <a className='name' href='/'>
+                                    <p>{firstName}</p>
+                                    <p>{LastName}</p>
+                                </a>
+                                
+                            </div>
                         
-                    </div>
+                        </div>)
+                    :(
+                        <a href="/login">
+                            <FaCircleUser className='Icon' size={45} />
+                            <a className='login' href="/login">Login</a>
+                        </a>)
+                }
                     
                     
-                </a>
+                </div>
             </div>
         </div>
         
