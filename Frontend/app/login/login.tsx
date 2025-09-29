@@ -34,9 +34,8 @@ export function Login()
 
 switch (msg) {
   case "Login successful":
-    toast.success("Login successful")         // Success path: notify the user and navigate to the homepage.
-   // navigate("/", { replace: true });
-    break;
+    toast.success("Login successful")  
+    window.location.href = "/";
 
   case "Missing fields":
     toast.warning("Missing fields")
@@ -53,6 +52,8 @@ switch (msg) {
   default:
     toast.error(`Error ${response.status}` )
        // Fallback for any other message or unexpected response, the server sends
+
+   
 } 
 }
 

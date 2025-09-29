@@ -43,7 +43,11 @@ export function Registration() {
         if(msg.status == 500)
           toast.error("Error 500: Internal Server Error");
         else if(msg.error == "Registration Sucessfull")
+        {
           toast.success("Registration Sucessfull");
+           window.location.href = "/";
+        }
+          
         else
           toast.warn(msg.error);
       
