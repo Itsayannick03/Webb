@@ -5,6 +5,8 @@ import { FaCircleUser } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { CiLogin } from "react-icons/ci";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 
 
@@ -87,20 +89,22 @@ export function Header()
                 { isLoggedIn?(
                         <div className='profile'>
 
-                            <FaCircleUser className='Icon' size={38}/>
-                            <div >
+                            <a href="#">
+                                <FaCircleUser className='icon' size={35}/>
+                            </a>
+                            <a className='name' href='#' >
                                 
-                                <a className='name' href='/'>
-                                    <p>{firstName}</p>
-                                    <p>{LastName}</p>
-                                </a>
                                 
-                            </div>
+                                <p>{firstName}</p>
+                                <p>{LastName}</p>
+                               
+                                
+                            </a>
                         
                         </div>)
                     :(
-                        <a href="/login">
-                            <FaCircleUser className='Icon' size={45} />
+                        <a className='profile' href="/login">
+                            <CiLogin className='icon' size={30} />
                             <a className='login' href="/login">Login</a>
                         </a>)
                 }
