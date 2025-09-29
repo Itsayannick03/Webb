@@ -87,7 +87,7 @@ async function loginUser(req, res)
             return res.status(401).json({error: "Invalid password"})
         }
 
-        const userID = user.id;
+        const userID = user.id.toString();
 
         res.cookie("user", userID.toString(), {
             httpOnly: true,
