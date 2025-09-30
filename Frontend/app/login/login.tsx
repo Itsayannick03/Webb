@@ -1,15 +1,15 @@
 import "./Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import React from "react";
+
 
 
 export function Login() 
 {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
-  const navigate = useNavigate();
   
 //fetching 
   async function attemptLogin(e: React.FormEvent) {
@@ -27,7 +27,10 @@ export function Login()
   // read the server body:  error 
   let data: { error?: string } = {};
   try { data = await response.json(); } 
-  catch {}
+  catch 
+  {
+    return; // Must do something here!
+  }
 
 // Take only the server's message from the parsed JSON body, in this case the controller only sends error .
 
@@ -37,10 +40,12 @@ switch (msg) {
   case "Login successful":
     toast.success("Login successful")  
     window.location.href = "/";
+    break;
 
   case "Missing fields":
     toast.warning("Missing fields")
        // 400 Bad Request – required fields were not provided.
+    break;
 
   case "Invalid password":
     toast.warning("Invalid password")    // 401 Unauthorized – password didn't match.
@@ -53,6 +58,7 @@ switch (msg) {
   default:
     toast.error(`Error ${response.status}` )
        // Fallback for any other message or unexpected response, the server sends
+    break;
 
    
 } 
@@ -73,7 +79,7 @@ switch (msg) {
             <FaLock className="icon" />
           </div>
           <div className="register-link">
-            <span>Don't have an account?</span>
+            <span>Dont have an account?</span>
             <a className="registrationLink" href="registration"> Registration</a>
         
  
