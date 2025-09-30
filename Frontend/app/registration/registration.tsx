@@ -6,6 +6,8 @@ import { FaIdCard } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import React from "react";
+
 
 
 //Function that specifically handles the registration process
