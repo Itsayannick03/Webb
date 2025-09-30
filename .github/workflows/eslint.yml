@@ -118,7 +118,7 @@ jobs:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
 
 
-        run: npx eslint ./app
+        run: npx eslint ../Frontend/app/
 
 
         continue-on-error: true
