@@ -4,6 +4,8 @@ import { PiScissorsThin } from "react-icons/pi";
 import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
 import { PiOfficeChairThin } from "react-icons/pi";
+import React from "react";
+
 export function Booking() 
 {
     return(

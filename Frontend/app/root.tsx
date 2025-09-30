@@ -13,6 +13,8 @@ import { Header } from "~/header"
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Footer } from "./footer";
+import React from "react";
+
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
