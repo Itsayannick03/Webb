@@ -35,7 +35,7 @@ export function Login()
 switch (msg) {
   case "Login successful":
     toast.success("Login successful")  
-    window.location.href = "/";
+    //window.location.href = "/";
     break;
 
   case "Missing fields":
