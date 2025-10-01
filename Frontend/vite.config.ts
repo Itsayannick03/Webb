@@ -9,7 +9,7 @@ import react from "@vitejs/plugin-react";
 
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), react()],
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   test: {
     globals: true,
     environment: "jsdom"
