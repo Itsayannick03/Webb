@@ -34,8 +34,11 @@ export function Login()
 
 switch (msg) {
   case "Login successful":
-    toast.success("Login successful")  
-    //window.location.href = "/";
+    toast.success("Login successful", 
+      { onClose: () => { window.location.href = "/"},
+      autoClose: 1000, 
+});
+    //
     break;
 
   case "Missing fields":
