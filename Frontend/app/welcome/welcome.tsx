@@ -8,7 +8,7 @@ export function Welcome() {
       
 
      
-        <img className='image box'  src="logo.png" alt="Mane Attraction text" width={300} height={10}/>
+        <img className='imageBox'  src="logo.png" alt="Mane Attraction text"/>
         
 
        
