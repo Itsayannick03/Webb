@@ -12,10 +12,7 @@ export function Login()
   const [password, setPassword] = useState<string>();
   
 //fetching 
-  async function attemptLogin(e: React.FormEvent) {
-    e.preventDefault();
-    
-  
+  async function attemptLogin(){  
  
    const response = await fetch("http://localhost:5000/login", {
     method: "POST",
@@ -38,10 +35,11 @@ export function Login()
 
 switch (msg) {
   case "Login successful":
-    toast.success("Login successful");  
-    window.location.href = "/";
-    
-    
+    toast.success("Login successful", 
+      { onClose: () => { window.location.href = "/"},
+      autoClose: 1000, 
+});
+    //
     break;
 
   case "Missing fields":
@@ -70,7 +68,7 @@ switch (msg) {
   return (
     <div className="wrapper">
       <div className="card">
-        <form onSubmit={attemptLogin} >
+        <div >
           <h1 className="Login-title">Login</h1>
           <div className="input-box">
             <input id="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
@@ -86,8 +84,8 @@ switch (msg) {
         
  
            </div>
-          <button type="submit">Login</button>
-        </form>
+          <button onClick={attemptLogin} type="submit">Login</button>
+        </div>
       </div>
     </div>
   )
