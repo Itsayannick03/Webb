@@ -89,7 +89,7 @@ export function Header()
                 { isLoggedIn?(
                         <div className='profile'>
 
-                            <a href="#">
+                            <a href="/profile">
                                 <FaCircleUser className='icon' size={35}/>
                             </a>
                             <a className='name' href='#' >

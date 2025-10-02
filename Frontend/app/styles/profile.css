@@ -1,0 +1,107 @@
+.profile-main
+{
+    min-height: calc(100vh - 160px); 
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  padding: 16px 20px;
+  background: white;
+
+ 
+   
+}
+
+.profile-container
+{
+    border: 1px solid black;
+    border-radius: 10px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    
+    max-width: 700px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 360px;
+    background: #fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    padding:18px 20px 22px;
+
+    gap: 20px;
+
+}
+
+.login-header
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+}
+
+.profile-title
+{
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.profile-name
+{
+    font-weight: 420;
+    font-size: large;
+
+                                                                                                                                                                                                                                                     ;
+}
+
+.profile-email
+{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.login-picture-button
+{
+   width: 40%;
+ 
+  border: 1px solid #b5b5b5;
+  border-radius: 8px;
+  background: linear-gradient(#f5efe7, white);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 13px;
+  font-weight: 500;
+  
+  padding: 5px;
+}
+
+.login-picture-button:hover
+{
+    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+}
+
+.profile-personalInfo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    gap: 5px;
+}
+
+
+
+
+
+
+
+
