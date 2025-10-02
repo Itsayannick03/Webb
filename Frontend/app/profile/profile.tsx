@@ -54,9 +54,24 @@ export function Profile()
 
                 </div>
 
-                <div className='passwordField'>
-                    
-                </div>
+                <div className='password-container'>
+                    <p>Password</p>
+                    <div className='inputField-container'>
+                        <div>
+                                <label>Current Password</label>
+                                <input className='nameField' type="name" />
+                        </div>
+                        <div>
+                                <label>New Password</label>
+                                <input className='nameField' type="firstName" />
+                        </div>
+                    </div>
+
+                    <div className='confirm-password-container'>
+                            <label>New Password</label>
+                            <input className='nameField' type="firstName" />
+                    </div>
+                </div>  
                 
             </div>
         </div>
