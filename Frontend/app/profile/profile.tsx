@@ -25,12 +25,12 @@ export function Profile()
                         
                         <div>
                             <h1>First Name</h1>
-                            <input className='nameField' type="firstName" />
+                            <input className='nameField' type="name" />
                         </div>
                         
                         <div className=''>
                             <h1>Last Name</h1>
-                            <input className='nameField' type="lastName" />
+                            <input className='nameField' type="name" />
                         </div>
 
                         
@@ -59,18 +59,22 @@ export function Profile()
                     <div className='inputField-container'>
                         <div>
                                 <label>Current Password</label>
-                                <input className='nameField' type="name" />
+                                <input className='nameField' type="password" />
                         </div>
                         <div>
                                 <label>New Password</label>
-                                <input className='nameField' type="firstName" />
+                                <input className='nameField' type="password" />
                         </div>
                     </div>
 
                     <div className='confirm-password-container'>
                             <label>New Password</label>
-                            <input className='nameField' type="firstName" />
+                            <input className='nameField' type="password" />
                     </div>
+                </div>
+
+                <div className='logout-container'>
+                    <button className='border-button'>Logout</button>
                 </div>  
                 
             </div>
