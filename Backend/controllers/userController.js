@@ -119,7 +119,7 @@ async function getUser(req, res)
         if(!user)
             return res.status(404).json({message: "User not found"});
 
-        return res.status(200).json({firstName: user.firstName, lastName: user.lastName});
+        return res.status(200).json({firstName: user.firstName, lastName: user.lastName, email: user.email, phoneNumber: user.phoneNumber , password: user.password});
     }
     catch(err)
     {
