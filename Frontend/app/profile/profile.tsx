@@ -1,5 +1,7 @@
 import '../styles/profile.css'
 import { FaCircleUser } from "react-icons/fa6";
+import { MdOutlineKey } from "react-icons/md";
+import { CgInfinity } from "react-icons/cg";
 
 export function Profile()
 {
@@ -18,13 +20,42 @@ export function Profile()
                 </div>
 
                 <div className='profile-personalInfo'>
+                    <p>Personal Information</p>
                     <div className='profile-name-section'>
-                        <p>Personal Information</p>
-                        <input className='profile-input profile-firstName' type="firstName" />
-                        <input className='profile-input profile-lastName' type="LastName" />
+                        
+                        <div>
+                            <h1>First Name</h1>
+                            <input className='nameField' type="firstName" />
+                        </div>
+                        
+                        <div className=''>
+                            <h1>Last Name</h1>
+                            <input className='nameField' type="lastName" />
+                        </div>
 
+                        
                     </div>
 
+                    <div>   
+                        <h1>Email</h1>
+                        <input className='emailField' type="text" />
+                        
+                    </div>
+
+                    <div className='iconCard'>
+                        <MdOutlineKey />
+                        <CgInfinity />
+                    </div>
+
+                    <div className='SaveButton'>
+                        <button>Save Changes</button>
+                    </div>
+                    
+
+                </div>
+
+                <div className='passwordField'>
+                    
                 </div>
                 
             </div>
