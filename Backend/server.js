@@ -4,7 +4,7 @@ const express = require("express");
 const User = require("./models/Users");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
-const {registerUser, loginUser, getUser} = require("./controllers/userController");
+const {registerUser, loginUser, getUser, logout} = require("./controllers/userController");
 const cors = require("cors");
 
 const app = express();
@@ -31,8 +31,13 @@ app.post("/register", registerUser);
 //Login
 app.post("/login", loginUser);
 
+//Logout
+app.post("/logout", logout);
+
 //Get user names from Cookie
 app.get("/name", getUser)
+
+
 
 
 
