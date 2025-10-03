@@ -130,13 +130,14 @@ async function getUser(req, res)
 async function logout(req, res) {
     try 
     {
-        const token = req.cookies.token;
+        const user = req.cookies.user;
 
-        if(!token)
-            return res.status(404).json({error: "cookie not found"});
+        if(!user)
+            return res.status(402).json({error: "cookie not found"});
 
         res.clearCookie("user");
         res.status(200).json({message: "Succesfull Logut"});
+        console.log("user deleted")
     } catch (err) 
     {
         res.status(500);

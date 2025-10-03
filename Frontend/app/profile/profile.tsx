@@ -2,9 +2,30 @@ import '../styles/profile.css'
 import { FaCircleUser } from "react-icons/fa6";
 import { MdOutlineKey } from "react-icons/md";
 import { CgInfinity } from "react-icons/cg";
+import { toast } from "react-toastify";
 
 export function Profile()
 {
+    async function Logout()
+    {
+        try
+        {
+            const response = await fetch("http://localhost:5000/logout", {
+            method: "POST",
+            credentials: "include"
+            
+            });
+            toast.success("Logged out", 
+                  { onClose: () => { window.location.href = "/"},
+                  autoClose: 1000, 
+            });
+        }
+        catch(err)
+        {
+            toast.error("server error");
+        }
+        
+    }
     return(
         <div className='profile-main'>
             <div className='profile-container' >
@@ -48,7 +69,7 @@ export function Profile()
                     </div>
 
                     <div className='SaveButton'>
-                        <button>Save Changes</button>
+                        <button >Save Changes</button>
                     </div>
                     
 
@@ -74,7 +95,7 @@ export function Profile()
                 </div>
 
                 <div className='logout-container'>
-                    <button className='border-button'>Logout</button>
+                    <button onClick={Logout} className='border-button'>Logout</button>
                 </div>  
                 
             </div>
