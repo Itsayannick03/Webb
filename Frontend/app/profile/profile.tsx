@@ -10,17 +10,17 @@ export function Profile()
 {   
     const [firstNameHeader, setFirstNameHeader] = useState("");
     const [lastNameHeader, setLastNameHeader]   = useState("");
-     const [emailHeader, setEmailHeader]         = useState("");
+    const [emailHeader, setEmailHeader]         = useState("");
+    
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName]   = useState("");
     const [email, setEmail]         = useState("");
     const [phoneNumber, setPhoneNumber]         = useState("");
 
+    const [currentPassword, setCurrentPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
 
-    const [password, setPassword]         = useState("");
-
-    
 
     async function getData()
     {
@@ -40,12 +40,12 @@ export function Profile()
             setFirstName(data.firstName);
             setLastName(data.lastName);
             setEmail(data.email);
-            setPhoneNumber(data.phoneNumber)
+            setPhoneNumber(data.phoneNumber);
        
         }
-        catch
+        catch(err)
         {
-
+            toast.error("Error 500")
         }
     }
 
@@ -60,26 +60,27 @@ export function Profile()
         });
 
         if (!result.isConfirmed) return;
-    const res = await fetch("http://localhost:5000/user", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ firstName, lastName, email, phoneNumber })
-    });
+        
+        const res = await fetch("http://localhost:5000/user", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ firstName, lastName, email, phoneNumber, currentPassword, newPassword })
+        });
 
-    const updated = await res.json();
+        const updated = await res.json();
     
-    toast.success("Information updated");
-    window.location.reload()
-  };
+        toast.success("Information updated");
+        window.location.reload()
+    };
+
     async function Logout()
     {
         try
         {
             const response = await fetch("http://localhost:5000/logout", {
-            method: "POST",
-            credentials: "include"
-            
+                method: "POST",
+                credentials: "include"
             });
             toast.success("Logged out", 
                   { onClose: () => { window.location.href = "/"},
@@ -90,12 +91,11 @@ export function Profile()
         {
             toast.error("server error");
         }
-        
     }
 
     useEffect(() => {
-    getData();
-  }, []); // empty dependency array → only run on mount
+        getData();
+    }, []); // empty dependency array → only run on mount
 
 
     return(
@@ -161,17 +161,14 @@ export function Profile()
                     <div className='inputField-container'>
                         <div>
                                 <label>Current Password</label>
-                                <input className='nameField' type="password"/>
+                                <input className='nameField' type="text" onChange={(e) => setCurrentPassword(e.target.value)}/>
                         </div>
-                        <div>
-                                <label>New Password</label>
-                                <input className='nameField' type="password" />
-                        </div>
+                        
                     </div>
 
                     <div className='confirm-password-container'>
                             <label>New Password</label>
-                            <input className='nameField' type="password" />
+                            <input className='nameField' type="password" onChange={(e) => setNewPassword(e.target.value)}/>
                     </div>
                 </div>
 

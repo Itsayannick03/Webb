@@ -135,7 +135,15 @@ async function updateUser(req, res)
 
         if(!userID)
             return res.status(404).json({error: "User not found"});
-        const {firstName, lastName, email, phoneNumber, password} = req.body;
+
+        const {firstName, lastName, email, phoneNumber, currentPassword} = req.body;
+        const user = User.findById(userID)
+
+        const isMatch = await  bcrypt.compare(currentPassword, user.password);
+
+        if(!isMatch)
+            return res.status(401).json({error: "Invalid password"});
+        
 
         const updatedUser = await User.findByIdAndUpdate(
             userID,
