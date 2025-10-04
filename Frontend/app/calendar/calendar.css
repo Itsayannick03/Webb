@@ -1,0 +1,44 @@
+
+
+.wk { max-width: 1100px; margin: 0 auto; padding: 8px 0; }
+
+.wk__top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 8px 0 16px;
+}
+
+.wk__link {
+  background: none; border: none; display: inline-flex; align-items: center;
+  gap: 6px; color: #4c6a92; font-weight: 600; cursor: pointer;
+}
+
+.wk__range { text-align: center; }
+.wk__title { font-weight: 700; font-size: 18px; }
+.wk__subtitle { color: #6b7280; font-size: 12px; margin-top: 2px; }
+
+/* Header: weekdays + date numbers */
+.wk__hdr {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px;
+}
+.wk__colhdr {
+  text-align: center; padding: 12px 0; border-bottom: 1px solid #e5e7eb;
+  border-radius: 8px 8px 0 0; background: #fff;
+}
+.wk__weekday { color: #406287; font-weight: 700; text-transform: none; }
+.wk__daynum { font-size: 20px; font-weight: 800; }
+
+/* Empty day columns (clickable) */
+.wk__grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; margin-top: 0;
+}
+.wk__daybox {
+  height: 460px; width: 100%; background: #ffffff;
+  border: 1px solid #e5e7eb; border-radius: 0 0 12px 12px;
+  cursor: pointer; transition: background .2s ease, transform .15s ease;
+}
+.wk__daybox:hover { background: #eef3f9; transform: translateY(-1px); }
+.wk__daybox:focus { outline: none; }
+.wk__daybox:focus-visible { outline: 2px solid #4c6a92; outline-offset: 2px; }
+
+/* Weekend modifier (Sat/Sun) */
+.is-weekend { background: #f9fafb; }
