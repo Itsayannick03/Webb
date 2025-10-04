@@ -257,7 +257,7 @@
   
   padding: 5px;
 
-  transition: background  0.5s ease;
+  transition: background  0.8s ease;
 }
 
 .border-button:hover
@@ -266,7 +266,7 @@
         color: white;
         border: 1px solid rgb(255, 255, 255);
         border-color: rgba(0, 0, 0, 0.5);
-        background: rgba(122, 0, 0, 1);
+        background: rgb(122, 50, 50);
 }
 
 
