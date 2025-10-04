@@ -80,3 +80,40 @@
     transform: scale(1) skewX(0deg);
   }
 }
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #111;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+  box-shadow: 0 0 15px #ff0, 0 0 25px #0ff;
+  text-shadow: 0 0 5px #fff;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseAura 2.5s infinite ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.15) rotate(-3deg);
+  background: linear-gradient(90deg, #ffff00, #ff00ff, #00ffff);
+  box-shadow: 0 0 30px #f0f, 0 0 50px #0ff;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Aura pulsing effect */
+@keyframes pulseAura {
+  0% {
+    box-shadow: 0 0 15px #ff0, 0 0 25px #0ff;
+  }
+  50% {
+    box-shadow: 0 0 30px #f0f, 0 0 50px #ff0;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff0, 0 0 25px #0ff;
+  }
+}

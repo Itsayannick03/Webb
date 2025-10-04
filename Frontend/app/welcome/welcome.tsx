@@ -1,7 +1,15 @@
-import React from "react";
+
 import '../styles/welcome.css';
+import React, { useRef } from "react";
+
 
 export function Welcome() {
+   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const startMusic = () => {
+    audioRef.current?.play(); // TS knows play() exists ✅
+  };
+
   return (
     <div className="main">
       <img 
@@ -18,9 +26,10 @@ export function Welcome() {
       <button className="welcome-btn">🚪 Enter the Rizz</button>
 
       {/* 🔊 Background music */}
-      <audio autoPlay loop>
+
+      <button onClick={startMusic}>▶️ Play Aura</button>
+       <audio ref={audioRef} loop>
         <source src="/skibidi.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
       </audio>
     </div>
   )
