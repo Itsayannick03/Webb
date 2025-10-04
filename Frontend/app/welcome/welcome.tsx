@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/welcome.css'
+import '../styles/welcome.css';
 
 export function Welcome() {
   return (
@@ -14,7 +14,14 @@ export function Welcome() {
       <p className="welcome-subtitle">
         🗣 Aura Farming • Gyatt Energy • Rizz Overflow 💯
       </p>
+
       <button className="welcome-btn">🚪 Enter the Rizz</button>
+
+      {/* 🔊 Background music */}
+      <audio autoPlay loop>
+        <source src="/skibidi.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   )
 }
