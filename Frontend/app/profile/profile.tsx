@@ -4,12 +4,23 @@ import { MdOutlineKey } from "react-icons/md";
 import { CgInfinity } from "react-icons/cg";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export function Profile()
-{
-    const [firstName, setFirstName] = useState("Firstname");
-    const [LastName, setLastName] = useState("LastName");
-    const [email, setEmail] = useState("Example@email.com");
+{   
+    const [firstNameHeader, setFirstNameHeader] = useState("");
+    const [lastNameHeader, setLastNameHeader]   = useState("");
+     const [emailHeader, setEmailHeader]         = useState("");
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName]   = useState("");
+    const [email, setEmail]         = useState("");
+    const [phoneNumber, setPhoneNumber]         = useState("");
+
+
+    const [password, setPassword]         = useState("");
+
+    
 
     async function getData()
     {
@@ -20,15 +31,47 @@ export function Profile()
                 credentials: "include"
             });
 
-            const data = await response.json()
+            const data = await response.json();
 
-            setFirstName(data.firstName)
+            setFirstNameHeader(data.firstName);
+            setLastNameHeader(data.lastName);
+            setEmailHeader(data.email);
+
+            setFirstName(data.firstName);
             setLastName(data.lastName);
-            setEmail(data.email)
+            setEmail(data.email);
+            setPhoneNumber(data.phoneNumber)
+       
         }
         catch
-        {}
+        {
+
+        }
     }
+
+    const handleSave = async () => {
+        const result = await Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to save your changes?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, save it!",
+            cancelButtonText: "Cancel"
+        });
+
+        if (!result.isConfirmed) return;
+    const res = await fetch("http://localhost:5000/user", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ firstName, lastName, email, phoneNumber })
+    });
+
+    const updated = await res.json();
+    
+    toast.success("Information updated");
+    window.location.reload()
+  };
     async function Logout()
     {
         try
@@ -53,6 +96,8 @@ export function Profile()
     useEffect(() => {
     getData();
   }, []); // empty dependency array → only run on mount
+
+
     return(
         <div className='profile-main'>
             <div className='profile-container' >
@@ -61,11 +106,11 @@ export function Profile()
                     
                     <FaCircleUser size={60} />
                     <div className='profile-name'>
-                        <p >{firstName} </p>
-                        <p>{LastName}</p>
+                        <p >{firstNameHeader} </p>
+                        <p>{lastNameHeader}</p>
                     </div>
                     
-                    <p className='profile-email'>{email}</p>
+                    <p className='profile-email'>{emailHeader}</p>
                     
                     <button className='login-picture-button' >Change Picture</button>
                 </div>
@@ -76,20 +121,26 @@ export function Profile()
                         
                         <div>
                             <h1>First Name</h1>
-                            <input className='nameField' type="name" />
+                            <input className='nameField' type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
                         </div>
                         
-                        <div className=''>
+                        <div >
                             <h1>Last Name</h1>
-                            <input className='nameField' type="name" />
+                            <input className='nameField' type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                         </div>
 
                         
                     </div>
 
                     <div>   
+                        <h1>Phone Number</h1>
+                        <input className='emailField' type="phone" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
+                        
+                    </div>
+
+                    <div>   
                         <h1>Email</h1>
-                        <input className='emailField' type="text" />
+                        <input className='emailField' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                         
                     </div>
 
@@ -99,7 +150,7 @@ export function Profile()
                     </div>
 
                     <div className='SaveButton'>
-                        <button >Save Changes</button>
+                        <button onClick={handleSave} >Save Changes</button>
                     </div>
                     
 
@@ -110,7 +161,7 @@ export function Profile()
                     <div className='inputField-container'>
                         <div>
                                 <label>Current Password</label>
-                                <input className='nameField' type="password" />
+                                <input className='nameField' type="password"/>
                         </div>
                         <div>
                                 <label>New Password</label>

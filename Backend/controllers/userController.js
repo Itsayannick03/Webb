@@ -127,6 +127,30 @@ async function getUser(req, res)
     }
 }
 
+async function updateUser(req, res)
+{
+    try
+    {
+        const userID = req.cookies.user;
+
+        if(!userID)
+            return res.status(404).json({error: "User not found"});
+        const {firstName, lastName, email, phoneNumber, password} = req.body;
+
+        const updatedUser = await User.findByIdAndUpdate(
+            userID,
+            {firstName, lastName, email, phoneNumber},
+            {new: true}
+        );
+
+        res.json(updatedUser);
+    }
+    catch(err)
+    {
+        res.status(500).json({error: err.message});
+    }
+}
+
 async function logout(req, res) {
     try 
     {
@@ -145,4 +169,4 @@ async function logout(req, res) {
     }
 }
 
-module.exports = {registerUser, loginUser, getUser, logout};
+module.exports = {registerUser, loginUser, getUser, logout, updateUser};
