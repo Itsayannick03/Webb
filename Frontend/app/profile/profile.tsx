@@ -3,9 +3,32 @@ import { FaCircleUser } from "react-icons/fa6";
 import { MdOutlineKey } from "react-icons/md";
 import { CgInfinity } from "react-icons/cg";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 export function Profile()
 {
+    const [firstName, setFirstName] = useState("Firstname");
+    const [LastName, setLastName] = useState("LastName");
+    const [email, setEmail] = useState("Example@email.com");
+
+    async function getData()
+    {
+        try
+        {
+            const response = await fetch("http://localhost:5000/name", {
+                method: "GET",
+                credentials: "include"
+            });
+
+            const data = await response.json()
+
+            setFirstName(data.firstName)
+            setLastName(data.lastName);
+            setEmail(data.email)
+        }
+        catch
+        {}
+    }
     async function Logout()
     {
         try
@@ -26,6 +49,10 @@ export function Profile()
         }
         
     }
+
+    useEffect(() => {
+    getData();
+  }, []); // empty dependency array → only run on mount
     return(
         <div className='profile-main'>
             <div className='profile-container' >
@@ -33,9 +60,12 @@ export function Profile()
                     <h1 className='profile-title'>Profile</h1>
                     
                     <FaCircleUser size={60} />
-
-                    <p className='profile-name'>Yannick Winkler</p>
-                    <p className='profile-email'>Jaxterlp@gmail.com</p>
+                    <div className='profile-name'>
+                        <p >{firstName} </p>
+                        <p>{LastName}</p>
+                    </div>
+                    
+                    <p className='profile-email'>{email}</p>
                     
                     <button className='login-picture-button' >Change Picture</button>
                 </div>
