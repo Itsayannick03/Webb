@@ -1,96 +1,94 @@
-.mainDiv
-{
-    display: flex;
-  align-items: center;
-  justify-content: space-between; /* left & right positioning */
-  position: relative; /* allows absolute positioning inside */
-  height: 80px;       /* adjust header height */
-  padding: 0 20px;
-  background: linear-gradient(to bottom, #f5efe7, #ffffff);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  
-    
-}
-
-.buttons
-{
-    position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* perfect horizontal centering */
+.mainDiv {
   display: flex;
-  gap: 30px; /* space between links */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+  animation: wiggle 4s infinite alternate;
 }
 
-.buttons a
-{
-  font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+.image {
+  filter: drop-shadow(0 0 10px #ff0);
+  animation: spinDrip 10s linear infinite;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.buttons a {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: black;
-  transition: font-size 0.3s ease; /* smooth animation */
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+  transition: transform 0.2s ease-in-out, color 0.2s;
 }
 
-
-
-.logo
-{
-    position: 'fixed';
-    top: '10px';
-  right: '10px';
+.buttons a:hover {
+  transform: scale(1.2) rotate(-5deg);
+  color: #ff0;
 }
 
-.bookingButton
-{
-  text-align: center;
-  width: 80px;
-  
-
-}
-
-.buttons a:hover
-{
-  text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
-}
-
-.icon
-{
-  size: 300px;
-  transition: transform 0.2s ease; /* smooth animation */
-}
-
-
-
-.profile
-{ 
+.logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 3px;
 }
 
-.name
-{
-  
+.profile {
   display: flex;
-  flex-direction: row;
-  gap: 5px;
-
-
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.icon
-{
-  transition: transform 0.2s ease; /* smooth animation */
+.icon {
+  color: #fff;
+  filter: drop-shadow(0 0 5px #0ff);
+  transition: transform 0.2s;
 }
 
-.icon:hover
-{
-  transform: scale(1.2);
+.icon:hover {
+  transform: rotate(20deg) scale(1.3);
+  color: #ff0;
 }
 
+.name p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #f0f, 0 0 15px #0ff;
+  animation: bounce 2s infinite;
+}
 
+.login {
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0, 0 0 15px #f0f;
+  transition: color 0.2s, transform 0.2s;
+}
 
+.login:hover {
+  color: #0ff;
+  transform: scale(1.1);
+}
 
+/* animations */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(0.5deg); }
+}
+
+@keyframes spinDrip {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

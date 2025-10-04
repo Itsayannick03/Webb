@@ -1,18 +1,20 @@
 import React from "react";
-
 import '../styles/welcome.css'
 
 export function Welcome() {
   return (
-    <div className="main" >
-      
+    <div className="main">
+      <img 
+        className="imageBox"  
+        src="logo.png" 
+        alt="💀 Skibidi Aura Farming Logo 💀" 
+      />
 
-     
-        <img className='imageBox'  src="logo.png" alt="Mane Attraction text"/>
-        
-
-       
-
-      </div>
-    
-    )}
+      <h1 className="welcome-title">🔥 WELCOME TO THE SKIBIDI HQ 🔥</h1>
+      <p className="welcome-subtitle">
+        🗣 Aura Farming • Gyatt Energy • Rizz Overflow 💯
+      </p>
+      <button className="welcome-btn">🚪 Enter the Rizz</button>
+    </div>
+  )
+}

@@ -1,281 +1,171 @@
-.profile-main
-{
-    min-height: calc(100vh - 160px); 
+.profile-main {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
-  padding: 16px 20px;
-  background: white;
-
- 
-   
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00);
+  min-height: 100vh;
+  font-family: "Comic Sans MS", cursive;
+  color: #fff;
+  animation: drip-bg 10s infinite alternate;
 }
 
-.profile-container
-{
-    border: 1px solid black;
-    border-radius: 10px;
-
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
-    
-    max-width: 700px;
-
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 360px;
-    background: #fff;
-    border:1px solid rgba(0,0,0,.08);
-    border-radius:16px;
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
-    padding:18px 20px 22px;
-
-    gap: 20px;
-
+.profile-container {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 70%;
+  max-width: 900px;
+  box-shadow: 0 0 40px #f0f, 0 0 60px #0ff;
+  animation: bounce 4s infinite;
 }
 
-.login-header
-{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 3px;
-
-
+.profile-title {
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 15px #ff0, 0 0 30px #f0f;
+  margin-bottom: 1rem;
 }
 
-.profile-title
-{
-    font-weight: 700;
-    font-size: 25px;
+.login-header {
+  text-align: center;
 }
 
-.profile-name
-{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+.profile-name {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
 }
 
-.profile-name p
-{
-    font-weight: 420;
-    font-size: large;
-
-                                                                                                                                                                                                                                                     ;
+.profile-email {
+  font-size: 1.1rem;
+  color: #ff0;
+  text-shadow: 0 0 5px #ff0;
 }
 
-.profile-email
-{
-    font-weight: 400;
-    font-size: 13px;
+.login-picture-button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  border: none;
+  border-radius: 12px;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #fff;
+  transition: transform 0.2s;
 }
 
-.login-picture-button
-{
-   width: 40%;
- 
-  border: 1px solid #b5b5b5;
-  border-radius: 8px;
-  background: linear-gradient(#f5efe7, white);
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-
-  font-size: 14px;
-  font-weight: 500;
-  
-  padding: 5px;
+.login-picture-button:hover {
+  transform: scale(1.1) rotate(-3deg);
 }
 
-.login-picture-button:hover
-{
-    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+.profile-personalInfo {
+  margin-top: 2rem;
 }
 
-.profile-personalInfo
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
-    border-spacing: 0px;
-
-    gap: 5px;
-    
+.profile-personalInfo p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #f0f;
 }
 
-.profile-name-section
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    gap: 15px;
-}
-
-.profile-personalInfo p
-{
-    margin-top: 10px;
-    font-size: 17px;
-    font-weight: 500;
-
-    gap: 5px;
-}
-
-
-
-.profile-personalInfo h1
-{
-    font-size: small;
-    font-weight: 300;
-}
-
-.profile-personalInfo input
-{
-    border: 1px solid #b5b5b5;
-    width: 100%;
-    border-radius: 5px;
-    height: 25px;
-   
-}
-
-.profile-personalInfo .emailField
-{
-    
-    border: 1px solid #b5b5b5;
-     border-radius: 5px;
-     width: 100%;
-     height: 25px;
-   
-}
-
-
-.profile-personalInfo .iconCard
-{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.profile-personalInfo .SaveButton
-{
-   
+.profile-name-section {
   display: flex;
-  justify-content: center; /* center horizontally */
-  margin-top: 10px;        /* optional space above */
-  width: 100%;             /* take full width of parent */
-  
-
-
-    
-
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.profile-personalInfo .SaveButton button
-{
-    width: 40%;
- 
-  border: 1px solid #b5b5b5;
+.nameField, .emailField {
+  width: 100%;
+  padding: 0.7rem;
   border-radius: 8px;
-  background: linear-gradient(#f5efe7, white);
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-
-  font-size: 14px;
-  font-weight: 500;
-  
-  padding: 5px;
+  border: none;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #000;
+  background: #fff;
+  box-shadow: 0 0 15px #ff0, 0 0 25px #0ff inset;
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
-.profile-personalInfo .SaveButton button:hover
-{
-    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+.nameField:focus, .emailField:focus {
+  outline: none;
+  box-shadow: 0 0 25px #f0f, 0 0 35px #0ff;
+  transform: scale(1.05);
 }
 
-.password-container
-{
-    display: flex;
-    flex-direction: column;
-
-    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
-    width: 100%;
+.iconCard {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
 }
 
-.password-container input
-{
-    border: 1px solid #b5b5b5;
-     border-radius: 5px;
-     width: 100%;
-     height: 25px;
+.SaveButton button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #0ff, #f0f);
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 0 15px #fff;
+  transition: transform 0.2s ease-in-out;
 }
 
-.password-container label
-{
-    font-size: small;
-    font-weight: 300;
+.SaveButton button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #ff0, #f0f);
 }
 
-.password-container p
-{
-     margin-top: 10px;
-    font-size: 17px;
-    font-weight: 500;
+.password-container {
+  margin-top: 2rem;
 }
 
-.inputField-container
-{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+.password-container p {
+  font-size: 1.3rem;
+  text-shadow: 0 0 10px #0ff;
 }
 
-.logout-container
-{
-    width: 100%;
-    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
-    gap: 200px;
+.inputField-container,
+.confirm-password-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.border-button
-{
-   width: 100px;
- 
-  border: 1px solid rgb(122, 0, 0);
-  border-radius: 8px;
-  color: rgb(122, 0, 0);
-  background: white;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-
-  margin-top: 20px;
-
-  font-size: 14px;
-  font-weight: 500;
-  
-  padding: 5px;
-
-  transition: background  0.8s ease;
-  transition: color 0.8s all;
+.logout-container {
+  margin-top: 2rem;
+  text-align: center;
 }
 
-.border-button:hover
-{
-        box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.5);
-        color: white;
-        border: 1px solid rgb(255, 255, 255);
-        border-color: rgba(0, 0, 0, 0.5);
-        background: rgb(122, 50, 50);
+.border-button {
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: 2px solid #ff0;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #ff0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
+.border-button:hover {
+  background: #ff0;
+  color: #111;
+  transform: scale(1.1);
+}
 
+/* animations */
+@keyframes drip-bg {
+  0% { background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); }
+  100% { background: linear-gradient(135deg, #00ffff, #ff00ff, #ff0); }
+}
 
-
-
-
-
-
-
-
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

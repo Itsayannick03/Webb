@@ -1,56 +1,63 @@
 .footer {
   display: flex;
-  flex-direction: row;
-  justify-content: center; /* vänster, mitten, höger */
+  justify-content: space-between;
   align-items: center;
-  
-  padding: 20px;
-  background: linear-gradient(to top, #f5efe7, #ffffff);
-
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
-  
-
-
-  width: 100%;
-
-
+  padding: 1.5rem 2rem;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+  color: #fff;
+  font-family: "Comic Sans MS", cursive;
+  box-shadow: 0 -5px 25px rgba(255, 0, 255, 0.6);
   position: relative;
   bottom: 0;
- 
+  width: 100%;
+  animation: drip-bg 8s infinite alternate;
 }
 
-
-
 .footer-logo {
-  width: 150px;
+  width: 80px;
   height: auto;
-
-
+  filter: drop-shadow(0 0 15px #ff0) drop-shadow(0 0 25px #0ff);
+  animation: spinGyatt 12s linear infinite;
 }
 
 .footer-text {
-  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   text-align: center;
-  color: black;
-
-}
-
-
-
-.footer-text a:hover
-{
-  text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2)  ;
+  flex: 1;
 }
 
 .footer-row {
-    
   display: flex;
   justify-content: center;
-  gap: 30px;       /* mellanrum mellan textblocken */
-  margin: 5px 0;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
 }
 
+.footer-row a, 
 .footer-row p {
-  margin: 0;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.footer-row a:hover, 
+.footer-row p:hover {
+  transform: scale(1.2) rotate(-3deg);
+  color: #ff0;
+}
+
+/* Skibidi animations */
+@keyframes drip-bg {
+  0%   { background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00); }
+  50%  { background: linear-gradient(90deg, #00ffff, #ff0, #ff00ff); }
+  100% { background: linear-gradient(90deg, #ffff00, #ff00ff, #00ffff); }
+}
+
+@keyframes spinGyatt {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

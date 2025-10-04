@@ -1,35 +1,54 @@
-.main
-{
-    display: flex;
-    flex-direction: center;
-    align-items: center;
-    justify-content: center;
-
-   
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00);
+  font-family: "Comic Sans MS", cursive;
+  color: #fff;
+  text-align: center;
 }
 
-.welcomeText
-{
-    display: flex;
-    flex-direction: row;
-    border: 1px solid black;
-    border-radius: 15px;
-   
-    
+.imageBox {
+  width: 300px;
+  max-width: 80%;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px #ff0) drop-shadow(0 0 40px #0ff);
+  animation: spinGyatt 10s linear infinite;
 }
 
-.borderLeft
-{
-    border-right: 1px solid black;
-    height: 100vh;
+.welcome-title {
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px #f0f, 0 0 30px #0ff;
 }
 
-.imageBox
-{
-    width: 50vh;
-    border: 1px solid  rgba(0, 0, 0, 0.12);
-    border-radius: 100px;
-    background: linear-gradient(#f5efe7, white);
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
+.welcome-subtitle {
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem;
+  text-shadow: 0 0 10px #ff0;
+}
 
+.welcome-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #111;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  box-shadow: 0 0 15px #fff, 0 0 25px #ff0;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.welcome-btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+  background: linear-gradient(90deg, #ff0, #f0f);
+}
+
+/* Aura spin */
+@keyframes spinGyatt {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -51,13 +51,17 @@ export function Profile()
 
     const handleSave = async () => {
         const result = await Swal.fire({
-            title: "Are you sure?",
-            text: "Do you want to save your changes?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, save it!",
-            cancelButtonText: "Cancel"
-        });
+    title: "📢 Skibidi Alert!",
+    text: "U tryna lock in these rizzed changes, lil bro? 💀",
+    icon: "question", // was "warning"
+    showCancelButton: true,
+    confirmButtonText: "✅ Yap, lock it in",
+    cancelButtonText: "❌ Nah fam, ratio",
+    background: "#111", // dark skibidi vibes
+    color: "#f0f", // neon text
+    confirmButtonColor: "#0f0", // sigma green
+    cancelButtonColor: "#f00", // ohio red
+  });
 
         if (!result.isConfirmed) return;
         
@@ -65,7 +69,7 @@ export function Profile()
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
-            body: JSON.stringify({ firstName, lastName, email, phoneNumber, currentPassword, newPassword })
+            body: JSON.stringify({ firstName, lastName, email, phoneNumber })
         });
 
         const updated = await res.json();
@@ -100,83 +104,110 @@ export function Profile()
 
     return(
         <div className='profile-main'>
-            <div className='profile-container' >
-                <div className='login-header'>
-                    <h1 className='profile-title'>Profile</h1>
-                    
-                    <FaCircleUser size={60} />
-                    <div className='profile-name'>
-                        <p >{firstNameHeader} </p>
-                        <p>{lastNameHeader}</p>
-                    </div>
-                    
-                    <p className='profile-email'>{emailHeader}</p>
-                    
-                    <button className='login-picture-button' >Change Picture</button>
-                </div>
+    <div className='profile-container'>
+      <div className='login-header'>
+        <h1 className='profile-title'>🔥 Skibby Profile 🔥</h1>
 
-                <div className='profile-personalInfo'>
-                    <p>Personal Information</p>
-                    <div className='profile-name-section'>
-                        
-                        <div>
-                            <h1>First Name</h1>
-                            <input className='nameField' type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-                        </div>
-                        
-                        <div >
-                            <h1>Last Name</h1>
-                            <input className='nameField' type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
-                        </div>
-
-                        
-                    </div>
-
-                    <div>   
-                        <h1>Phone Number</h1>
-                        <input className='emailField' type="phone" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
-                        
-                    </div>
-
-                    <div>   
-                        <h1>Email</h1>
-                        <input className='emailField' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                        
-                    </div>
-
-                    <div className='iconCard'>
-                        <MdOutlineKey />
-                        <CgInfinity />
-                    </div>
-
-                    <div className='SaveButton'>
-                        <button onClick={handleSave} >Save Changes</button>
-                    </div>
-                    
-
-                </div>
-
-                <div className='password-container'>
-                    <p>Password</p>
-                    <div className='inputField-container'>
-                        <div>
-                                <label>Current Password</label>
-                                <input className='nameField' type="text" onChange={(e) => setCurrentPassword(e.target.value)}/>
-                        </div>
-                        
-                    </div>
-
-                    <div className='confirm-password-container'>
-                            <label>New Password</label>
-                            <input className='nameField' type="password" onChange={(e) => setNewPassword(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className='logout-container'>
-                    <button onClick={Logout} className='border-button'>Logout</button>
-                </div>  
-                
-            </div>
+        <FaCircleUser size={60} />
+        <div className='profile-name'>
+          <p>💀 Rizzlord</p>
+          <p>SigmaMaxxing</p>
         </div>
+
+        <p className='profile-email'>ohio.rizz@fanum.tax</p>
+
+        <button className='login-picture-button'>✨ Change Drip Pic ✨</button>
+      </div>
+
+      <div className='profile-personalInfo'>
+        <p>📱 Personal Rizzformation</p>
+        <div className='profile-name-section'>
+          <div>
+            <h1>First Rizz</h1>
+            <input
+              className='nameField'
+              type="text"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="Enter ur gyatt name"
+            />
+          </div>
+
+          <div>
+            <h1>Last Sigma</h1>
+            <input
+              className='nameField'
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Enter ur sigma tag"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h1>📞 Skib Phone</h1>
+          <input
+            className='emailField'
+            type="phone"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="+69 Ohio digits"
+          />
+        </div>
+
+        <div>
+          <h1>📧 Ohio Mail</h1>
+          <input
+            className='emailField'
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="rizz@ohio.com"
+          />
+        </div>
+
+        <div className='iconCard'>
+          <MdOutlineKey />
+          <CgInfinity />
+        </div>
+
+        <div className='SaveButton'>
+          <button onClick={handleSave}>💾 Save the Rizz</button>
+        </div>
+      </div>
+
+      <div className='password-container'>
+        <p>🔑 Secret Sauce</p>
+        <div className='inputField-container'>
+          <div>
+            <label>Current Fanum Tax</label>
+            <input
+              className='nameField'
+              type="text"
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              placeholder="••••••"
+            />
+          </div>
+        </div>
+
+        <div className='confirm-password-container'>
+          <label>New Drip Pass</label>
+          <input
+            className='nameField'
+            type="password"
+            onChange={(e) => setNewPassword(e.target.value)}
+            placeholder="Enter fresh skibpass"
+          />
+        </div>
+      </div>
+
+      <div className='logout-container'>
+        <button onClick={Logout} className='border-button'>🚪 Dip Out</button>
+      </div>
+    </div>
+  </div>
     )
 }
