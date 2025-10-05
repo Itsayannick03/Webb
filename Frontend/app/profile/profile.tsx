@@ -73,7 +73,7 @@ export function Profile()
         if(res.status != 200)
             return toast.warning(data.error)
 
-        toast.success("Infoirmation saved", 
+        toast.success("Information saved", 
                   { onClose: () => { window.location.reload()},
                   autoClose: 500, 
             });
@@ -169,7 +169,7 @@ export function Profile()
                     <div className='inputField-container'>
                         <div>
                                 <label>Current Password</label>
-                                <input className='nameField' type="text" onChange={(e) => setCurrentPassword(e.target.value)}/>
+                                <input className='nameField' type="password" onChange={(e) => setCurrentPassword(e.target.value)}/>
                         </div>
                         
                     </div>

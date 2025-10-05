@@ -139,24 +139,39 @@ async function updateUser(req, res)
         const {firstName, lastName, email, phoneNumber, currentPassword, newPassword} = req.body;
 
         const user = await User.findById(userID)
-        const isMatch = await  bcrypt.compare(currentPassword, user.password);
 
-        if(!isMatch)
-            return res.status(401).json({error: "Invalid password"});
-
-        //generate salt
-        const salt = await bcrypt.genSalt(10); // 10 = cost factor
-            
-        //hash password
-        const hashedPassword = await bcrypt.hash(req.body.newPassword, salt);
-
-        const updatedUser = await User.findByIdAndUpdate(
+        if(newPassword == "")
+        {
+            const updatedUser = await User.findByIdAndUpdate(
             userID,
-            {firstName, lastName, email, phoneNumber, password: hashedPassword},
-            {new: true}
-        );
+            {firstName, lastName, email, phoneNumber},
+            {new: true});
 
-        return res.status(200).json(updatedUser);
+            return res.status(200).json(updatedUser);
+        }
+        else
+        {
+            const isMatch = await  bcrypt.compare(currentPassword, user.password);
+
+            if(!isMatch)
+                return res.status(401).json({error: "Invalid password"});
+
+            //generate salt
+            const salt = await bcrypt.genSalt(10); // 10 = cost factor
+                
+            //hash password
+            const hashedPassword = await bcrypt.hash(req.body.newPassword, salt);
+
+            const updatedUser = await User.findByIdAndUpdate(
+                userID,
+                {firstName, lastName, email, phoneNumber, password: hashedPassword},
+                {new: true}
+            );
+            return res.status(200).json(updatedUser);
+        }
+        
+
+        
     }
     catch(err)
     {
