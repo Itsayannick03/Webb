@@ -205,4 +205,27 @@ async function logout(req, res) {
     }
 }
 
-module.exports = {registerUser, loginUser, getUser, logout, updateUser};
+async function createServiceRequest(req, res) {
+    try 
+    {
+        const services = req.body;
+
+        if(Array.isArray(services) || services.length == 0)
+            return res.status(400).json({error: "Services must be a non empty array"})
+
+        res.cookie("services", services, {
+            httpOnly: true,
+            secure: false,        // must be false on localhost
+            sameSite: "lax",      // "strict" can block cross-origin requests
+            maxAge: 1000 * 60 * 60
+        });
+
+        res.status(201).json({error: "Service Cookie created"});
+
+    } 
+    catch (err) 
+    {
+        res.status(500).json({error: "Internal server error"});
+    }
+}
+module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest};

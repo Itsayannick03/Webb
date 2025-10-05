@@ -4,7 +4,7 @@ const express = require("express");
 const User = require("./models/Users");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
-const {registerUser, loginUser, getUser, logout, updateUser} = require("./controllers/userController");
+const {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest} = require("./controllers/userController");
 const cors = require("cors");
 
 const app = express();
@@ -39,7 +39,7 @@ app.get("/name", getUser)
 
 app.put("/user", updateUser)
 
-
+app.put("/services", createServiceRequest)
 
 
 
