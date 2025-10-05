@@ -10,6 +10,12 @@ export function Booking() {
     let services: Number[] = [];
 
     async function push() {
+
+        //Lägg till en fetch för att få ID nummret av databas service objekten som jag har lagt till.
+        //Funktionen nedanför ska sedan lägga till ID nummren i service arrayn.
+        //Använd /service/<namn>
+        //Namnen är Color, Styling och Cut
+        //Se det här som en friendly remeinder och glöm inte bort att du är AWSOME, you got this GIRL!
         if (haircut) {
             services.push(1)
         }

@@ -28,10 +28,10 @@ async function getServices(req, res) {
   }
 }
 
-// Get one service by ID
-async function getServiceById(req, res) {
+// Get one service by Name
+async function getServiceByName(req, res) {
   try {
-    const service = await Service.findById(req.params.id);
+    const service = await Service.findOne({name: req.params.name});
     if (!service) return res.status(404).json({ error: "Service not found" });
 
     res.status(200).json(service);
@@ -75,7 +75,7 @@ async function deleteService(req, res) {
 module.exports = {
   createService,
   getServices,
-  getServiceById,
+  getServiceByName,
   updateService,
   deleteService
 };

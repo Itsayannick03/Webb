@@ -31,7 +31,7 @@
 
 /* Shadow when hover over service buttons */
 .button-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6)
+    box-shadow: 0 5px 15px 0 inset rgba(21, 21, 19, 0.3);
 }
 
 /* styling for header */
