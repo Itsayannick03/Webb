@@ -1,0 +1,281 @@
+.profile-main
+{
+    min-height: calc(100vh - 160px); 
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  padding: 16px 20px;
+  background: white;
+
+ 
+   
+}
+
+.profile-container
+{
+    border: 1px solid black;
+    border-radius: 10px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    
+    max-width: 700px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 360px;
+    background: #fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    padding:18px 20px 22px;
+
+    gap: 20px;
+
+}
+
+.login-header
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+
+}
+
+.profile-title
+{
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.profile-name
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.profile-name p
+{
+    font-weight: 420;
+    font-size: large;
+
+                                                                                                                                                                                                                                                     ;
+}
+
+.profile-email
+{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.login-picture-button
+{
+   width: 40%;
+ 
+  border: 1px solid #b5b5b5;
+  border-radius: 8px;
+  background: linear-gradient(#f5efe7, white);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 14px;
+  font-weight: 500;
+  
+  padding: 5px;
+}
+
+.login-picture-button:hover
+{
+    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+}
+
+.profile-personalInfo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-spacing: 0px;
+
+    gap: 5px;
+    
+}
+
+.profile-name-section
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    gap: 15px;
+}
+
+.profile-personalInfo p
+{
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 500;
+
+    gap: 5px;
+}
+
+
+
+.profile-personalInfo h1
+{
+    font-size: small;
+    font-weight: 300;
+}
+
+.profile-personalInfo input
+{
+    border: 1px solid #b5b5b5;
+    width: 100%;
+    border-radius: 5px;
+    height: 25px;
+   
+}
+
+.profile-personalInfo .emailField
+{
+    
+    border: 1px solid #b5b5b5;
+     border-radius: 5px;
+     width: 100%;
+     height: 25px;
+   
+}
+
+
+.profile-personalInfo .iconCard
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.profile-personalInfo .SaveButton
+{
+   
+  display: flex;
+  justify-content: center; /* center horizontally */
+  margin-top: 10px;        /* optional space above */
+  width: 100%;             /* take full width of parent */
+  
+
+
+    
+
+}
+
+.profile-personalInfo .SaveButton button
+{
+    width: 40%;
+ 
+  border: 1px solid #b5b5b5;
+  border-radius: 8px;
+  background: linear-gradient(#f5efe7, white);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 14px;
+  font-weight: 500;
+  
+  padding: 5px;
+}
+
+.profile-personalInfo .SaveButton button:hover
+{
+    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+}
+
+.password-container
+{
+    display: flex;
+    flex-direction: column;
+
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.password-container input
+{
+    border: 1px solid #b5b5b5;
+     border-radius: 5px;
+     width: 100%;
+     height: 25px;
+}
+
+.password-container label
+{
+    font-size: small;
+    font-weight: 300;
+}
+
+.password-container p
+{
+     margin-top: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.inputField-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.logout-container
+{
+    width: 100%;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    gap: 200px;
+}
+
+.border-button
+{
+   width: 100px;
+ 
+  border: 1px solid rgb(122, 0, 0);
+  border-radius: 8px;
+  color: rgb(122, 0, 0);
+  background: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+
+  margin-top: 20px;
+
+  font-size: 14px;
+  font-weight: 500;
+  
+  padding: 5px;
+
+  transition: background  0.8s ease;
+  transition: color 0.8s all;
+}
+
+.border-button:hover
+{
+        box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 1px solid rgb(255, 255, 255);
+        border-color: rgba(0, 0, 0, 0.5);
+        background: rgb(122, 50, 50);
+}
+
+
+
+
+
+
+
+
+
+
