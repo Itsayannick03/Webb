@@ -5,6 +5,32 @@ import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
 
 export function Booking() {
+
+
+    let services: Number[] = [];
+
+    async function push() {
+        if (haircut) {
+            services.push(1)
+        }
+        if (color) {
+            services.push(2)
+        }
+        if (styling) {
+            services.push(3)
+        }
+        const response = await fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+        const data = await response.json()
+        alert(data.error)
+    }
+
+
     const [haircut, setHaircut] = useState(false);
     const [color, setColor] = useState(false);          //useState tracks if the services are selected
     const [styling, setStyling] = useState(false);
@@ -32,17 +58,17 @@ export function Booking() {
                         <PiPaintBrushHouseholdThin size={50} />
                         <button>Color</button>
                     </div>
-                    <div                                                             
-                        className={`button-container ${styling ? 'selected' : ''}`} 
+                    <div
+                        className={`button-container ${styling ? 'selected' : ''}`}
                         onClick={() => setStyling(!styling)}>
                         <PiHairDryerThin size={50} />
                         <button>Styling</button>
                     </div>
                 </div>
             </div>
-            <div className="confirm-button"> 
-                <button disabled={!Confirm}>Confirm</button>  
-            </div> 
+            <div className="confirm-button">
+                <button onClick={push} disabled={!Confirm}>Confirm</button>
+            </div>
         </div>   //button is disabled when confirm is false
     )
 }
