@@ -138,7 +138,15 @@ async function updateUser(req, res)
 
         const {firstName, lastName, email, phoneNumber, currentPassword, newPassword} = req.body;
 
-        const user = await User.findById(userID)
+        const user = await User.findById(userID);
+
+        if(email != user.email)
+        {
+            emailInUse = User.findOne(email);
+
+            if(emailInUse)
+                return res.status(409).json({error: "Email already in use"});
+        }
 
         if(newPassword == "")
         {
