@@ -24,6 +24,7 @@ export function Booking() {
             headers: {
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify({services}),
             credentials: 'include'
         })
         const data = await response.json()
