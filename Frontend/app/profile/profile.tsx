@@ -65,13 +65,21 @@ export function Profile()
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
-            body: JSON.stringify({ firstName, lastName, email, phoneNumber, currentPassword, newPassword })
+            body: JSON.stringify({ firstName, lastName, email, phoneNumber, currentPassword, newPassword})
         });
 
+        const data = await res.json();
+
+        if(res.status != 200)
+            return toast.warning(data.error)
+
+        toast.success("Infoirmation saved", 
+                  { onClose: () => { window.location.reload()},
+                  autoClose: 500, 
+            });
         const updated = await res.json();
     
-        toast.success("Information updated");
-        window.location.reload()
+        
     };
 
     async function Logout()

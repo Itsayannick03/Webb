@@ -136,22 +136,27 @@ async function updateUser(req, res)
         if(!userID)
             return res.status(404).json({error: "User not found"});
 
-        const {firstName, lastName, email, phoneNumber, currentPassword} = req.body;
-        const user = User.findById(userID)
+        const {firstName, lastName, email, phoneNumber, currentPassword, newPassword} = req.body;
 
+        const user = await User.findById(userID)
         const isMatch = await  bcrypt.compare(currentPassword, user.password);
 
         if(!isMatch)
             return res.status(401).json({error: "Invalid password"});
-        
+
+        //generate salt
+        const salt = await bcrypt.genSalt(10); // 10 = cost factor
+            
+        //hash password
+        const hashedPassword = await bcrypt.hash(req.body.newPassword, salt);
 
         const updatedUser = await User.findByIdAndUpdate(
             userID,
-            {firstName, lastName, email, phoneNumber},
+            {firstName, lastName, email, phoneNumber, password: hashedPassword},
             {new: true}
         );
 
-        res.json(updatedUser);
+        return res.status(200).json(updatedUser);
     }
     catch(err)
     {
