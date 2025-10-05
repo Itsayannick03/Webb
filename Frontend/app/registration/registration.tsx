@@ -26,7 +26,7 @@ export function Registration() {
     const user = { firstName, lastName, email, phoneNumber, password };
 
     if (password != passwordRepeat) {
-      alert("Password do not match");
+      toast.warning("Passwords do not match"); 
       return;
     }
 
