@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/Users");
+const Booking = require("../models/Booking.js");
 
 async function registerUser(req, res)
 {
@@ -208,19 +209,19 @@ async function logout(req, res) {
 async function createServiceRequest(req, res) {
     try 
     {
-        const services = req.body;
+        const services = await req.body.services;
 
-        if(Array.isArray(services) || services.length == 0)
+        if(!Array.isArray(services) || services.length == 0)
             return res.status(400).json({error: "Services must be a non empty array"})
 
-        res.cookie("services", services, {
+        res.cookie("services", JSON.stringify(services), {
             httpOnly: true,
             secure: false,        // must be false on localhost
             sameSite: "lax",      // "strict" can block cross-origin requests
             maxAge: 1000 * 60 * 60
         });
 
-        res.status(201).json({error: "Service Cookie created"});
+        res.status(201).json({message: "Created new serivce"});
 
     } 
     catch (err) 
@@ -228,4 +229,39 @@ async function createServiceRequest(req, res) {
         res.status(500).json({error: "Internal server error"});
     }
 }
-module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest};
+
+async function createBooking(req, res)
+{
+    try 
+    {
+        const services = req.cookies.services ? JSON.parse(req.cookies.services) : [];
+        if(!Array.isArray(services) || services.length == 0)
+            return res.status(400).json({error: "Services must be a non empty array"});
+
+
+        const UserID = req.cookies.user;
+        if(!UserID)
+            return res.status(404).json({error: "User not found"});
+        
+        const {date} = req.body;
+        if(!date)
+            return res.status(400).json({error: "Missing data"});
+
+        const newBooking = new Booking({
+            userID: UserID,
+            services: services,
+            date: date
+        });
+        
+        await newBooking.save();
+
+        return res.status(201).json({message: "Booking created"});
+
+    } 
+    catch (err) 
+    {
+        res.status(500).json({error: err.message})
+    }
+}
+
+module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest, createBooking};

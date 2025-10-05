@@ -2,9 +2,10 @@ require("dotenv").config();
 const connectDB =require("./db");
 const express = require("express");
 const User = require("./models/Users");
+const Booking = require("./models/Booking");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
-const {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest} = require("./controllers/userController");
+const {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest, createBooking} = require("./controllers/userController");
 const cors = require("cors");
 
 const app = express();
@@ -39,7 +40,9 @@ app.get("/name", getUser)
 
 app.put("/user", updateUser)
 
-app.put("/services", createServiceRequest)
+app.post("/services", createServiceRequest)
+
+app.post("/booking", createBooking)
 
 
 
