@@ -46,7 +46,7 @@ app.post("/services", createServiceRequest)
 
 app.post("/booking", createBooking)
 
-app.post("/service", createService)
+app.get("/service", createService)
 
 app.get("/service", getServices)
 

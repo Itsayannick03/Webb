@@ -1,5 +1,6 @@
 import '../booking/booking.css';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PiScissorsThin } from "react-icons/pi";
 import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
@@ -7,9 +8,10 @@ import { PiHairDryerThin } from "react-icons/pi";
 export function Booking() {
 
 
-    let services: Number[] = [];
+
 
     async function push() {
+        let services: Number[] = [];
 
         //Lägg till en fetch för att få ID nummret av databas service objekten som jag har lagt till.
         //Funktionen nedanför ska sedan lägga till ID nummren i service arrayn.
@@ -17,30 +19,67 @@ export function Booking() {
         //Namnen är Color, Styling och Cut
         //Se det här som en friendly remeinder och glöm inte bort att du är AWSOME, you got this GIRL!
         if (haircut) {
-            services.push(1)
+            const cutResponse = await fetch("http://localhost:5000/service/Cut", {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
+            });
+            const cutData = await cutResponse.json()
+
+            const cutID = cutData.id;
+            services.push(cutID);
+
         }
         if (color) {
-            services.push(2)
+            const colorResponse = await fetch("http://localhost:5000/service/Color", {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
+            })
+
+            const colorData = await colorResponse.json()
+
+            const stylingID = colorData.id;
+            services.push(stylingID)
         }
         if (styling) {
-            services.push(3)
+            const stylingResponse = await fetch("http://localhost:5000/service/Styling", {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
+            })
+            const stylingData = await stylingResponse.json()
+
+            const stylingID = stylingData.id;
+            services.push(stylingID)
         }
         const response = await fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({services}),
+            body: JSON.stringify({ services }),
             credentials: 'include'
         })
         const data = await response.json()
-        alert(data.error)
-    }
 
+        if (response.ok) {
+            navigate('/#');                      // navigate to calendar after waiting for api
+        } else {
+            alert(data.error || 'Failed to create booking');
+        }
+    }
 
     const [haircut, setHaircut] = useState(false);
     const [color, setColor] = useState(false);          //useState tracks if the services are selected
     const [styling, setStyling] = useState(false);
+    const navigate = useNavigate();
 
     const Confirm = haircut || color || styling;        // confirm is true if any of the services are selected
 
