@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const Booking = require("../models/Booking.js");
+const { findById } = require("../models/Users.js");
 
 async function createServiceRequest(req, res) {
     try 
@@ -7,7 +8,13 @@ async function createServiceRequest(req, res) {
         const services = await req.body.services;
 
         if(!Array.isArray(services) || services.length == 0)
-            return res.status(400).json({error: "Services must be a non empty array"})
+            return res.status(400).json({error: "Services must be a non empty array"});
+        for(i = 0; i < services.length; i++) {
+            const exists = Service.findById(services[i])
+            if(!exists) {
+                return exists.status(401).json({error: "Service not found"});
+            }   
+        }
 
         res.cookie("services", JSON.stringify(services), {
             httpOnly: true,
@@ -16,7 +23,7 @@ async function createServiceRequest(req, res) {
             maxAge: 1000 * 60 * 60
         });
 
-        res.status(201).json({error: "Created new serivce"});
+        res.status(201).json({error: "Created new service"});
 
     } 
     catch (err) 

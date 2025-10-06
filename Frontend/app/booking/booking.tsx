@@ -28,7 +28,7 @@ export function Booking() {
             });
             const cutData = await cutResponse.json()
 
-            const cutID = cutData.id;
+            const cutID = cutData._id;
             services.push(cutID);
 
         }
@@ -43,7 +43,7 @@ export function Booking() {
 
             const colorData = await colorResponse.json()
 
-            const stylingID = colorData.id;
+            const stylingID = colorData._id;
             services.push(stylingID)
         }
         if (styling) {
@@ -56,7 +56,7 @@ export function Booking() {
             })
             const stylingData = await stylingResponse.json()
 
-            const stylingID = stylingData.id;
+            const stylingID = stylingData._id;
             services.push(stylingID)
         }
         const response = await fetch('http://localhost:5000/services', {
