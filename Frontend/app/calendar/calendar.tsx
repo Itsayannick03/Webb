@@ -3,9 +3,15 @@ import { GrPrevious, GrNext } from "react-icons/gr";
 import "./Calendar.css";
 
 export function Calendar() {
+
+
+
+
+
+  //vid confirm ska en funktion finnas som skapar bookning och efter detta ska tiden tas bort.  
   
    // Get the Monday of the week for a given date
-  const getMonday = (d: Date): Date => {
+    const getMonday = (d: Date): Date => {
     const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     const day = (x.getDay() + 6) % 7; // 0=Mon..6=Sun
     x.setDate(x.getDate() - day);
@@ -80,42 +86,87 @@ export function Calendar() {
 
 
 
+// return true if weekend
+  const isWeekend = (d: Date) => 
+    {
+    const n = d.getDay(); // 0 = Sun, 6 = Sat
+    return n === 0 || n === 6;
+  };
+
+  //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend 
+  const createTimeSlots = (d: Date): string[] => 
+    {
+    if (isWeekend(d)) return []; // no slots on Sat/Sun
+    const times: string[] = [];
+    for (let h = 9; h < 17; h++) {
+      const label = `${String(h).padStart(2, "0")}:00`;
+      times.push(label);
+    }
+    return times;
+  };
+// en endpoint skickar en array av datum som är bokade if is weekend eller booked date resten ska pushas. 
+  
+
 
   return (
-    <div className="wk">
-      <div className="wk__top">
-        <button className="wk__link" type="button" aria-label="Previous week" onClick={goPrev} disabled={atMinWeek}          // visually/semantically disabled
-          >
-          <GrPrevious /> Earlier
-            </button>
+  <div className="wk">
+    <div className="wk__top">
+      <button
+        className="wk__link"
+        type="button"
+        aria-label="Previous week"
+        onClick={goPrev}
+        disabled={atMinWeek}
+      >
+        <GrPrevious /> Earlier
+      </button>
 
-        <div className="wk__range">
+      <div className="wk__range">
         <div className="wk__title">{rangeLabel}</div>
         <div className="wk__subtitle">WEEK {weekNo} · {weekYear}</div>
-        </div>
-
-        <button className="wk__link" type="button" aria-label="Next week" onClick={goNext} > 
-        
-          Later <GrNext />
-            </button>
-              </div>
-
-            <div className="wk__hdr"> {weekdays.map((name, i) => (
-            <div key={name} className={`wk__colhdr ${i >= 5 ? "is-weekend" : ""}`}>
-            <div className="wk__weekday">{name}</div>
-            <div className="wk__daynum">{days[i].getDate()}</div>
-            </div>
-           ))}
-          </div>
-
-          <div className="wk__grid"> {days.map((d, i) => (
-          <button key={i} type="button" className={`wk__daybox ${i >= 5 ? "is-weekend" : ""}`} aria-label={d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric",
-            })}
-          />
-        ))}
       </div>
+
+      <button
+        className="wk__link"
+        type="button"
+        aria-label="Next week"
+        onClick={goNext}
+      >
+        Later <GrNext />
+      </button>
     </div>
-  );
+
+    <div className="wk__hdr">
+      {weekdays.map((name, i) => (
+        <div key={name} className={`wk__colhdr ${i >= 5 ? "is-weekend" : ""}`}>
+          <div className="wk__weekday">{name}</div>
+          <div className="wk__daynum">{days[i].getDate()}</div>
+        </div>
+      ))}
+    </div>
+
+    {/* GRID WITH TIME SLOTS */}
+    <div className="wk__grid">
+      {days.map((d, i) => (
+        <div key={i} className={`wk__daybox ${i >= 5 ? "is-weekend" : ""}`}>
+          {!isWeekend(d) && (
+            <div className="slots-col">
+              {createTimeSlots(d).map((t) => (
+                <button key={t} className="slot">
+                  <div className="slot__time">{t}</div>
+                  
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div className="Confirm-btn">
+      <button onClick={Calendar} type="submit">Confirm</button>
+    </div>
+  </div>
+);
+
 }
-
-

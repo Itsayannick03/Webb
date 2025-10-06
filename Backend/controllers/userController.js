@@ -250,10 +250,11 @@ async function createBooking(req, res)
         const newBooking = new Booking({
             userID: UserID,
             services: services,
-            date: date
+            date: date 
         });
         
         await newBooking.save();
+
 
         return res.status(201).json({message: "Booking created"});
 
@@ -264,4 +265,10 @@ async function createBooking(req, res)
     }
 }
 
+
+
+
+
 module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest, createBooking};
+
+
