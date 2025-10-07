@@ -42,18 +42,21 @@ app.get("/name", getUser)
 
 app.put("/user", updateUser)
 
-app.post("/services", createServiceRequest)
+
 
 app.post("/booking", createBooking)
 
-app.post("/service", createService)
 
-app.get("/service", getServices)
+app.post("/services", createService)
 
-app.get("/service/:name", getServiceByName)
+app.get("/services", getServices)
 
-app.delete("/service/:id", deleteService)
+app.get("/services/:name", getServiceByName)
 
+app.delete("/services/:id", deleteService)
+
+
+app.post("/services", createServiceRequest)
 
 
 //Start Server
