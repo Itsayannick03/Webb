@@ -5,7 +5,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const {registerUser, loginUser, getUser, logout, updateUser} = require("./controllers/userController");
-const {createServiceRequest: selectService, createBooking} = require("./controllers/bookingControllers.js");
+const {selectService, createBooking} = require("./controllers/bookingControllers.js");
 const {createService,getServices,getServiceByName, deleteService} = require("./controllers/serviceController.js")
 const cors = require("cors");
 
