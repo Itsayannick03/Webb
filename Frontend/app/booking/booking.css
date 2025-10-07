@@ -1,71 +1,89 @@
+/* Styling for service site */
 .bookingsite {
-    background-color: rgb(241, 236, 236);
-    color: black;
-    font-size: 20px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
 }
-.button {
-    color: black;
+
+/* Styling for all service buttons */
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 50px;
-    display: flex;
-    font-size: 20px;
-    margin-left: 300px;
-    margin-bottom: 300px;
-    
-}
-.button .haircut:hover,
-.button .color:hover,
-.button .hairandcolor:hover,
-.button .styling:hover {
-    background-color: rgb(255, 255, 255, 0.3); 
-    border: 2px solid #2f2929;              
-    cursor: pointer;                     
-    transform: scale(1.05);              
-    transition: all 0.3s ease; 
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);         
 }
 
-
-.head {
-    border: 1px solid rgb(55, 50, 50);
-    background-color: rgb(55, 50, 50);
-    padding: 10px;
-    width: 1300px;
-    margin: auto;
-    color: white;
-  
-}
-.icon {
-    position: relative;
-    font-size: 80px;
-    text-align: center;
-    display: inline-block;
-    width: 80%;
-    
-}
-.button .haircut,
-.button .color,
-.button .hairandcolor,
-.button .styling {
-    border: 2px solid rgb(13, 9, 9);
-    width: 200px;
-    height: 185px;
+/* Styling for service buttons */
+.button-container {
+    border: 1px solid black;
+    width: 50%;
     padding: 50px;
-    margin-top: 30px;
-    background-color: white;
-    text-align: center;
 
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;    
-    gap: 30px;
-   
-}
-.icon1 {
-    position: relative;
-    font-size: 80px;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 5px 10px 0 rgba(21, 21, 19, 0.3);
+    border: 2px solid black;
+    width: 200px;
 }
 
-.text {
-    text-align: center;
+/* Shadow when hover over service buttons */
+.button-container:hover {
+    box-shadow: 0 5px 15px 0 inset rgba(21, 21, 19, 0.3);
+}
+
+/* styling for header */
+.header {
+    padding: 10px 70px;
+    text-align: left;
+    font-size: 25px;
+    background-color: #3f3f3f;
+    color: white;
+    border-radius: 8px;
+    max-width: 1400px;
+    margin: 20px auto 60px;
+    height: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* styling for entire confirm button */
+.confirm-button {
+    text-align: right;
+    border: 2px solid black;
+    position: absolute;
+    left: 1200px;
+    top: 440px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #f5efe7;
+    width: 90px; 
+    height: 50px
+}
+
+/* styling when service is selected */
+.button-container.selected {
+    border: 2px solid #8B7355;
+    background-color: #f5efe7;
+    box-shadow: 0 5px 15px 0 inset rgba(21, 21, 19, 0.3);
+}
+
+/* Styling when button disabeled */
+.confirm-button button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: #f5efe7;
+    color: #333;
+}
+
+/* Styling when button enabled */
+.confirm-button button:enabled {    
+    cursor: pointer;
+    background-color: #f5efe7; 
+    color: black;
+    width: 100%; 
+    height: 100%; 
+    border: none;
 }

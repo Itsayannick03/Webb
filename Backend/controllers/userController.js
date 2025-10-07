@@ -1,6 +1,5 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/Users");
-const Booking = require("../models/Booking.js");
 
 async function registerUser(req, res)
 {
@@ -124,7 +123,7 @@ async function getUser(req, res)
     }
     catch(err)
     {
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -143,7 +142,7 @@ async function updateUser(req, res)
 
         if(email != user.email)
         {
-            emailInUse = User.findOne(email);
+            const emailInUse = User.findOne(email);
 
             if(emailInUse)
                 return res.status(409).json({error: "Email already in use"});
@@ -206,39 +205,9 @@ async function logout(req, res) {
     }
 }
 
-async function createServiceRequest(req, res) {
-    try 
-    {
-        const services = await req.body.services;
-
-        if(!Array.isArray(services) || services.length == 0)
-            return res.status(400).json({error: "Services must be a non empty array"})
-
-        res.cookie("services", JSON.stringify(services), {
-            httpOnly: true,
-            secure: false,        // must be false on localhost
-            sameSite: "lax",      // "strict" can block cross-origin requests
-            maxAge: 1000 * 60 * 60
-        });
-
-        res.status(201).json({message: "Created new serivce"});
-
-    } 
-    catch (err) 
-    {
-        res.status(500).json({error: "Internal server error"});
-    }
-}
-
-async function createBooking(req, res)
-{
-    try 
-    {
-        const services = req.cookies.services ? JSON.parse(req.cookies.services) : [];
-        if(!Array.isArray(services) || services.length == 0)
-            return res.status(400).json({error: "Services must be a non empty array"});
 
 
+<<<<<<< HEAD
         const UserID = req.cookies.user;
         if(!UserID)
             return res.status(404).json({error: "User not found"});
@@ -272,3 +241,6 @@ async function createBooking(req, res)
 module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest, createBooking};
 
 
+=======
+module.exports = {registerUser, loginUser, getUser, logout, updateUser};
+>>>>>>> be7cc64fd107fb9587a1a473d80149684b417afc
