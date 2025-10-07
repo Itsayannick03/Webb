@@ -124,7 +124,7 @@ async function getUser(req, res)
     }
     catch(err)
     {
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -143,7 +143,7 @@ async function updateUser(req, res)
 
         if(email != user.email)
         {
-            emailInUse = User.findOne(email);
+            const emailInUse = User.findOne(email);
 
             if(emailInUse)
                 return res.status(409).json({error: "Email already in use"});
@@ -226,7 +226,7 @@ async function createServiceRequest(req, res) {
     } 
     catch (err) 
     {
-        res.status(500).json({error: "Internal server error"});
+        res.status(500).json({error: err.message});
     }
 }
 
