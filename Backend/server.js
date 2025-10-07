@@ -1,8 +1,7 @@
 require("dotenv").config();
 const connectDB =require("./db");
 const express = require("express");
-const User = require("./models/Users");
-const Booking = require("./models/Booking");
+
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const {registerUser, loginUser, getUser, logout, updateUser} = require("./controllers/userController");
