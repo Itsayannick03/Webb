@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const Booking = require("../models/Booking.js");
 const Service = require("../models/Service.js");
 
-async function createServiceRequest(req, res) {
+async function selectService(req, res) {
     try 
     {
         const services = req.body.services;
@@ -66,4 +66,4 @@ async function createBooking(req, res)
     }
 }
 
-module.exports = {createServiceRequest, createBooking};
+module.exports = {selectService, createBooking};

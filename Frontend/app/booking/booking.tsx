@@ -59,7 +59,7 @@ export function Booking() {
             const stylingID = stylingData._id;
             services.push(stylingID)
         }
-        const response = await fetch('http://localhost:5000/services', {
+        const response = await fetch('http://localhost:5000/bookings/select-services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
