@@ -32,6 +32,27 @@ async function selectService(req, res) {
     }
 }
 
+async function getBookings(req, res)
+{
+    try 
+    {
+        bookings = await Booking.find({});
+        const dates = [];
+
+        bookings.forEach(booking => {
+            dates.push(booking.date);
+        });
+
+        return res.status(200).json(dates);
+    } 
+    catch (err) 
+    {
+        return res.status(500).json({error: err.message});
+    }
+}
+
+
+
 async function createBooking(req, res)
 {
     try 
@@ -66,4 +87,4 @@ async function createBooking(req, res)
     }
 }
 
-module.exports = {selectService, createBooking};
+module.exports = {selectService, createBooking, getBookings};
