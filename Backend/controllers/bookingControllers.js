@@ -102,6 +102,9 @@ async function createBooking(req, res)
         const date = new Date(dateString);
         if (isNaN(date.getTime())) 
             return res.status(400).json({ error: "Invalid date format" });
+        const exist = Booking.find({userID: UserID, services: services, date: date});
+        if(exist)
+            return res.status(400).json({error: "Booking already exists"})
 
         const newBooking = new Booking({
             userID: UserID,
