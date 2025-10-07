@@ -26,7 +26,7 @@ export function Profile()
     {
         try
         {
-            const response = await fetch("http://localhost:5000/name", {
+            const response = await fetch("http://localhost:5000/users", {
                 method: "GET",
                 credentials: "include"
             });
@@ -61,7 +61,7 @@ export function Profile()
 
         if (!result.isConfirmed) return;
         
-        const res = await fetch("http://localhost:5000/user", {
+        const res = await fetch("http://localhost:5000/users", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -86,7 +86,7 @@ export function Profile()
     {
         try
         {
-            const response = await fetch("http://localhost:5000/logout", {
+            const response = await fetch("http://localhost:5000/users/logout", {
                 method: "POST",
                 credentials: "include"
             });
