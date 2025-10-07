@@ -23,7 +23,7 @@ export function Header()
         try
         {
             
-            const res = await fetch('http://localhost:5000/name', {
+            const res = await fetch('http://localhost:5000/users', {
                 method: 'GET',
                 credentials: "include",
             });
