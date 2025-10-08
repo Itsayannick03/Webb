@@ -12,10 +12,132 @@
 
 .conf-main-container
 {
-   max-width: 400px;
-  width: 100%;
-  height: 800px;
-  background-color: blue    ;
-  margin-top: 50px;
-  margin-bottom: 50px;
+border: 1px solid black;
+    border-radius: 10px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    
+    max-width: 700px;
+
+
+    display: flex;
+    flex-direction: column;
+    
+
+    width: 320px;
+    background: #fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    padding:18px 20px 22px;
+
+    gap: 20px;
+}
+
+.conf-header
+{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+   
+  
+}
+
+.conf-header p
+{
+    font-weight: 350;
+    color: rgba(0, 0, 0, 0.5);
+}
+.conf-header h1
+{
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.conf-data-container
+{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.conf-data-container h1
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.conf-data-container p
+{
+    font-size: 16px;
+    
+}
+
+.conf-price-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.conf-price-container h1
+{
+     font-weight: 550;
+    font-size: 20px;
+}
+
+.conf-price-container p
+{
+     font-weight: 500;
+    font-size: 18px;
+}
+
+.conf-footer h1
+{
+    font-weight: 550;
+    font-size: 20px;
+}
+
+.conf-footer p
+{
+   font-weight: 550;
+    font-size: 20px;
+
+}
+
+.conf-button-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conf-button-container button
+{
+  
+    border-radius:10px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    padding: 6px;
+    font-weight: 500;
+}
+
+.conf-button-container button:hover
+{
+    box-shadow: 0 0px 5px inset rgba(0, 0, 0, 0.253);
+}
+
+.conf-button-confirm
+{
+    
+    background: linear-gradient(#f5efe7, white);
+ 
+
+    box-shadow: 0 0px 7px inset rgba(0, 0, 0, 0.253);
 }
