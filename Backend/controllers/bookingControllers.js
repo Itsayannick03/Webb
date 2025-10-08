@@ -5,14 +5,14 @@ const { findById } = require("../models/Users.js");
 async function createServiceRequest(req, res) {
     try 
     {
-        const services = await req.body.services;
+        const services = req.body.services;
 
         if(!Array.isArray(services) || services.length == 0)
             return res.status(400).json({error: "Services must be a non empty array"});
         for(i = 0; i < services.length; i++) {
-            const exists = Service.findById(services[i])
+            const exists = await Service.findById(services[i])
             if(!exists) {
-                return exists.status(401).json({error: "Service not found"});
+                return res.status(404).json({error: "Service not found"});
             }   
         }
 
@@ -28,7 +28,7 @@ async function createServiceRequest(req, res) {
     } 
     catch (err) 
     {
-        res.status(500).json({error: "Internal server error"});
+        res.status(500).json({error: err.message});
     }
 }
 
