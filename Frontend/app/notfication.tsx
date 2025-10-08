@@ -4,8 +4,23 @@ import emailjs from '@emailjs/browser';
 emailjs.init('pbjfnm0OSx7-UFRZ0');
 
 export function Notification() {
+
+    var templateParams = {
+        name: '#',
+        notes: 'Thank You For Booking With Us!',
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).then(
+        (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+            console.log('FAILED...', error);
+        },
+    );
+
     const form = useRef<HTMLFormElement>(null);
-    
+
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
@@ -14,7 +29,7 @@ export function Notification() {
             console.error('Form reference is null');
             return;
         }
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+        emailjs.sendForm('service_9meo42u', 'YOUR_TEMPLATE_ID', form.current, {
             publicKey: 'pbjfnm0OSx7-UFRZ0',
         })
             .then((response) => {
