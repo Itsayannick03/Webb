@@ -10,7 +10,7 @@ export function Notification() {
         notes: 'Thank You For Booking With Us!',
     };
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).then(
+    emailjs.send('service_9meo42u', 'template_dog8kkc', templateParams).then(
         (response) => {
             console.log('SUCCESS!', response.status, response.text);
         },
@@ -29,7 +29,7 @@ export function Notification() {
             console.error('Form reference is null');
             return;
         }
-        emailjs.sendForm('service_9meo42u', 'YOUR_TEMPLATE_ID', form.current, {
+        emailjs.sendForm('service_9meo42u', 'template_dog8kkc', form.current, {
             publicKey: 'pbjfnm0OSx7-UFRZ0',
         })
             .then((response) => {
