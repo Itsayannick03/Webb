@@ -17,7 +17,7 @@ async function selectService(req, res) {
         }
 
         res.cookie("services", JSON.stringify(services), {
-            httpOnly: true,
+            httpOnly: false,
             secure: false,        // must be false on localhost
             sameSite: "lax",      // "strict" can block cross-origin requests
             maxAge: 1000 * 60 * 60

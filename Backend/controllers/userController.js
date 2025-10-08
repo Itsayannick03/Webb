@@ -93,7 +93,8 @@ async function loginUser(req, res)
             httpOnly: true,
             secure: false,        // must be false on localhost
             sameSite: "lax",      // "strict" can block cross-origin requests
-            maxAge: 1000 * 60 * 60
+            maxAge: 1000 * 60 * 60,
+            path: "/"
         });
 
         return res.status(200).json({error: "Login successful"})

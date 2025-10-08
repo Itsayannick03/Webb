@@ -1,8 +1,30 @@
-import React from "react";
+
 import confirmation from "../styles/confirmation.css"
+import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 export function Confirmation() 
 {
+    const [services, setServices] = useState<string[]>([]);
+
+    useEffect(() => {
+        const cookieData = Cookies.get("services")
+
+        if(cookieData)
+        {
+            try
+            {
+                setServices(JSON.parse(cookieData));
+            }
+            catch(err)
+            {
+                toast.error("Invalid Service cookie")
+            }
+
+        }
+    }, []);
+
     return(
         <div className="confirmation-main">
             <div className="conf-main-container">
@@ -13,8 +35,7 @@ export function Confirmation()
                 <div className="conf-data-container">
                     <div className="services-container">
                         <h1>Services</h1>
-                        <p>Haircut (30 min)</p>
-                        <p>Color (90 min)</p>
+                        {services.length > 0 ? (services.map((s, i) => <p key={i}>{s}</p>)) : (<p>No Services selected</p>)}
                     </div>
 
                     <div className="date-container">
