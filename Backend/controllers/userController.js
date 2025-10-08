@@ -207,40 +207,4 @@ async function logout(req, res) {
 
 
 
-<<<<<<< HEAD
-        const UserID = req.cookies.user;
-        if(!UserID)
-            return res.status(404).json({error: "User not found"});
-        
-        const {date} = req.body;
-        if(!date)
-            return res.status(400).json({error: "Missing data"});
-
-        const newBooking = new Booking({
-            userID: UserID,
-            services: services,
-            date: date 
-        });
-        
-        await newBooking.save();
-
-
-        return res.status(201).json({message: "Booking created"});
-
-    } 
-    catch (err) 
-    {
-        res.status(500).json({error: err.message})
-    }
-}
-
-
-
-
-
-module.exports = {registerUser, loginUser, getUser, logout, updateUser, createServiceRequest, createBooking};
-
-
-=======
 module.exports = {registerUser, loginUser, getUser, logout, updateUser};
->>>>>>> be7cc64fd107fb9587a1a473d80149684b417afc

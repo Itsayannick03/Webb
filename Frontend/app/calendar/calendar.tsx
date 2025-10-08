@@ -4,11 +4,39 @@ import "./Calendar.css";
 
 export function Calendar() {
 
+  // fetching
+async function getAllBooking() {
+  const res = await fetch('http://localhost:5000/bookings', {
+    credentials: 'include',
+  }); 
+  const Bookedtimes = await res.json();
+/*const data = await res.json(); 
+const Bookedtimes = data.date; 
+kanske måste definera vilken date jag menar*/
+}
+
+// return true if weekend
+  const isWeekend = (d: Date) => 
+    {
+    const n = d.getDay(); // 0 = Sun, 6 = Sat
+    return n === 0 || n === 6;
+  };
+
+  //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend 
+  const createTimeSlots = (d: Date, bookedTimes: string[] = []): string[] => {
+    
+    if (isWeekend(d)) return []; // no slots on Sat/Sun
+    const times: string[] = [];
+    for (let h = 9; h < 17; h++) {
+      const label = `${String(h).padStart(2, "0")}:00`;
+      if (bookedTimes?.includes(label)) continue; // <-- skip booked  
+      times.push(label);
+    }
+    return times;
+  };
 
 
-
-
-  //vid confirm ska en funktion finnas som skapar bookning och efter detta ska tiden tas bort.  
+  
   
    // Get the Monday of the week for a given date
     const getMonday = (d: Date): Date => {
@@ -25,7 +53,7 @@ export function Calendar() {
     return x;
   };
   
-    // ISO week number (1..53)
+    //  ISO week number (1..52)
   const isoWeekNumber = (d: Date): number => {
     const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     const dayNum = date.getUTCDay() || 7;
@@ -35,7 +63,7 @@ export function Calendar() {
     return Math.ceil((diffDays + 1) / 7);
   };
   
-  // ISO week-year (the year that week belongs to)
+  // ISO week-year 
   const isoWeekYear = (d: Date): number => {
     const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     const dayNum = date.getUTCDay() || 7;
@@ -84,29 +112,7 @@ export function Calendar() {
   // Go to the next week
   const goNext = () => setAnchor(addDays(anchor, 7));
 
-
-
-// return true if weekend
-  const isWeekend = (d: Date) => 
-    {
-    const n = d.getDay(); // 0 = Sun, 6 = Sat
-    return n === 0 || n === 6;
-  };
-
-  //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend 
-  const createTimeSlots = (d: Date): string[] => 
-    {
-    if (isWeekend(d)) return []; // no slots on Sat/Sun
-    const times: string[] = [];
-    for (let h = 9; h < 17; h++) {
-      const label = `${String(h).padStart(2, "0")}:00`;
-      times.push(label);
-    }
-    return times;
-  };
-// en endpoint skickar en array av datum som är bokade if is weekend eller booked date resten ska pushas. 
   
-
 
   return (
   <div className="wk">
@@ -126,11 +132,7 @@ export function Calendar() {
         <div className="wk__subtitle">WEEK {weekNo} · {weekYear}</div>
       </div>
 
-      <button
-        className="wk__link"
-        type="button"
-        aria-label="Next week"
-        onClick={goNext}
+      <button className="wk__link" type="button" aria-label="Next week" onClick={goNext}
       >
         Later <GrNext />
       </button>
@@ -162,7 +164,6 @@ export function Calendar() {
         </div>
       ))}
     </div>
-
     <div className="Confirm-btn">
       <button onClick={Calendar} type="submit">Confirm</button>
     </div>
