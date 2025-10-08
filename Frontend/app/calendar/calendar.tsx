@@ -4,17 +4,22 @@ import "./Calendar.css";
 
 export function Calendar() {
 
+  const [bookingTimes, setbookingTimes] = useState<Date[]>(); 
+
   // fetching
 async function getAllBooking() {
   const res = await fetch('http://localhost:5000/bookings', {
     credentials: 'include',
   }); 
-  const Bookedtimes = await res.json();
+  
+
+  const bookingTimes = await res.json();  
 /*const data = await res.json(); 
 const Bookedtimes = data.date; 
 kanske måste definera vilken date jag menar*/
 }
 
+  
 // return true if weekend
   const isWeekend = (d: Date) => 
     {
