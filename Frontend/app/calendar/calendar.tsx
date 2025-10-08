@@ -4,28 +4,51 @@ import "./Calendar.css";
 
 export function Calendar() {
 
-  const [bookingTimes, setbookingTimes] = useState<Date[]>(); 
+  //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt 
+const [date, setdate] = useState<Date[]>();
 
+//fetching
+async function confirm () {
+
+const res = await fetch ('http://localhost:5000/bookings/select-date',{
+   method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ date }),
+    credentials: "include"         
+})
+
+let data: { error?: string } = {};
+  try { data = await res.json(); } 
+  catch 
+  {
+    return; 
+  }
+
+if (res.status != 201){
+
+  alert(data.error)
+}   
+
+}
   // fetching
-async function getAllBooking() {
+async function getAllTimeSlots() {
   const res = await fetch('http://localhost:5000/bookings', {
     credentials: 'include',
   }); 
   
-
-  const bookingTimes = await res.json();  
-/*const data = await res.json(); 
-const Bookedtimes = data.date; 
-kanske måste definera vilken date jag menar*/
+  const bookedTimes: string[] = await res.json(); // <-- parse the JSON body
+  return bookedTimes;
 }
 
-  
 // return true if weekend
   const isWeekend = (d: Date) => 
     {
     const n = d.getDay(); // 0 = Sun, 6 = Sat
     return n === 0 || n === 6;
   };
+
+
+const bookedTimes = getAllTimeSlots();
 
   //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend 
   const createTimeSlots = (d: Date, bookedTimes: string[] = []): string[] => {
@@ -39,11 +62,8 @@ kanske måste definera vilken date jag menar*/
     }
     return times;
   };
-
-
-  
-  
-   // Get the Monday of the week for a given date
+    
+  // Get the Monday of the week for a given date
     const getMonday = (d: Date): Date => {
     const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     const day = (x.getDay() + 6) % 7; // 0=Mon..6=Sun
@@ -136,7 +156,6 @@ kanske måste definera vilken date jag menar*/
         <div className="wk__title">{rangeLabel}</div>
         <div className="wk__subtitle">WEEK {weekNo} · {weekYear}</div>
       </div>
-
       <button className="wk__link" type="button" aria-label="Next week" onClick={goNext}
       >
         Later <GrNext />

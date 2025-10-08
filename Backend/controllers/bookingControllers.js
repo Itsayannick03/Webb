@@ -42,7 +42,7 @@ async function getBookings(req, res)
         bookings.forEach(booking => {
             dates.push(booking.date);
         });
-        console.log(dates)
+        
         return res.status(200).json(dates);
     } 
     catch (err) 
