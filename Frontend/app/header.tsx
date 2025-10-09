@@ -105,7 +105,7 @@ export function Header()
                     :(
                         <a className='profile' href="/login">
                             <CiLogin className='icon' size={30} />
-                            <a className='login' href="/login">Login</a>
+                            <p className='login'>Login</p>
                         </a>)
                 }
                     

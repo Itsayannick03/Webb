@@ -1,21 +1,27 @@
 
-import confirmation from "../styles/confirmation.css"
+import "../styles/confirmation.css"
 import React, { useEffect, useState } from "react";
-import Cookies from "js-cookie";
 import { toast } from "react-toastify";
+
 
 export function Confirmation() 
 {
     const [services, setServices] = useState<string[]>([]);
+        console.log("test1")
 
     useEffect(() => {
-        const cookieData = Cookies.get("services")
+        console.log("test2");
+        const cookieData = document.cookie;
+        console.log(document.cookie);
+
 
         if(cookieData)
         {
             try
             {
                 setServices(JSON.parse(cookieData));
+                        console.log("test3")
+
             }
             catch(err)
             {

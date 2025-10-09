@@ -17,7 +17,7 @@ async function selectService(req, res) {
         }
 
         res.cookie("services", JSON.stringify(services), {
-            httpOnly: false,
+            httpOnly: true,
             secure: false,        // must be false on localhost
             sameSite: "lax",      // "strict" can block cross-origin requests
             maxAge: 1000 * 60 * 60
@@ -29,6 +29,48 @@ async function selectService(req, res) {
     catch (err) 
     {
         res.status(500).json({error: err.message});
+    }
+}
+
+async function getServices(res, req)
+{
+    try 
+    {
+        const services = req.cookies.services;
+        const user = req.cookies.user
+
+        if(!services)
+            return res.status(400).json({error: "no services found"});
+
+        return res.status(200).json({services});
+    } 
+    catch (error) 
+    {
+        
+    }
+}
+
+async function getServiceData(req, res)
+{
+    try
+    {
+        const serviceID = req.body.serviceID;
+
+        const service = Service.findById(serviceID);
+
+        if(!service)
+            return res.status(404).json({error: "service not found"});
+
+        const name = service.name;
+        const price = service.price;
+        const duration = service.duration;
+
+        return res.status(200).json({Name: name, Price: price, Duration: duration});
+
+    }
+    catch
+    {
+
     }
 }
 
@@ -123,4 +165,4 @@ async function createBooking(req, res)
     }
 }
 
-module.exports = {selectService, createBooking, getBookings, selectDate};
+module.exports = {selectService, createBooking, getBookings, selectDate, getServices, getServiceData};
