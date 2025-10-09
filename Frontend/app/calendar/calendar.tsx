@@ -32,7 +32,7 @@ if (res.status != 201){
 }
   // fetching
 async function getAllTimeSlots() {
-  const res = await fetch('http://localhost:5000/bookings', {
+  const res = await fetch('http://localhost:5000/bookings', { 
     credentials: 'include',
   }); 
   
