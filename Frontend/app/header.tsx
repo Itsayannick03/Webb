@@ -68,7 +68,7 @@ export function Header()
                 </div>
 
                 <div className='text'>
-                    <a href="/booking">Booking</a>
+                    <a href="/service">Booking</a>
                 </div>
                 <div >
                     <a href="">Contact</a>
