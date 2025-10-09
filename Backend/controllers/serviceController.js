@@ -95,7 +95,7 @@ async function getServiceData(req, res)
     {
         const serviceID = req.body.serviceID;
 
-        const service = Service.findById(serviceID);
+        const service = await Service.findById(serviceID);
 
         if(!service)
             return res.status(404).json({error: "service not found"});
