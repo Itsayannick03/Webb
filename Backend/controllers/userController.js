@@ -110,8 +110,9 @@ async function getUser(req, res) {
 
         return res.status(200).json({ firstName: user.firstName, lastName: user.lastName, email: user.email, phoneNumber: user.phoneNumber, password: user.password });
     }
-    catch (err) {
-        res.status(500).json({ error: "internal server error" });
+    catch(err)
+    {
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -126,8 +127,9 @@ async function updateUser(req, res) {
 
         const user = await User.findById(userID);
 
-        if (email != user.email) {
-            emailInUse = User.findOne(email);
+        if(email != user.email)
+        {
+            const emailInUse = User.findOne(email);
 
             if (emailInUse)
                 return res.status(409).json({ error: "Email already in use" });

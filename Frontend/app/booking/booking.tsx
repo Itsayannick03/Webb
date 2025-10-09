@@ -19,7 +19,7 @@ export function Booking() {
         //Namnen är Color, Styling och Cut
         //Se det här som en friendly remeinder och glöm inte bort att du är AWSOME, you got this GIRL!
         if (haircut) {
-            const cutResponse = await fetch("http://localhost:5000/service/Cut", {
+            const cutResponse = await fetch("http://localhost:5000/services/Cut", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export function Booking() {
 
         }
         if (color) {
-            const colorResponse = await fetch("http://localhost:5000/service/Color", {
+            const colorResponse = await fetch("http://localhost:5000/services/Color", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ export function Booking() {
             services.push(stylingID)
         }
         if (styling) {
-            const stylingResponse = await fetch("http://localhost:5000/service/Styling", {
+            const stylingResponse = await fetch("http://localhost:5000/services/Styling", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ export function Booking() {
             const stylingID = stylingData.id;
             services.push(stylingID)
         }
-        const response = await fetch('http://localhost:5000/services', {
+        const response = await fetch('http://localhost:5000/bookings/select-services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
