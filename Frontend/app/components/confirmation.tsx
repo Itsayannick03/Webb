@@ -6,29 +6,64 @@ import { toast } from "react-toastify";
 
 export function Confirmation() 
 {
+    const [serviceIDs, setServiceIDs] = useState<string[]>([]);
     const [services, setServices] = useState<string[]>([]);
-        console.log("test1")
 
-    useEffect(() => {
-        console.log("test2");
-        const cookieData = document.cookie;
-        console.log(document.cookie);
-
-
-        if(cookieData)
+    async function fetchServiceData()
+    {
+        try
         {
-            try
+            serviceIDs.forEach(serviceID => 
             {
-                setServices(JSON.parse(cookieData));
-                        console.log("test3")
+                try
+                {
+                    const res = await fetch("http://localhost:5000/services/data", {
+                        method: "GET",
+                        credentials: "include",
+                        body: serviceID
+                    });
 
-            }
-            catch(err)
-            {
-                toast.error("Invalid Service cookie")
-            }
+                    const service = await res.json();
 
+                    setServices([...services, service]);
+                }
+                
+            });
         }
+        catch(err)
+        {
+            toast.error("error");
+        }
+    }
+
+    async function fetchServices()
+    {
+        try
+        {
+            const res = await fetch("http://localhost:5000/services/cookie", {
+                method: 'GET',
+                credentials: 'include'
+            });
+
+            const data = await res.json();
+
+            if(res.status != 200)
+            {
+                toast.warning(data.error);
+                return;
+            }
+                
+
+            setServiceIDs(data.services);
+            
+        }
+        catch(err)
+        {
+            toast.error("internal server error");
+        }
+    }
+    useEffect(() => {
+       
     }, []);
 
     return(

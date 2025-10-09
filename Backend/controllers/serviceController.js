@@ -72,10 +72,54 @@ async function deleteService(req, res) {
   }
 }
 
+async function getServicesFromCookie(req, res)
+{
+    try 
+    {
+
+        if(!req.cookies.services)
+            return res.status(400).json({error: "no services found"});
+          
+        const services = JSON.parse(req.cookies.services);
+        return res.status(200).json({services});
+    } 
+    catch (error) 
+    {
+        return res.status(500).json({error: error.message});
+    }
+}
+
+async function getServiceData(req, res)
+{
+    try
+    {
+        const serviceID = req.body.serviceID;
+
+        const service = Service.findById(serviceID);
+
+        if(!service)
+            return res.status(404).json({error: "service not found"});
+
+        const name = service.name;
+        const price = service.price;
+        const duration = service.duration;
+
+        return res.status(200).json({Name: name, Price: price, Duration: duration});
+
+    }
+    catch
+    {
+        return res.status(500).json({error: error.message});
+
+    }
+}
+
 module.exports = {
   createService,
   getServices,
   getServiceByName,
   updateService,
-  deleteService
+  deleteService,
+  getServicesFromCookie,
+  getServiceData
 };
