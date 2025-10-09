@@ -20,13 +20,25 @@ We are going to make a webbsite where you will be able to book a haircut. The si
 6. **Confirmation**: A confimation email to the users email to verify that the booking went through
 
 # Technology Stack
-- **Frontend**: React with TypeScript
-- **Backend**: Node.js with Express
+  # Frontend
+- **Framework**: React with TypeScript
+- **Routing**: React Router
 - **Styling**: CSS with modern design principles
 - **Icons**: React Icons
-- **Routing**: React Router
 - **Testing**: Jest with React Testing Library
 
-#  How To Compile And Run
+  #  Backend
+- **Runtime**: Node.js with Express
+- **Database**: MongoDB
+- **Email**: EmailJS
 
+#  How To Compile And Run
+  # Frontend
+  Run the commands:
+  - cmd
+  - npm run dev
+
+  # Backend
+  Run the command:  
+  - node server.js
 
