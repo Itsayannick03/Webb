@@ -5,15 +5,25 @@ import "./Calendar.css";
 export function Calendar() {
 
   //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt 
-const [date, setdate] = useState<Date[]>();
+  //const [date, setdate] = useState<Date[]>();
+  
+const [date, setdate] = useState<{ date: string; time: string } | null>(null);
+
+//helper function
+const toYmd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 
 //fetching
+
+
 async function confirm () {
+
+
+//const toYmd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 
 const res = await fetch ('http://localhost:5000/bookings/select-date',{
    method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ date }),
+    body: JSON.stringify( date ),
     credentials: "include"         
 })
 
@@ -178,7 +188,7 @@ const bookedTimes = getAllTimeSlots();
           {!isWeekend(d) && (
             <div className="slots-col">
               {createTimeSlots(d).map((t) => (
-                <button key={t} className="slot">
+                <button key={t} className="slot" onClick={()=> setdate({date: toYmd(d), time: t})}>
                   <div className="slot__time">{t}</div>
                   
                 </button>
