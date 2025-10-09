@@ -137,7 +137,7 @@ const bookedTimes = getAllTimeSlots();
   // Go to the next week
   const goNext = () => setAnchor(addDays(anchor, 7));
 
-  
+
 
   return (
   <div className="wk">
@@ -189,7 +189,7 @@ const bookedTimes = getAllTimeSlots();
       ))}
     </div>
     <div className="Confirm-btn">
-      <button onClick={Calendar} type="submit">Confirm</button>
+      <button onClick={confirm} type="submit">Confirm</button>
     </div>
   </div>
 );
