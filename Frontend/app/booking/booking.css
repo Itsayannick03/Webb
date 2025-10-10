@@ -29,10 +29,10 @@
     width: 200px;
 }
 
-/* Shadow when hover over service buttons */
-.button-container:hover {
-    box-shadow: 0 5px 15px 0 inset rgba(21, 21, 19, 0.3);
+.button-container button {
+    margin-top: 11px; /* Adjust this value as needed */
 }
+
 
 /* styling for header */
 .header {
@@ -60,7 +60,7 @@
     justify-content: center;
     background-color: #f5efe7;
     width: 90px; 
-    height: 50px
+    height: 50px;
 }
 
 /* styling when service is selected */
@@ -87,3 +87,24 @@
     height: 100%; 
     border: none;
 }
+
+.button-container {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 220px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(8, 8, 8, 0.3);
+}
+
+
+
