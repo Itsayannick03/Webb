@@ -5,6 +5,7 @@ A web application for booking hair salon appointments built with React and TypeS
 # Declarations:
 I, Alma Warin, declare that i am the sole author of the content i add to this repository. 
 I, Fadumi Jama, declare that i am the sole author of the content i add to this repository. 
+I, Fadumi Jama, declare that i am the sole author of the content i add to this repository. 
 # Contributors:
 - **Alma** - Username: waal22el
 -  **Fadumo** - Username: Fadde1
