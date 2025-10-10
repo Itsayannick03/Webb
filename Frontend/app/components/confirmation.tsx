@@ -12,20 +12,38 @@ export function Confirmation() {
 
     }
 
-    function notification() {
-        var templateParams = {
-            name: '#',
-            notes: 'Thank You For Booking With Us!',
-        };
+    async function notification() {
+        try {
+            const userRes = await fetch("http://localhost:5000/users", {
+                method: 'GET',
+                credentials: 'include',
 
-        emailjs.send('service_5lu0xj8', 'template_dog8kkc', templateParams).then(
-            (response) => {
-                console.log('SUCCESS!', response.status, response.text);
-            },
-            (error) => {
-                console.log('FAILED...', error);
-            },
-        );
+            });
+
+            if (!userRes.ok) {
+                toast.error("Failed to fetch user data");
+                return;
+            }
+
+            const userData = await userRes.json();
+            const userName = userData.firstName || "Customer";
+
+            var templateParams = {
+                name: userName,
+                notes: 'Thank You For Booking With Us!',
+            };
+
+            emailjs.send('service_5lu0xj8', 'template_dog8kkc', templateParams).then(
+                (response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                },
+                (error) => {
+                    console.log('FAILED...', error);
+                },
+            );
+        } catch (error) {
+            console.log("Error sending email")
+        }
 
         const form = useRef<HTMLFormElement>(null);
 
@@ -86,17 +104,15 @@ export function Confirmation() {
                         credentials: "include",
                         body: serviceID
                     });
-                    
+
                     res.then((data) => {
                         const serviceData = {
-                        name: (data as any).Name,
-                        price: (data as any).Price,
-                        duration: (data as any).Duration,
+                            name: (data as any).Name,
+                            price: (data as any).Price,
+                            duration: (data as any).Duration,
                         };
-                    setServices(services => [...services, serviceData]);
+                        setServices(services => [...services, serviceData]);
                     });
-
-                    //setServices([...services, service]);
                 }
                 catch (err) {
                     toast.error("error");
