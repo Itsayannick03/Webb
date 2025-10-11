@@ -3,7 +3,6 @@ import "./homepage.css"
 
 
 
-
 export function Homepage() {
 
 
@@ -14,28 +13,13 @@ export function Homepage() {
         <div className="homepage">
             <div className="home-container">
                 <div className="home-content">
-                    <h1 className="home-title">We are the Mane Attraction</h1>
+                    <h1 className="home-title">We are <br/>The Mane Attraction</h1>
                     <a className="home-button" href="/login">Book now</a>
                     </div>
                  </div>
             </div>
 
-    )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    );
 
 }
 
