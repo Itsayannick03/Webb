@@ -14,7 +14,7 @@ export function Homepage() {
             <div className="home-container">
                 <div className="home-content">
                     <h1 className="home-title">We are <br/>The Mane Attraction</h1>
-                    <a className="home-button" href="/login">Book now</a>
+                    <a className="home-button" href="/booking">Book now</a>
                     </div>
                  </div>
             </div>
