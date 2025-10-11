@@ -13,3 +13,6 @@ test("renders Login title, inputs, and button", () => {
   expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();   // password input
   expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument(); // button
 });
+
+
+//måste lägga till mer tester 
