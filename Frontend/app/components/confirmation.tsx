@@ -8,6 +8,7 @@ import emailjs from '@emailjs/browser';
 export function Confirmation() {
     const [serviceIDs, setServiceIDs] = useState<string[]>([]);
     const [services, setServices] = useState<any[]>([]);
+    const [date, setDate] = useState<Date>();
     async function parse() {
 
     }
@@ -69,6 +70,24 @@ export function Confirmation() {
         };
     }
 
+    async function fetchDate() {
+        try {
+            const res = await fetch("http://localhost:5000/bookings/getDate", {
+                method: 'GET',
+                credentials: 'include'
+            });
+            const data = await res.json();
+            if(res.status != 200) {
+                toast.error("error");
+                return;
+            }
+            setDate(data.date);
+        } catch(err) {
+            toast.error( "error" );
+        };
+
+    }
+
     async function fetchServices() {
         try {
             const res = await fetch("http://localhost:5000/services/cookie", {
@@ -92,7 +111,9 @@ export function Confirmation() {
         }
     }
     useEffect(() => {
-
+        fetchServices();
+        fetchServiceData();
+        fetchDate();
     }, []);
 
     async function fetchServiceData() {
@@ -139,7 +160,7 @@ export function Confirmation() {
 
                     <div className="date-container">
                         <h1>Date</h1>
-                        <p>19 Oktober   14:00</p>
+                        <p>{date?.toDateString()}</p>
                     </div>
 
                 </div>

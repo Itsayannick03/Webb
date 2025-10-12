@@ -5,7 +5,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const {registerUser, loginUser, getUser, logout, updateUser} = require("./controllers/userController");
-const {selectService, createBooking, getBookings, selectDate} = require("./controllers/bookingControllers.js");
+const {selectService, createBooking, getBookings, selectDate, getDate} = require("./controllers/bookingControllers.js");
 const {createService,getServices,getServiceByName, deleteService, getServicesFromCookie, getServiceData} = require("./controllers/serviceController.js")
 const cors = require("cors");
 
@@ -48,6 +48,7 @@ app.post("/bookings/select-services", selectService)
 app.post("/bookings/select-date", selectDate)
 app.post("/bookings", createBooking)
 app.get("/bookings", getBookings)
+app.get("/bookings/getDate", getDate)
 
 
 app.post("/services", createService)
