@@ -57,7 +57,7 @@ app.get("/services", getServices)
 
 app.get("/services/cookie", getServicesFromCookie)
 
-app.get("services/data", getServiceData)
+app.post("/services/data", getServiceData)
 
 app.get("/services/:name", getServiceByName)
 

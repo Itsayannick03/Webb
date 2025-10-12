@@ -38,7 +38,7 @@ async function getBookings(req, res) {
         bookings.forEach(booking => {
             dates.push(booking.date);
         });
-
+        
         return res.status(200).json(dates);
     }
     catch (err) {
@@ -74,13 +74,13 @@ async function selectDate(req, res) {
     }
 }
 
-async function getDate() {
+async function getDate(req, res) {
     try {
-        const cookie = req.cookie.bookingDate;
+        const cookie = req.cookies.bookingDate;
         if (!cookie) {
             return res.status(404).json({ error: "no date found" });
         }
-        const date = JSON.parse(cookie);
+        const date = cookie;
         res.status(200).json({ date: date });
 
     } catch (err) {

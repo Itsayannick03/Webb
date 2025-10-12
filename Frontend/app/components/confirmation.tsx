@@ -3,12 +3,14 @@ import "../styles/confirmation.css"
 import React, { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
+import { p } from "node_modules/@react-router/dev/dist/routes-CZR-bKRt";
 
 
 export function Confirmation() {
     const [serviceIDs, setServiceIDs] = useState<string[]>([]);
     const [services, setServices] = useState<any[]>([]);
     const [date, setDate] = useState<Date>();
+    const [price, setPrice] = useState<Number>(0);
     async function parse() {
 
     }
@@ -77,16 +79,18 @@ export function Confirmation() {
                 credentials: 'include'
             });
             const data = await res.json();
-            if(res.status != 200) {
+            if (res.status != 200) {
                 toast.error("error");
                 return;
             }
             setDate(data.date);
-        } catch(err) {
-            toast.error( "error" );
+        } catch (err) {
+            console.log("test");
+            toast.error("error");
+            console.log("fuck you", err);
         };
-
     }
+   
 
     async function fetchServices() {
         try {
@@ -102,7 +106,6 @@ export function Confirmation() {
                 return;
             }
 
-
             setServiceIDs(data.services);
 
         }
@@ -112,36 +115,44 @@ export function Confirmation() {
     }
     useEffect(() => {
         fetchServices();
-        fetchServiceData();
         fetchDate();
     }, []);
+    useEffect(() => {
+        if (serviceIDs.length > 0) {
+            fetchServiceData();
+        }
+    }, [serviceIDs]);
 
     async function fetchServiceData() {
         try {
-            serviceIDs.forEach(serviceID => {
-                try {
-                    const res = fetch("http://localhost:5000/services/data", {
-                        method: "GET",
-                        credentials: "include",
-                        body: serviceID
-                    });
+            const servicePromises = serviceIDs.map(async (serviceID) => {
+                const res = await fetch("http://localhost:5000/services/data", {
+                    method: "POST",  
+                    credentials: "include",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ serviceID })  
+                });
 
-                    res.then((data) => {
-                        const serviceData = {
-                            name: (data as any).Name,
-                            price: (data as any).Price,
-                            duration: (data as any).Duration,
-                        };
-                        setServices(services => [...services, serviceData]);
-                    });
+                if (res.ok) {
+                    const data = await res.json();
+                    return {
+                        name: data.Name,
+                        price: data.Price,
+                        duration: data.Duration,
+                    };
                 }
-                catch (err) {
-                    toast.error("error");
-                }
+
+                return null;
             });
-        }
-        catch (err) {
-            toast.error("error");
+
+            const servicesData = await Promise.all(servicePromises);
+
+            setServices(servicesData.filter(service => service !== null));
+
+        } catch (err) {
+            toast.error("Could not fetch services");
         }
     }
 
@@ -155,12 +166,12 @@ export function Confirmation() {
                 <div className="conf-data-container">
                     <div className="services-container">
                         <h1>Services</h1>
-                        {services.length > 0 ? (services.map((s, i) => <p key={i}>{s}</p>)) : (<p>No Services selected</p>)}
+                        {services.length > 0 ? (services.map((s, i) => <p key={i}>{s.name}</p>)) : (<p>No Services selected</p>)}
                     </div>
 
                     <div className="date-container">
                         <h1>Date</h1>
-                        <p>{date?.toDateString()}</p>
+                        <p>{date ? new Date(date).toLocaleString() : 'No date selected'}</p>
                     </div>
 
                 </div>
@@ -173,8 +184,6 @@ export function Confirmation() {
                     <button className="conf-button-back">Go Back</button>
                     <button onClick={notification} className="conf-button-confirm">Confirm Booking</button>
                 </div>
-
-
             </div>
         </div>
     )
