@@ -1,7 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
 import { Login } from "../login/login";
+import { vi } from "vitest"
 
 test("renders Login title, inputs, and button", () => {
   // RENDER the component
@@ -15,4 +17,31 @@ test("renders Login title, inputs, and button", () => {
 });
 
 
-//måste lägga till mer tester 
+//test to se when fetch happens by creating a fake fetch so that wed dont need a real sever
+test("triggers fetch to /users/login after form input", async () => {
+  global.fetch = vi.fn().mockResolvedValue({
+    ok: true, // optional but nice to include
+    status: 200,
+    json: vi.fn().mockResolvedValue({ error: "Missing fields" }),
+  } as any);
+
+  render (<Login/>); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
