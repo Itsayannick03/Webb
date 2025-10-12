@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import "./Calendar.css";
+import "./calendar.css";
 
 export function Calendar() {
 
