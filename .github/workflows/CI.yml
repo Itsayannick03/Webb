@@ -1,0 +1,36 @@
+name: CI (frontend unit tests)
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'Frontend/**', '.github/workflows/**' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'Frontend/**', '.github/workflows/**' ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: Frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: Frontend
+        run: npm ci
+
+      - name: Run unit tests
+        working-directory: Frontend
+        run: npm test 
+
