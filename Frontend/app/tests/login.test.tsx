@@ -13,10 +13,12 @@ test("renders Login title, inputs, and button", () => {
   render(<Login />);
 
   //  elements expected to see
-  expect(screen.getByText("Login")).toBeInTheDocument();                 // title
+  
+  expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
   expect(screen.getByPlaceholderText("Email")).toBeInTheDocument();          // email input
   expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();      // password input
   expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument(); // button
+
 });
 
 
