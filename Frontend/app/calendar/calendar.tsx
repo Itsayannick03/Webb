@@ -18,7 +18,7 @@ export function Calendar() {
   }, []);
 
   async function check() {
-    const session = Cookies.get("User");
+    const session = Cookies.get("user");
 
     if (!session) {
       window.location.href = "/";
