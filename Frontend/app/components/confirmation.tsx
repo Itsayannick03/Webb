@@ -90,6 +90,10 @@ export function Confirmation() {
             console.log("fuck you", err);
         };
     }
+
+    function fetchPrice() {
+        
+    }
    
 
     async function fetchServices() {

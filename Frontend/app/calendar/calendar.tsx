@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import "./Calendar.css";
+import "./calendar.css";
 
 export function Calendar() {
 
@@ -42,7 +42,7 @@ if (res.status != 201){
 }
   // fetching
 async function getAllTimeSlots() {
-  const res = await fetch('http://localhost:5000/bookings', {
+  const res = await fetch('http://localhost:5000/bookings', { 
     credentials: 'include',
   }); 
   
