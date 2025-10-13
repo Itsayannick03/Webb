@@ -3,14 +3,14 @@ import "../styles/confirmation.css"
 import React, { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
-import { p } from "node_modules/@react-router/dev/dist/routes-CZR-bKRt";
+
 
 
 export function Confirmation() {
     const [serviceIDs, setServiceIDs] = useState<string[]>([]);
     const [services, setServices] = useState<any[]>([]);
     const [date, setDate] = useState<Date>();
-    const [price, setPrice] = useState<Number>(0);
+    const [price, setPrice] = useState<number>(0);
     async function parse() {
 
     }
@@ -32,18 +32,26 @@ export function Confirmation() {
             const userName = userData.firstName || "Customer";
 
             var templateParams = {
+                email: 'waal22el@student.ju.se',
                 name: userName,
                 notes: 'Thank You For Booking With Us!',
+                booking_date: date ? new Date(date).toLocaleString() : 'Unknown date',
+                services: services.map(s => s.name).join(', '),
+                total_price: services.reduce((total, service) => total + service.price, 0) + 'kr'
             };
 
-            emailjs.send('service_5lu0xj8', 'template_dog8kkc', templateParams).then(
-                (response) => {
-                    console.log('SUCCESS!', response.status, response.text);
-                },
-                (error) => {
-                    console.log('FAILED...', error);
-                },
+            const response = await emailjs.send(
+                'service_5lu0xj8',
+                'template_dog8kkc',
+                templateParams,
+                {
+                    publicKey: 'pbjfnm0OSx7-UFRZ0',
+                }
             );
+
+            console.log('SUCCESS!', response.status, response.text);
+            toast.success("Confirmation email sent!");
+
         } catch (error) {
             console.log("Error sending email")
         }
@@ -91,10 +99,57 @@ export function Confirmation() {
         };
     }
 
-    function fetchPrice() {
-        
+    async function createBooking() {
+        try {
+
+            if (serviceIDs.length === 0) {
+                toast.error("No services selected");
+                return false;
+            }
+
+            if (!date) {
+                toast.error("No date selected");
+                return false;
+            }
+
+            const bookingData = {
+                serviceIDs: serviceIDs,
+                date: date,
+                totalPrice: services.reduce((total, service) => total + service.price, 0)
+            };
+
+            const res = await fetch("http://localhost:5000/bookings", {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bookingData)
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.error(data.error || "Failed to create booking");
+                return false;
+            }
+            toast.success("Booking confirmed!");
+            return true;
+
+        } catch (error) {
+            toast.error("Failed to make booking");
+            return false;
+        }
     }
-   
+
+    async function handleClick() {
+        const bookingSuccess = await createBooking();
+        if (bookingSuccess) {
+            await notification();
+        }
+    }
+
+
 
     async function fetchServices() {
         try {
@@ -131,12 +186,12 @@ export function Confirmation() {
         try {
             const servicePromises = serviceIDs.map(async (serviceID) => {
                 const res = await fetch("http://localhost:5000/services/data", {
-                    method: "POST",  
+                    method: "POST",
                     credentials: "include",
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ serviceID })  
+                    body: JSON.stringify({ serviceID })
                 });
 
                 if (res.ok) {
@@ -177,16 +232,15 @@ export function Confirmation() {
                         <h1>Date</h1>
                         <p>{date ? new Date(date).toLocaleString() : 'No date selected'}</p>
                     </div>
-
                 </div>
 
                 <div className="conf-price-container">
                     <h1>Total</h1>
-                    <p>350kr</p>
+                    <p>{services.reduce((total, service) => total + service.price, 0)}kr</p>
                 </div>
                 <div className="conf-button-container">
                     <button className="conf-button-back">Go Back</button>
-                    <button onClick={notification} className="conf-button-confirm">Confirm Booking</button>
+                    <button onClick={handleClick} className="conf-button-confirm">Confirm Booking</button>
                 </div>
             </div>
         </div>

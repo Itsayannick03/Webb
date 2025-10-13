@@ -106,7 +106,7 @@ async function createBooking(req, res) {
         const date = new Date(dateString);
         if (isNaN(date.getTime()))
             return res.status(400).json({ error: "Invalid date format" });
-        const exist = Booking.find({ userID: UserID, services: services, date: date });
+        const exist = await Booking.findOne({ userID: UserID, services: services, date: date });
         if (exist)
             return res.status(400).json({ error: "Booking already exists" })
 
@@ -125,5 +125,6 @@ async function createBooking(req, res) {
         res.status(500).json({ error: err.message })
     }
 }
+
 
 module.exports = { selectService, createBooking, getBookings, selectDate, getDate };
