@@ -1,4 +1,4 @@
-import { Homepage } from "../homepage/homepage";
+import { Homepage } from "../Homepage/homepage";
 import React from "react";
 
 
