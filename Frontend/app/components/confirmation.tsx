@@ -11,6 +11,7 @@ export function Confirmation() {
     const [services, setServices] = useState<any[]>([]);
     const [date, setDate] = useState<Date>();
     const [price, setPrice] = useState<number>(0);
+    const [bookings, setBookings] = useState([]);
     async function parse() {
 
     }
@@ -174,6 +175,7 @@ export function Confirmation() {
     }
     useEffect(() => {
         fetchServices();
+        fetchBookings();
         fetchDate();
     }, []);
     useEffect(() => {
@@ -212,6 +214,41 @@ export function Confirmation() {
 
         } catch (err) {
             toast.error("Could not fetch services");
+        }
+    }
+
+    async function fetchBookings() {
+        try {
+            const res = await fetch("http://localhost:5000/bookings", {
+                method: 'GET',
+                credentials: 'include'
+            });
+            const data = await res.json();
+            if (res.ok) {
+                setBookings(data);
+            }
+        } catch (error) {
+            toast.error("Failed to fetch bookings");
+        }
+    }
+
+    async function deleteBooking(bookingId: string) {
+        try {
+
+            const res = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
+                method: 'DELETE',
+                credentials: 'include',
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                toast.success("Booking deleted");
+
+            } else {
+                toast.error(data.error);
+            }
+        } catch (error) {
+            toast.error("Failed to delete")
         }
     }
 

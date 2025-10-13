@@ -38,7 +38,7 @@ async function getBookings(req, res) {
         bookings.forEach(booking => {
             dates.push(booking.date);
         });
-        
+
         return res.status(200).json(dates);
     }
     catch (err) {
@@ -125,6 +125,32 @@ async function createBooking(req, res) {
         res.status(500).json({ error: err.message })
     }
 }
+async function deleteBooking(req, res) {
+    try {
+        const bookingId = req.params.id;
 
+        if (!bookingId) {
+            return res.status(400).json({ error: "Booking ID is required" });
+        }
 
-module.exports = { selectService, createBooking, getBookings, selectDate, getDate };
+        const UserID = req.cookies.user;
+        if (!UserID) {
+            return res.status(401).json({ error: "User not authenticated " })
+        }
+
+        const deletedBooking = await Booking.findOneAndDelete({
+            _id: bookingId,
+            userID: UserID
+        });
+
+        if (!deletedBooking) {
+            return res.status(404).json({ error: "Booking not found" });
+        }
+
+        return res.status(200).json({ message: "Booking deleted successfully" })
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+}
+
+module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking };
