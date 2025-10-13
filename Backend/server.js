@@ -32,7 +32,7 @@ const loginLimit = rateLimit({
   max: 5,
   message: {
     error:
-      "Whoa there, speedster! Give it a moment — when the bar’s gone, you can try again.",
+      "Whoa there, speedster! Give it a moment, when the bar’s gone, you can try again.",
   },
   standardHeaders: true,
   legacyHeaders: false,
