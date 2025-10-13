@@ -13,8 +13,9 @@ export function Booking() {
   useEffect(() => {
     check();
   }, []);
+
   async function check() {
-    const session = Cookies.get("User");
+    const session = Cookies.get("user");
 
     if (!session) {
       Swal.fire({
@@ -26,7 +27,6 @@ export function Booking() {
 
         allowOutsideClick: false,
       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           Swal.fire("Saved!", "", "success");
           window.location.href = "/";
