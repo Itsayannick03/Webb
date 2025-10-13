@@ -56,11 +56,7 @@ export function Header() {
         </div>
 
         <div className="text">
-          {isLoggedIn ? (
-            <a href="/booking">Booking</a>
-          ) : (
-            <a href="/login">Booking</a>
-          )}
+          <a href="/booking">Booking</a>
         </div>
         <div>
           <a href="">Contact</a>

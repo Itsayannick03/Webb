@@ -4,8 +4,37 @@ import { useNavigate } from "react-router-dom";
 import { PiScissorsThin } from "react-icons/pi";
 import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
+import Cookies from "js-cookie";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export function Booking() {
+  useEffect(() => {
+    check();
+  }, []);
+  async function check() {
+    const session = Cookies.get("User");
+
+    if (!session) {
+      Swal.fire({
+        title: "Oops?",
+        text: "You need to be logged in to be here!",
+        icon: "warning",
+
+        confirmButtonText: "Ok!",
+
+        allowOutsideClick: false,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire("Saved!", "", "success");
+          window.location.href = "/";
+        }
+      });
+    }
+  }
+
   async function push() {
     let services: Number[] = [];
 
