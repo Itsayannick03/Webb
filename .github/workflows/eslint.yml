@@ -10,6 +10,7 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     strategy:
+    fail-fast: false
       matrix:
         folder: [Backend, Frontend]
 
