@@ -114,7 +114,7 @@ jobs:
         env:
 
 
-          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+          SARIF_ESLINT_IGNORE_SUPPRESSED: "false"
 
 
         run: npx eslint 
