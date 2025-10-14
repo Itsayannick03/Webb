@@ -5,9 +5,9 @@ import { PiScissorsThin } from "react-icons/pi";
 import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
 import Cookies from "js-cookie";
-import { toast } from "react-toastify";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
+import React from "react"
 
 export function Booking() {
   useEffect(() => {
@@ -36,7 +36,7 @@ export function Booking() {
   }
 
   async function push() {
-    let services: Number[] = [];
+    const services: number[] = [];
 
     //Lägg till en fetch för att få ID nummret av databas service objekten som jag har lagt till.
     //Funktionen nedanför ska sedan lägga till ID nummren i service arrayn.

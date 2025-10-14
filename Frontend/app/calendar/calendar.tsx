@@ -49,23 +49,21 @@ export function Calendar() {
     }
   }
   // fetching
-  async function getAllTimeSlots() {
+
+  /*async function getAllTimeSlots() {
     const res = await fetch("http://localhost:5000/bookings", {
       credentials: "include",
     });
 
     const bookedTimes: string[] = await res.json(); // <-- parse the JSON body
     return bookedTimes;
-  }
+  }*/
 
   // return true if weekend
   const isWeekend = (d: Date) => {
     const n = d.getDay(); // 0 = Sun, 6 = Sat
     return n === 0 || n === 6;
   };
-
-  const bookedTimes = getAllTimeSlots();
-
   //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend
   const createTimeSlots = (d: Date, bookedTimes: string[] = []): string[] => {
     if (isWeekend(d)) return []; // no slots on Sat/Sun
