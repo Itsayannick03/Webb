@@ -12,6 +12,7 @@ export function Confirmation() {
     const [date, setDate] = useState<Date>();
     const [price, setPrice] = useState<number>(0);
     const [bookings, setBookings] = useState([]);
+    const [email, setEmail] = useState('');
     async function parse() {
 
     }
@@ -31,9 +32,16 @@ export function Confirmation() {
 
             const userData = await userRes.json();
             const userName = userData.firstName || "Customer";
+            const sendToEmail = email || userData.email;
+
+            if (!sendToEmail) {
+                toast.error("Please enter an email address");
+                return;
+            }
 
             var templateParams = {
-                email: 'waal22el@student.ju.se',
+                to_email: sendToEmail,
+                email: sendToEmail,
                 name: userName,
                 notes: 'Thank You For Booking With Us!',
                 booking_date: date ? new Date(date).toLocaleString() : 'Unknown date',
@@ -42,7 +50,7 @@ export function Confirmation() {
             };
 
             const response = await emailjs.send(
-                'service_5lu0xj8',
+                'service_n7fu37g',
                 'template_dog8kkc',
                 templateParams,
                 {
@@ -67,7 +75,7 @@ export function Confirmation() {
                 console.error('Form reference is null');
                 return;
             }
-            emailjs.sendForm('service_5lu0xj8', 'template_dog8kkc', form.current, {
+            emailjs.sendForm('service_n7fu37g', 'template_dog8kkc', form.current, {
                 publicKey: 'pbjfnm0OSx7-UFRZ0',
             })
                 .then((response) => {
@@ -259,6 +267,18 @@ export function Confirmation() {
                     <h1>Booking Confirmation</h1>
                     <p>Please review your booking details before confirming.</p>
                 </div>
+
+                <div className="email-container">
+                    <h2>Send Confirmation To</h2>
+                    <input
+                        type="email"
+                        placeholder="Enter email address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="email-input"
+                    />
+                </div>
+
                 <div className="conf-data-container">
                     <div className="services-container">
                         <h1>Services</h1>
