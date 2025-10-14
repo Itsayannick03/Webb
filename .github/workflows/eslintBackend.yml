@@ -117,7 +117,7 @@ jobs:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
 
 
-        run: npx eslint .
+        run: npx eslint 
         working-directory: ./Backend
 
 
