@@ -121,7 +121,7 @@ jobs:
         working-directory: ./Frontend/app
 
 
-        continue-on-error: true
+        continue-on-error: false
 
 
 
