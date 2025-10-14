@@ -5,6 +5,7 @@ import { CgInfinity } from "react-icons/cg";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import React from "react"
 
 export function Profile()
 {   
@@ -43,9 +44,9 @@ export function Profile()
             setPhoneNumber(data.phoneNumber);
        
         }
-        catch(err)
+        catch
         {
-            toast.error("Error 500")
+            toast.error("Error 500");
         }
     }
 
@@ -77,7 +78,6 @@ export function Profile()
                   { onClose: () => { window.location.reload()},
                   autoClose: 500, 
             });
-        const updated = await res.json();
     
         
     };
@@ -86,7 +86,7 @@ export function Profile()
     {
         try
         {
-            const response = await fetch("http://localhost:5000/users/logout", {
+            await fetch("http://localhost:5000/users/logout", {
                 method: "POST",
                 credentials: "include"
             });
@@ -95,7 +95,7 @@ export function Profile()
                   autoClose: 1000, 
             });
         }
-        catch(err)
+        catch
         {
             toast.error("server error");
         }

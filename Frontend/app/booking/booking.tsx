@@ -1,50 +1,35 @@
-import '../booking/booking.css';
+import "../booking/booking.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PiScissorsThin } from "react-icons/pi";
 import { PiPaintBrushHouseholdThin } from "react-icons/pi";
 import { PiHairDryerThin } from "react-icons/pi";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
+import React from "react"
 
 export function Booking() {
+  useEffect(() => {
+    check();
+  }, []);
 
+  async function check() {
+    const session = Cookies.get("user");
 
+    if (!session) {
+      Swal.fire({
+        title: "Oops?",
+        text: "You need to be logged in to be here!",
+        icon: "warning",
 
+        confirmButtonText: "Ok!",
 
-    async function push() {
-        let services: Number[] = [];
-
-        //Lägg till en fetch för att få ID nummret av databas service objekten som jag har lagt till.
-        //Funktionen nedanför ska sedan lägga till ID nummren i service arrayn.
-        //Använd /service/<namn>
-        //Namnen är Color, Styling och Cut
-        //Se det här som en friendly remeinder och glöm inte bort att du är AWSOME, you got this GIRL!
-        if (haircut) {
-            const cutResponse = await fetch("http://localhost:5000/services/Cut", {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                credentials: 'include'
-            });
-            const cutData = await cutResponse.json()
-
-            const cutID = cutData._id;
-            services.push(cutID);
-
-        }
-        if (color) {
-            const colorResponse = await fetch("http://localhost:5000/services/Color", {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                credentials: 'include'
-            })
-
-            const colorData = await colorResponse.json()
-
-            const stylingID = colorData._id;
-            services.push(stylingID)
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Saved!", "", "success");
+          window.location.href = "/";
         }
         if (styling) {
             const stylingResponse = await fetch("http://localhost:5000/services/Styling", {
@@ -74,7 +59,25 @@ export function Booking() {
         } else {
             alert(data.error || 'Failed to create booking');
         }
+      );
+
+      const colorData = await colorResponse.json();
+
+      const stylingID = colorData._id;
+      services.push(stylingID);
     }
+    if (styling) {
+      const stylingResponse = await fetch(
+        "http://localhost:5000/services/Styling",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
+      const stylingData = await stylingResponse.json();
 
     const [haircut, setHaircut] = useState(false);
     const [color, setColor] = useState(false);          //useState tracks if the services are selected
