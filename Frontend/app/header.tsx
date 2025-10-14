@@ -2,9 +2,8 @@ import "./styles/header.css";
 import { FaCircleUser } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { CiLogin } from "react-icons/ci";
-import { FaRegCircleUser } from "react-icons/fa6";
+import React from "react";
 
 export function Header() {
   const [firstName, setFirstName] = useState("");

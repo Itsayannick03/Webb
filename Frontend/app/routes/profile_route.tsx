@@ -1,4 +1,5 @@
 import {Profile} from '../profile/profile'
+import React from "react"
 
 export function meta() {
   return [

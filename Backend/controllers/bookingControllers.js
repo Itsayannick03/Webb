@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt");
 const Booking = require("../models/Booking.js");
 const Service = require("../models/Service.js");
 
@@ -6,9 +5,9 @@ async function selectService(req, res) {
     try {
         const services = req.body.services;
 
-        if (!Array.isArray(services) || services.length == 0)
-            return res.status(400).json({ error: "Services must be a non empty array" });
-        for (i = 0; i < services.length; i++) {
+        if(!Array.isArray(services) || services.length == 0)
+            return res.status(400).json({error: "Services must be a non empty array"});
+        for(let i = 0; i < services.length; i++) {
             const exists = await Service.findById(services[i])
             if (!exists) {
                 return res.status(401).json({ error: "Service not found" });
