@@ -2,17 +2,16 @@ const Booking = require("../models/Booking.js");
 const Service = require("../models/Service.js");
 
 async function selectService(req, res) {
-    try 
-    {
+    try {
         const services = req.body.services;
 
         if(!Array.isArray(services) || services.length == 0)
             return res.status(400).json({error: "Services must be a non empty array"});
         for(let i = 0; i < services.length; i++) {
             const exists = await Service.findById(services[i])
-            if(!exists) {
-                return res.status(401).json({error: "Service not found"});
-            }   
+            if (!exists) {
+                return res.status(401).json({ error: "Service not found" });
+            }
         }
 
         res.cookie("services", JSON.stringify(services), {
@@ -22,49 +21,43 @@ async function selectService(req, res) {
             maxAge: 1000 * 60 * 60
         });
 
-        res.status(201).json({error: "Created new service"});
+        res.status(201).json({ error: "Created new service" });
 
-    } 
-    catch (err) 
-    {
-        res.status(500).json({error: err.message});
+    }
+    catch (err) {
+        res.status(500).json({ error: err.message });
     }
 }
 
-async function getBookings(req, res)
-{
-    try 
-    {
+async function getBookings(req, res) {
+    try {
         const bookings = await Booking.find({});
         const dates = [];
 
         bookings.forEach(booking => {
             dates.push(booking.date);
         });
-        
+
         return res.status(200).json(dates);
-    } 
-    catch (err) 
-    {
-        return res.status(500).json({error: err.message});
+    }
+    catch (err) {
+        return res.status(500).json({ error: err.message });
     }
 }
 
-async function selectDate(req, res)
-{
-    try 
-    {
+async function selectDate(req, res) {
+    try {
         const dateString = req.body.date;
-        if(!dateString)
-            return res.status(400).json({error: "Missing date"});
+        if (!dateString)
+            return res.status(400).json({ error: "Missing date" });
 
         const date = new Date(dateString);
-        if(isNaN(date.getTime()))
-            return res.status(400).json({error: "Invalid date format"});
+        if (isNaN(date.getTime()))
+            return res.status(400).json({ error: "Invalid date format" });
 
-        const exists = await Booking.findOne({date: date});
-        if(exists)
-            return res.status(400).json({error: "Date already booked"});
+        const exists = await Booking.findOne({ date: date });
+        if (exists)
+            return res.status(400).json({ error: "Date already booked" });
 
         res.cookie("bookingDate", date.toISOString(), {
             httpOnly: true,
@@ -73,53 +66,90 @@ async function selectDate(req, res)
             maxAge: 1000 * 60 * 60
         });
 
-        return res.status(201).json({message: "Date cookie created"});
-    } 
-    catch (err) 
-    {
-        return res.status(500).json({error: err.message});
+        return res.status(201).json({ message: "Date cookie created" });
+    }
+    catch (err) {
+        return res.status(500).json({ error: err.message });
     }
 }
 
-async function createBooking(req, res)
-{
-    try 
-    {
+async function getDate(req, res) {
+    try {
+        const cookie = req.cookies.bookingDate;
+        if (!cookie) {
+            return res.status(404).json({ error: "no date found" });
+        }
+        const date = cookie;
+        res.status(200).json({ date: date });
+
+    } catch (err) {
+        return res.status(500).json({ error: err.message });
+    }
+}
+
+async function createBooking(req, res) {
+    try {
         const services = req.cookies.services ? JSON.parse(req.cookies.services) : [];
-        if(!Array.isArray(services) || services.length == 0)
-            return res.status(400).json({error: "Services must be a non empty array"});
+        if (!Array.isArray(services) || services.length == 0)
+            return res.status(400).json({ error: "Services must be a non empty array" });
 
         const UserID = req.cookies.user;
-        if(!UserID)
-            return res.status(404).json({error: "User not found"});
+        if (!UserID)
+            return res.status(404).json({ error: "User not found" });
 
         const dateString = req.cookies.bookingDate;
-        if (!dateString) 
+        if (!dateString)
             return res.status(400).json({ error: "Missing date" });
 
 
         const date = new Date(dateString);
-        if (isNaN(date.getTime())) 
+        if (isNaN(date.getTime()))
             return res.status(400).json({ error: "Invalid date format" });
-        const exist = Booking.find({userID: UserID, services: services, date: date});
-        if(exist)
-            return res.status(400).json({error: "Booking already exists"})
+        const exist = await Booking.findOne({ userID: UserID, services: services, date: date });
+        if (exist)
+            return res.status(400).json({ error: "Booking already exists" })
 
         const newBooking = new Booking({
             userID: UserID,
             services: services,
             date: date
         });
-        
+
         await newBooking.save();
 
-        return res.status(201).json({message: "Booking created"});
+        return res.status(201).json({ message: "Booking created" });
 
-    } 
-    catch (err) 
-    {
-        res.status(500).json({error: err.message})
+    }
+    catch (err) {
+        res.status(500).json({ error: err.message })
+    }
+}
+async function deleteBooking(req, res) {
+    try {
+        const bookingId = req.params.id;
+
+        if (!bookingId) {
+            return res.status(400).json({ error: "Booking ID is required" });
+        }
+
+        const UserID = req.cookies.user;
+        if (!UserID) {
+            return res.status(401).json({ error: "User not authenticated " })
+        }
+
+        const deletedBooking = await Booking.findOneAndDelete({
+            _id: bookingId,
+            userID: UserID
+        });
+
+        if (!deletedBooking) {
+            return res.status(404).json({ error: "Booking not found" });
+        }
+
+        return res.status(200).json({ message: "Booking deleted successfully" })
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
     }
 }
 
-module.exports = {selectService, createBooking, getBookings, selectDate};
+module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking };

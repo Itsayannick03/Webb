@@ -56,9 +56,6 @@ export function Registration() {
       })
     })
   }
-
-
-
   //Function that handles the entire process when the button is pressed
 
   return (
