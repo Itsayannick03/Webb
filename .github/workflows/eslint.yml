@@ -27,5 +27,10 @@ jobs:
         working-directory: ./${{ matrix.folder }}
 
       - name: Run ESLint
-        run: npx eslint /app
+        run: |
+          if [ "${{ matrix.folder }}" = "Frontend" ]; then
+            npx eslint ./app
+          else
+            npx eslint .
+          fi
         working-directory: ./${{ matrix.folder }}
