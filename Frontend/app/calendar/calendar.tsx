@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export function Calendar() {
   //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt
-  //const [date, setdate] = useState<Date[]>();
+  //const [date, setdate] = useState<Date[]>();n,
 
   const [date, setdate] = useState<{ date: string; time: string } | null>(null);
 
