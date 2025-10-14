@@ -18,6 +18,7 @@ const {
   createBooking,
   getBookings,
   selectDate,
+  listAllBookings,
 } = require("./controllers/bookingControllers.js");
 const {
   createService,
@@ -74,6 +75,7 @@ app.post("/bookings/select-services", selectService);
 app.post("/bookings/select-date", selectDate);
 app.post("/bookings", createBooking);
 app.get("/bookings", getBookings);
+app.get("/bookings/all", listAllBookings);
 
 app.post("/services", createService);
 

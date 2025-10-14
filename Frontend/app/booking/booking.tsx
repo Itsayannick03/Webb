@@ -37,7 +37,7 @@ export function Booking() {
 
   async function push() {
     let services: Number[] = [];
-
+    //
     //Lägg till en fetch för att få ID nummret av databas service objekten som jag har lagt till.
     //Funktionen nedanför ska sedan lägga till ID nummren i service arrayn.
     //Använd /service/<namn>
