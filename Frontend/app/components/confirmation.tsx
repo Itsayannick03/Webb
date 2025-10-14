@@ -2,6 +2,7 @@
 import "../styles/confirmation.css"
 import React, { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 
 
@@ -13,6 +14,7 @@ export function Confirmation() {
     const [price, setPrice] = useState<number>(0);
     const [bookings, setBookings] = useState([]);
     const [email, setEmail] = useState('');
+    const navigate = useNavigate();
     async function parse() {
 
     }
@@ -142,7 +144,9 @@ export function Confirmation() {
                 toast.error(data.error || "Failed to create booking");
                 return false;
             }
-            toast.success("Booking confirmed!");
+            toast.success("Booking confirmed!", {
+                onClose: () => { window.location.href = "/"}
+            });
             return true;
 
         } catch (error) {
@@ -157,8 +161,6 @@ export function Confirmation() {
             await notification();
         }
     }
-
-
 
     async function fetchServices() {
         try {
@@ -260,6 +262,11 @@ export function Confirmation() {
         }
     }
 
+    function goAway()
+    {
+        window.location.href = "/calendar";
+    }
+
     return (
         <div className="confirmation-main">
             <div className="conf-main-container">
@@ -296,7 +303,7 @@ export function Confirmation() {
                     <p>{services.reduce((total, service) => total + service.price, 0)}kr</p>
                 </div>
                 <div className="conf-button-container">
-                    <button className="conf-button-back">Go Back</button>
+                    <button onClick={goAway} className="conf-button-back">Go Back</button>
                     <button onClick={handleClick} className="conf-button-confirm">Confirm Booking</button>
                 </div>
             </div>

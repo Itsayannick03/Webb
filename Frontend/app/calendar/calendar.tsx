@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 import "./calendar.css";
 
 export function Calendar() {
@@ -8,6 +9,7 @@ export function Calendar() {
   //const [date, setdate] = useState<Date[]>();
   
 const [date, setdate] = useState<{ date: string; time: string } | null>(null);
+const navigate = useNavigate();
 
 //helper function
 const toYmd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
@@ -34,10 +36,11 @@ let data: { error?: string } = {};
     return; 
   }
 
-if (res.status != 201){
-
+if (res.status === 201){
+  navigate('/confirmation'); 
+} else {
   alert(data.error)
-}   
+}
 
 }
   // fetching

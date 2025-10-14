@@ -70,7 +70,7 @@ export function Booking() {
         const data = await response.json()
 
         if (response.ok) {
-            navigate('/#');                      // navigate to calendar after waiting for api
+            navigate('/calendar');                      // navigate to calendar after waiting for api
         } else {
             alert(data.error || 'Failed to create booking');
         }
@@ -83,6 +83,7 @@ export function Booking() {
 
     const Confirm = haircut || color || styling;        // confirm is true if any of the services are selected
 
+    
     return (
         <div>
             <div className="header">
