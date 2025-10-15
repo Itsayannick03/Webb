@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import { useNavigate } from "react-router-dom";
 import "./calendar.css";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Calendar() {
   //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt
   //const [date, setdate] = useState<Date[]>();
 
   const [date, setdate] = useState<{ date: string; time: string } | null>(null);
+  const navigate = useNavigate();
 
   //helper function
   const toYmd = (d: Date) =>
@@ -45,7 +46,9 @@ export function Calendar() {
       return;
     }
 
-    if (res.status != 201) {
+    if (res.status === 201) {
+      navigate("/confirmation");
+    } else {
       alert(data.error);
     }
   }

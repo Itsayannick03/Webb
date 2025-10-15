@@ -1,23 +1,25 @@
 
 import "../styles/confirmation.css"
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 
 
 
-export function Confirmation() {
-    const [serviceIDs, setServiceIDs] = useState<string[]>([]);
-    const [services, setServices] = useState<any[]>([]);
-    const [date, setDate] = useState<Date>();
-    const [price, setPrice] = useState<number>(0);
-    const [bookings, setBookings] = useState([]);
-    const [email, setEmail] = useState('');
-    const navigate = useNavigate();
-    async function parse() {
 
+export function Confirmation() {
+
+    interface Service {
+        name: string;
+        price: number;
+        duration: number;
     }
+
+    const [serviceIDs, setServiceIDs] = useState<string[]>([]);
+    const [services, setServices] = useState<Service[]>([]);
+    const [date, setDate] = useState<Date>();
+
+    const [email, setEmail] = useState('');
 
     async function notification() {
         try {
@@ -41,7 +43,7 @@ export function Confirmation() {
                 return;
             }
 
-            var templateParams = {
+            const templateParams = {
                 to_email: sendToEmail,
                 email: sendToEmail,
                 name: userName,
@@ -63,32 +65,9 @@ export function Confirmation() {
             console.log('SUCCESS!', response.status, response.text);
             toast.success("Confirmation email sent!");
 
-        } catch (error) {
+        } catch {
             console.log("Error sending email")
         }
-
-        const form = useRef<HTMLFormElement>(null);
-
-
-        const sendEmail = (e: React.FormEvent) => {
-            e.preventDefault();
-
-            if (!form.current) {
-                console.error('Form reference is null');
-                return;
-            }
-            emailjs.sendForm('service_n7fu37g', 'template_dog8kkc', form.current, {
-                publicKey: 'pbjfnm0OSx7-UFRZ0',
-            })
-                .then((response) => {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Confirmation email sent!');
-                })
-                .catch((error) => {
-                    console.error('FAILED...', error);
-                    alert('Failed to send email.');
-                });
-        };
     }
 
     async function fetchDate() {
@@ -145,11 +124,11 @@ export function Confirmation() {
                 return false;
             }
             toast.success("Booking confirmed!", {
-                onClose: () => { window.location.href = "/"}
+                onClose: () => { window.location.href = "/" }
             });
             return true;
 
-        } catch (error) {
+        } catch {
             toast.error("Failed to make booking");
             return false;
         }
@@ -179,7 +158,7 @@ export function Confirmation() {
             setServiceIDs(data.services);
 
         }
-        catch (err) {
+        catch {
             toast.error("internal server error");
         }
     }
@@ -222,7 +201,7 @@ export function Confirmation() {
 
             setServices(servicesData.filter(service => service !== null));
 
-        } catch (err) {
+        } catch {
             toast.error("Could not fetch services");
         }
     }
@@ -233,37 +212,15 @@ export function Confirmation() {
                 method: 'GET',
                 credentials: 'include'
             });
-            const data = await res.json();
-            if (res.ok) {
-                setBookings(data);
-            }
-        } catch (error) {
+            await res.json();
+        } catch {
             toast.error("Failed to fetch bookings");
         }
     }
 
-    async function deleteBooking(bookingId: string) {
-        try {
 
-            const res = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
-                method: 'DELETE',
-                credentials: 'include',
-            });
-            const data = await res.json();
 
-            if (res.ok) {
-                toast.success("Booking deleted");
-
-            } else {
-                toast.error(data.error);
-            }
-        } catch (error) {
-            toast.error("Failed to delete")
-        }
-    }
-
-    function goAway()
-    {
+    function goAway() {
         window.location.href = "/calendar";
     }
 
