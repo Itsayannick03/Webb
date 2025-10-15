@@ -1,4 +1,4 @@
-import '../login/style.css';
+import '../styles/style.css';
 import { FaKey } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
