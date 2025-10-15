@@ -33,7 +33,6 @@ async function getBookings(req, res) {
     try {
         const bookings = await Booking.find({});
         const dates = [];
-
         bookings.forEach(booking => {
             dates.push(booking.date);
         });
