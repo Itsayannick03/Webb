@@ -175,7 +175,7 @@ export function Profile() {
                 </div>
 
                 <div className='bookings-container'>
-                    <p>My Bookings</p>
+                    <p><b>My Bookings</b></p>
                     {loading ? (
                         <p>Loading bookings...</p>
                     ) : bookings.length === 0 ? (
@@ -185,10 +185,10 @@ export function Profile() {
                             {bookings.map((booking) => (
                                 <div key={booking._id} className="booking-card">
                                     <div className="booking-info">
-                                        <h3>Booking Date:</h3>
+                                        <h3><i>Booking Date:</i></h3>
                                         <p>{new Date(booking.date).toLocaleString()}</p>
 
-                                        <h3>Services:</h3>
+                                        <h3><i>Services:</i></h3>
                                         {booking.services && booking.services.length > 0 ? (
                                             <ul>
                                                 {booking.services.map((service, index) => (
@@ -200,21 +200,16 @@ export function Profile() {
                                         ) : (
                                             <p>No services information available</p>
                                         )}
-
-                                        <h3>Total Price: {booking.totalPrice}kr</h3>
                                     </div>
                                     <button
                                         onClick={() => deleteBooking(booking._id)}
-                                        className="delete-booking-btn"
-                                    >
-                                        Delete Booking
+                                        className="delete-booking-btn"><b>Delete Booking</b>
                                     </button>
                                 </div>
                             ))}
                         </div>
                     )}
                 </div>
-
                 <div className='profile-personalInfo'>
                     <p>Personal Information</p>
                     <div className='profile-name-section'>
