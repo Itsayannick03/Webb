@@ -9,7 +9,7 @@ export function Calendar() {
   //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt
   //const [date, setdate] = useState<Date[]>();
 
-  const [date, setdate] = useState<{ date: string; time: string } | null>(null);
+  const [date, setdate] = useState<{ date: Date } | null>(null);
   const [bookedByTimes, setbookedbyTimes]= useState<string[]>([]);
 
   //helper function
@@ -223,7 +223,12 @@ export function Calendar() {
                   <button
                     key={t}
                     className="slot"
-                    onClick={() => setdate({ date: d.toISOString(), time: t })}
+                    onClick={() => {
+                      let _date = new Date(d)
+                      _date.setHours(Number.parseInt(t.split(":")[0]))
+                      _date.setMinutes(Number.parseInt(t.split(":")[1]))
+                      setdate({ date: _date })
+                    }}
                   >
                     <div className="slot__time">{t}</div>
                   </button>

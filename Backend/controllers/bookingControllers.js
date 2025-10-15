@@ -53,7 +53,6 @@ async function selectDate(req, res) {
         const date = new Date(dateString);
         if (isNaN(date.getTime()))
             return res.status(400).json({ error: "Invalid date format" });
-
         const exists = await Booking.findOne({ date: date });
         if (exists)
             return res.status(400).json({ error: "Date already booked" });
