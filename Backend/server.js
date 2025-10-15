@@ -18,12 +18,15 @@ const {
   getBookings,
   selectDate,
   getUserBookings, 
-  deleteBooking
+  deleteBooking,
+  getDate, 
 } = require("./controllers/bookingControllers.js");
 const {
   createService,
   getServices,
   getServiceByName,
+  getServicesFromCookie,
+  getServiceData, 
   deleteService,
 } = require("./controllers/serviceController.js");
 const cors = require("cors");
@@ -76,9 +79,14 @@ app.post("/bookings/select-date", selectDate);
 app.post("/bookings", createBooking);
 app.get("/bookings", getBookings);
 app.get("/bookings/user", getUserBookings);
+app.get("/bookings/getDate", getDate);
 app.delete("/bookings/delete/:booking", deleteBooking);
 
 app.post("/services", createService);
+
+app.post("/services/data", getServiceData)
+
+app.get("/services/cookie", getServicesFromCookie);
 
 app.get("/services", getServices);
 
