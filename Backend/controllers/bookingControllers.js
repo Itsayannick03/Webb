@@ -45,6 +45,21 @@ async function getBookings(req, res) {
     }
 }
 
+async function getUserBookings(req, res) {
+    try {
+        const UserID = req.cookies.user;
+        if (!UserID) {
+            return res.status(401).json({ error: "User not authenticated" });
+        }
+
+        const bookings = await Booking.find({ userID: UserID }).populate('services');
+        
+        return res.status(200).json(bookings);
+    } catch (err) {
+        return res.status(500).json({ error: err.message });
+    }
+}
+
 async function selectDate(req, res) {
     try {
         const dateString = req.body.date;
@@ -126,7 +141,9 @@ async function createBooking(req, res) {
 }
 async function deleteBooking(req, res) {
     try {
-        const bookingId = req.params.id;
+
+        
+        const bookingId = req.params.booking;
 
         if (!bookingId) {
             return res.status(400).json({ error: "Booking ID is required" });
@@ -137,14 +154,10 @@ async function deleteBooking(req, res) {
             return res.status(401).json({ error: "User not authenticated " })
         }
 
-        const deletedBooking = await Booking.findOneAndDelete({
+        await Booking.findOneAndDelete({
             _id: bookingId,
             userID: UserID
         });
-
-        if (!deletedBooking) {
-            return res.status(404).json({ error: "Booking not found" });
-        }
 
         return res.status(200).json({ message: "Booking deleted successfully" })
     } catch (error) {
@@ -152,4 +165,4 @@ async function deleteBooking(req, res) {
     }
 }
 
-module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking };
+module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking, getUserBookings };

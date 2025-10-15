@@ -17,6 +17,8 @@ const {
   createBooking,
   getBookings,
   selectDate,
+  getUserBookings, 
+  deleteBooking
 } = require("./controllers/bookingControllers.js");
 const {
   createService,
@@ -73,6 +75,8 @@ app.post("/bookings/select-services", selectService);
 app.post("/bookings/select-date", selectDate);
 app.post("/bookings", createBooking);
 app.get("/bookings", getBookings);
+app.get("/bookings/user", getUserBookings);
+app.delete("/bookings/delete/:booking", deleteBooking);
 
 app.post("/services", createService);
 
