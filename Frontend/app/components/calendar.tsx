@@ -14,8 +14,8 @@ export function Calendar() {
   const navigate = useNavigate();
 
   //helper function
-  const toYmd = (d: Date) =>
-    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  /*const toYmd = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;*/
 
   useEffect(() => {
     check();
@@ -227,7 +227,7 @@ export function Calendar() {
                     key={t}
                     className="slot"
                     onClick={() => {
-                      let _date = new Date(d)
+                      const _date = new Date(d)
                       _date.setHours(Number.parseInt(t.split(":")[0]))
                       _date.setMinutes(Number.parseInt(t.split(":")[1]))
                       setdate({ date: _date })
