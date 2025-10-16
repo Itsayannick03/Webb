@@ -1,4 +1,4 @@
-import { Booking } from "../booking/booking";
+import { Booking } from "../components/booking";
 import React from "react";
 
 

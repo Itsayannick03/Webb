@@ -1,4 +1,4 @@
-import "./styles/header.css";
+import "../styles/header.css";
 import { FaCircleUser } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
