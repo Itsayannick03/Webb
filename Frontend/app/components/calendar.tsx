@@ -11,6 +11,7 @@ export function Calendar() {
 
   const [date, setdate] = useState<{ date: Date } | null>(null);
   const [bookedByTimes, setbookedbyTimes]= useState<string[]>([]);
+  const navigate = useNavigate();
 
   //helper function
   const toYmd = (d: Date) =>
