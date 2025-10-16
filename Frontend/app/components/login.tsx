@@ -1,4 +1,4 @@
-import "./Login.css";
+import "../styles/Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-toastify";

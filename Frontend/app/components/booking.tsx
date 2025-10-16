@@ -1,4 +1,4 @@
-import "../booking/booking.css";
+import "../styles/booking.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PiScissorsThin } from "react-icons/pi";
