@@ -1,3 +1,4 @@
+
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -13,7 +14,7 @@ test("renders Login title, inputs, and button", () => {
   render(<Login />);
 
   //  elements expected to see
-  
+ 
   expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
   expect(screen.getByPlaceholderText("Email")).toBeInTheDocument();          // email input
   expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();      // password input
@@ -51,3 +52,5 @@ test("triggers fetch to /users/login after form input", async () => {
     credentials: "include",
   });
 });
+
+
