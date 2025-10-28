@@ -31,6 +31,11 @@ const {
 } = require("./controllers/serviceController.js");
 const cors = require("cors");
 
+const { 
+  getAllBookingsForAdmin,
+}
+=require("./controllers/bookingControllers.js");
+
 const loginLimit = rateLimit({
   windowMs: 10000,
   max: 5,
@@ -93,6 +98,8 @@ app.get("/services", getServices);
 app.get("/services/:name", getServiceByName);
 
 app.delete("/services/:id", deleteService);
+
+app.get("/admin/bookings", getAllBookingsForAdmin);
 
 //Start Server
 const PORT = process.env.PORT || 5000;

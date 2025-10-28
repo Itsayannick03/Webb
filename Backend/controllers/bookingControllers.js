@@ -1,5 +1,6 @@
 const Booking = require("../models/Booking.js");
 const Service = require("../models/Service.js");
+const User = require("../models/Users");
 
 async function selectService(req, res) {
     try {
@@ -163,4 +164,28 @@ async function deleteBooking(req, res) {
     }
 }
 
-module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking, getUserBookings };
+async function getAllBookingsForAdmin(req, res) {
+  try {
+    const userID = req.cookies.user;
+
+    if (!userID) return res.status(401).json({ error: "Not logged in" });
+
+    const user = await User.findById(userID);
+
+    if (!user || !user.isAdmin)
+      return res.status(403).json({ error: "Access denied. Admins only." });
+
+    // Fetch all bookings and populate related data
+    const bookings = await Booking.find()
+      .populate("userID", "firstName lastName email phoneNumber")
+      .populate("services", "name price");
+
+    res.status(200).json(bookings);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
+
+
+module.exports = { selectService, createBooking, getBookings, selectDate, getDate, deleteBooking, getUserBookings, getAllBookingsForAdmin };
