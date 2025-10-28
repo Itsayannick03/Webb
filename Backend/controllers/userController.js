@@ -87,7 +87,9 @@ async function loginUser(req, res) {
       maxAge: 1000 * 60 * 60,
     });
 
-    return res.status(200).json({ error: "Login successful" });
+    return res.status(200).json({ error: "Login successful" ,
+      isAdmin: user.isAdmin
+    });
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }

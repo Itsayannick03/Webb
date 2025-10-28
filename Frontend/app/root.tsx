@@ -9,10 +9,10 @@ import {
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Header } from "~/header"
+import { Header } from "~/components/header"
 import type { Route } from "./+types/root";
 import "./app.css";
-import { Footer } from "./footer";
+import { Footer } from "./components/footer";
 import React from "react";
 
 

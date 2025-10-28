@@ -1,4 +1,4 @@
-import "./Login.css";
+import "../styles/Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -18,7 +18,7 @@ export function Login() {
     });
 
     // read the server body:  error
-    let data: { error?: string } = {};
+    let data: { error?: string; isAdmin?: boolean } = {};
     try {
       data = await response.json();
     } catch {
@@ -33,12 +33,15 @@ export function Login() {
       case "Login successful":
         toast.success("Login successful", {
           onClose: () => {
+             if (data.isAdmin) {
+            window.location.href = "/admin";
+          } else {
             window.location.href = "/";
-          },
-          autoClose: 1000,
-        });
-        //
-        break;
+          }
+        },
+        autoClose: 1000,
+      });
+      break;
 
       case "Missing fields":
         toast.warning("Missing fields");

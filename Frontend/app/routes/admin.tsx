@@ -1,4 +1,4 @@
-import { Homepage } from "../Homepage/homepage";
+import {  Admin } from "../components/admin";
 import React from "react";
 
 
@@ -9,6 +9,6 @@ export function meta() {
   ];
 }
 
-export default function homepage() {
-  return <Homepage />;
+export default function admin() {
+  return <Admin />;
 }

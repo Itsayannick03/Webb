@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import "./calendar.css";
+import "../styles/calendar.css";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Calendar() {
   //const [bookingTimes, setbookingTimes] = useState<Date[]>(); //för att den ska kunna nås globalt
   //const [date, setdate] = useState<Date[]>();
 
-  const [date, setdate] = useState<{ date: string; time: string } | null>(null);
+  const [date, setdate] = useState<{ date: Date } | null>(null);
+  const [bookedByTimes, setbookedbyTimes]= useState<string[]>([]);
+  const navigate = useNavigate();
 
   //helper function
-  const toYmd = (d: Date) =>
-    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  /*const toYmd = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;*/
+
   useEffect(() => {
     check();
+    getAllTimeSlots();
   }, []);
 
   async function check() {
@@ -44,35 +49,48 @@ export function Calendar() {
       return;
     }
 
-    if (res.status != 201) {
+    if (res.status === 201) {
+      navigate("/confirmation");
+    } else {
       alert(data.error);
     }
   }
   // fetching
+
+
+
   async function getAllTimeSlots() {
     const res = await fetch("http://localhost:5000/bookings", {
+      method: "GET",
       credentials: "include",
     });
 
     const bookedTimes: string[] = await res.json(); // <-- parse the JSON body
-    return bookedTimes;
+    setbookedbyTimes(bookedTimes);
   }
+
+
+//fetching 2: 
+
+
 
   // return true if weekend
   const isWeekend = (d: Date) => {
     const n = d.getDay(); // 0 = Sun, 6 = Sat
     return n === 0 || n === 6;
   };
-
-  const bookedTimes = getAllTimeSlots();
-
   //  create slots (09:00–16:00) if Mon–Fri, else nothing weekend
-  const createTimeSlots = (d: Date, bookedTimes: string[] = []): string[] => {
+  const createTimeSlots = (d: Date): string[] => {
     if (isWeekend(d)) return []; // no slots on Sat/Sun
     const times: string[] = [];
     for (let h = 9; h < 17; h++) {
       const label = `${String(h).padStart(2, "0")}:00`;
-      if (bookedTimes?.includes(label)) continue; // <-- skip booked
+      const dateString = d.toISOString()
+      console.log(bookedByTimes)
+      console.log(dateString)
+
+      if (bookedByTimes.includes(dateString)) 
+        continue; // <-- skip booked
       times.push(label);
     }
     return times;
@@ -208,7 +226,12 @@ export function Calendar() {
                   <button
                     key={t}
                     className="slot"
-                    onClick={() => setdate({ date: toYmd(d), time: t })}
+                    onClick={() => {
+                      const _date = new Date(d)
+                      _date.setHours(Number.parseInt(t.split(":")[0]))
+                      _date.setMinutes(Number.parseInt(t.split(":")[1]))
+                      setdate({ date: _date })
+                    }}
                   >
                     <div className="slot__time">{t}</div>
                   </button>

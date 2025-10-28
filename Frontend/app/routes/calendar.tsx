@@ -1,4 +1,4 @@
-import { Calendar } from "../calendar/calendar";
+import { Calendar } from "../components/calendar";
 import React from "react";
 
 

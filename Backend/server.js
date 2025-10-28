@@ -5,7 +5,6 @@ const connectDB = require("./db");
 const express = require("express");
 
 const cookieParser = require("cookie-parser");
-const bcrypt = require("bcrypt");
 const {
   registerUser,
   loginUser,
@@ -18,14 +17,24 @@ const {
   createBooking,
   getBookings,
   selectDate,
+  getUserBookings, 
+  deleteBooking,
+  getDate, 
 } = require("./controllers/bookingControllers.js");
 const {
   createService,
   getServices,
   getServiceByName,
+  getServicesFromCookie,
+  getServiceData, 
   deleteService,
 } = require("./controllers/serviceController.js");
 const cors = require("cors");
+
+const { 
+  getAllBookingsForAdmin,
+}
+=require("./controllers/bookingControllers.js");
 
 const loginLimit = rateLimit({
   windowMs: 10000,
@@ -74,14 +83,23 @@ app.post("/bookings/select-services", selectService);
 app.post("/bookings/select-date", selectDate);
 app.post("/bookings", createBooking);
 app.get("/bookings", getBookings);
+app.get("/bookings/user", getUserBookings);
+app.get("/bookings/getDate", getDate);
+app.delete("/bookings/delete/:booking", deleteBooking);
 
 app.post("/services", createService);
+
+app.post("/services/data", getServiceData)
+
+app.get("/services/cookie", getServicesFromCookie);
 
 app.get("/services", getServices);
 
 app.get("/services/:name", getServiceByName);
 
 app.delete("/services/:id", deleteService);
+
+app.get("/admin/bookings", getAllBookingsForAdmin);
 
 //Start Server
 const PORT = process.env.PORT || 5000;

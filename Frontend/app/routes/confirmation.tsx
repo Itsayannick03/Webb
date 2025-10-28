@@ -1,4 +1,4 @@
-import { Booking } from "../components/booking";
+import { Confirmation } from "../components/confirmation";
 import React from "react";
 
 
@@ -9,6 +9,6 @@ export function meta() {
   ];
 }
 
-export default function booking() {
-  return <Booking />;
+export default function confirmation() {
+  return <Confirmation/>
 }
