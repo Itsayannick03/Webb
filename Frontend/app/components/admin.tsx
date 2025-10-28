@@ -6,13 +6,11 @@ export function Admin() {
  const [bookings, setBookings] = useState<
   {
     _id: string;
-    userID?: { firstName?: string; lastName?: string; email?: string };
+    userID: { firstName: string; lastName: string; email: string };
     date: string;
-    services?: { name: string }[];
+    services: { name: string }[];
   }[]
 >([]);
-
-
 
 
   useEffect(() => {
@@ -33,8 +31,6 @@ export function Admin() {
     
     fetchBookings();
   }, []);
-
-
 
 
 return (
@@ -58,11 +54,11 @@ return (
             {bookings.map((b) => (
               <tr key={b._id}>
                 <td>
-                  {b.userID?.firstName} {b.userID?.lastName}
+                  {b.userID.firstName} {b.userID.lastName}
                 </td>
-                <td>{b.userID?.email}</td>
+                <td>{b.userID.email}</td>
                 <td>{new Date(b.date).toLocaleString()}</td>
-                <td>{b.services?.map((s) => s.name).join(", ")}</td>
+                <td>{b.services.map((s) => s.name).join(", ")}</td>
               </tr>
             ))}
           </tbody>
