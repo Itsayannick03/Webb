@@ -35,14 +35,8 @@ We are going to make a webbsite where you will be able to book a haircut. The si
 - **Email**: EmailJS
 
 #  How To Compile And Run
-  # Frontend
-  Run the commands:
-  - cmd
-  - npm run dev
-
-  # Backend
-  Run the command:  
-  - node server.js
+  - Requires Python version 3 or higher.
+  - Run python startup.py
 
  # Admin account
  - email: admin123@gmail.com
