@@ -6,7 +6,7 @@ import platform
 base_dir = os.getcwd()
 system = platform.system()
 if platform.system() == "Windows":
-    frontend = subprocess.Popen('cmd /c start cmd /k "cd Webb && npm run dev"', shell=True)
+    frontend = subprocess.Popen('cmd /c start cmd /k "cd Frontend && npm run dev"', shell=True)
     backend = subprocess.Popen('cmd /c start cmd /k "cd Backend && node server.js"', shell=True)
 elif system in ("Linux", "Darwin"):
     frontend = subprocess.Popen(["npm", "run", "dev"], cwd="Frontend")
