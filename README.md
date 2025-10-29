@@ -44,3 +44,7 @@ We are going to make a webbsite where you will be able to book a haircut. The si
   Run the command:  
   - node server.js
 
+ # Admin account
+ email: admin123@gmail.com
+ password: 123
+
