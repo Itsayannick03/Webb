@@ -30,7 +30,7 @@ test("triggers fetch to /users/login after form input", async () => {
     ok: true,
     status: 200,
     json: vi.fn().mockResolvedValue({ error: "Missing fields" }),
-  } as any);
+  } as unknown as Response);
 
   // 1) Render component
   render(<Login />);
