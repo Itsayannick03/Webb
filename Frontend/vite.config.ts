@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     tsconfigPaths(), 
-    // 👇 Stäng av React Router-plugin när tester körs annars får felet i testerna 
+    //  Turns off react router when tests are running. 
     ...(isTest ? [] : [reactRouter()]),
   ],
   test: {
