@@ -1,0 +1,1909 @@
+commit 3ee5a76d3f483a996363407144f7480996f82cc8
+Merge: f460e6c c98aba7
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Tue Oct 28 15:43:43 2025 +0100
+
+    Merge pull request #80 from Itsayannick03/adminFadde
+    
+    Admin fadde
+
+commit c98aba7a61f35442a4a2186180d9571d415649a4
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Tue Oct 28 15:39:08 2025 +0100
+
+    commit
+
+commit 2833b928dcd301189b68cc3623c52a062d7ce67f
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Oct 27 20:07:07 2025 +0100
+
+    frontend for admin and route
+
+commit d8df7b24463334e00bf02ceab677266f08953f64
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 26 21:56:34 2025 +0100
+
+    changed the res function
+
+commit 52c7fe433f5ad91f8f9974295d5e80ee0e49aa55
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 26 21:36:18 2025 +0100
+
+    Added fetch for the admin and the backend since it didnt exits
+
+commit 35afb901a9af7c0514fb3a49b55aadb005e552b1
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 26 16:33:49 2025 +0100
+
+    added som backend for admin
+
+commit f460e6cc92c784ef70cc5352feca1cc517202a27
+Merge: e49e032 9ad988f
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:48:44 2025 +0200
+
+    Merge pull request #76 from Itsayannick03/times
+    
+    Times
+
+commit 9ad988fcf34a700df8bf11e76bf62472b85d1cce
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:48:10 2025 +0200
+
+    times fixed
+
+commit 6e116af4d9b6fac1c4b1a02ec4b048bee97c0ae8
+Merge: 54c494f e49e032
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:42:58 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into times
+
+commit 54c494f9108ed95b32268e71461d52b3479aa862
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:42:26 2025 +0200
+
+    fixed times
+
+commit a608e810ad644420175687f26f35fcd34738122b
+Merge: c3b92c7 2dff67f
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:40:12 2025 +0200
+
+    hello
+
+commit e49e032ce608843d297ebfc4836f4a5f32d8ee68
+Merge: a65ff6c c3b92c7
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:38:16 2025 +0200
+
+    Merge pull request #75 from Itsayannick03/files
+    
+    Files
+
+commit c3b92c70adc76cc2872b49459e4b309afe368873
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 16 08:35:39 2025 +0200
+
+    fixed folders
+
+commit 6de10ea647daa259c5d4f7a6657b6bbde51bd1eb
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 15 20:43:32 2025 +0200
+
+    fixed folders
+
+commit a65ff6c42a5dc62abcb30dc9be8ae080f66523f8
+Merge: be12b86 614ded8
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 15 20:24:59 2025 +0200
+
+    Merge pull request #73 from Itsayannick03/felix
+    
+    Felix
+
+commit 614ded833e940abad8f7382e82f872230baebc98
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 15 20:22:05 2025 +0200
+
+    confirmation finished
+
+commit 2dff67f4f1dc211bec64db0270c4a9041598ae77
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 15 18:08:44 2025 +0200
+
+    fixed time
+
+commit d1ebaa6970bc4e2a651a6d7af9d2728b3e689066
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 15 17:37:06 2025 +0200
+
+    sTest
+
+commit 8ebea087f3a6bab7d6f2db3242c3b1ee7dfe8b5c
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 15 17:36:36 2025 +0200
+
+    felix
+
+commit a50e91bb39d944df27c03172e00ea12f06b0366c
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 15 16:09:02 2025 +0200
+
+    fixed delete booking
+
+commit be12b86f60f05c73190c09aab6b16b290982cd2b
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 15 13:01:42 2025 +0200
+
+    added homepage.css
+
+commit 3a00cba2f8b304fd314baab2eeff1c4afd377a3d
+Merge: d91f2a3 43b4919
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Oct 15 11:58:23 2025 +0200
+
+    Merge pull request #71 from Itsayannick03/home
+    
+    Home
+
+commit 43b491901cb81f0184f20b0211d7bb9a989a1a55
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 15 11:45:17 2025 +0200
+
+    Changed book now path
+
+commit 4a38e21ca926245661b4655f9c152c15f1d44821
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 15 11:27:32 2025 +0200
+
+    Moved homepage to root
+
+commit d91f2a36062fb994f49b6de600ca9a70374fdf53
+Merge: 33ba3b2 bda2316
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 20:13:18 2025 +0200
+
+    Merge pull request #70 from Itsayannick03/bookingConfirmation
+    
+    Booking confirmation
+
+commit bda2316988b19c4527fcfa47b98e500a375952f0
+Merge: 9f06be3 33ba3b2
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 20:06:47 2025 +0200
+
+    Merge branch 'main' into bookingConfirmation
+
+commit 9f06be3c557d6559fd559e969ab93a8dbb19efd8
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 17:07:27 2025 +0200
+
+    fixed everything
+
+commit 33ba3b2b3870749dbb87be30ce39a183a6839750
+Merge: 49c5948 4a29624
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 16:01:27 2025 +0200
+
+    Merge pull request #68 from Itsayannick03/fixLint
+    
+    fixed frontend
+
+commit 4a296243f28229b2548ab1de84b692a96cb28235
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:59:37 2025 +0200
+
+    fixed frontend
+
+commit 49c59482fcf5fa684e6b46ed5e08d4d4440b0e95
+Merge: 20dd7fb c19a9e4
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 15:56:02 2025 +0200
+
+    Merge pull request #67 from Itsayannick03/fix
+    
+    fixed
+
+commit 20dd7fbc51b823739e5785cc8dec890e6b56350f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:52:25 2025 +0200
+
+    Update eslint.yml
+
+commit f939aedeed2c1bf84b87be0ea200346a8d85d366
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:50:47 2025 +0200
+
+    Update eslint.yml
+
+commit cefe9cd1fa21d34efccd801b77968da80a42a6e6
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:41:40 2025 +0200
+
+    Update eslint.yml
+
+commit 56fd9667273f384deda075286fb1d2dbb0de665f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:38:50 2025 +0200
+
+    Update eslint.yml
+
+commit 2b1df9ea8854ebc93423b91aff5f4fe47e6b08c7
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:36:17 2025 +0200
+
+    Update eslint.yml
+
+commit ccddb47fce5a559a9bcc25b2c24e01aa682e76b9
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 15:29:29 2025 +0200
+
+    Update eslint.yml
+
+commit df787ea02656eeb14400be4b477937d3cd8719de
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 15:11:34 2025 +0200
+
+    Update eslint.yml
+
+commit 6b53c2751d282b047b11db726a9f9019bcc25073
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 15:10:00 2025 +0200
+
+    Update eslintBackend.yml
+
+commit c19a9e443d41bc62ba3f0e94347c91404f47df5b
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 15:04:55 2025 +0200
+
+    fixed
+
+commit a3ba3e004657d14c19be811bed3db74e2e475652
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Oct 14 14:55:13 2025 +0200
+
+    notification fixed
+
+commit 44ee7aaaa04c891fe1679e8b08bab344817d541a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 14:48:44 2025 +0200
+
+    Update eslintBackend.yml
+
+commit 08f451fce808855f49fd46b17433ff9019df663d
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 14:47:39 2025 +0200
+
+    Update eslint.yml
+
+commit ed584d1315c188b774a4825e91a208844a51108a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 14 14:43:14 2025 +0200
+
+    Update eslint.yml
+
+commit 6f59af9fd3a7c0aabe8233618c953902f4466049
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 13 21:05:44 2025 +0200
+
+    attempted delete
+
+commit 0b9028f7da2826e1666f4d35c37a9c4635fc1a6b
+Merge: d957ce3 bb13dd6
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 20:12:53 2025 +0200
+
+    Merge pull request #63 from Itsayannick03/passwordCheck
+    
+    Password check
+
+commit bb13dd6d86a929496f21d4d2d42aaedd9a23f88f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 20:12:05 2025 +0200
+
+    Fixes
+
+commit 53f5fd15ee440955c7992c3cfb0398fdf739749b
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 20:09:58 2025 +0200
+
+    Added password limit
+
+commit f30a41810a72a9980bb052cb65b5348c3ef64fe6
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 13 19:41:18 2025 +0200
+
+    confirmation fixed
+
+commit d957ce31c8b35268c45ce21a66ce9a2df3e5dbe8
+Merge: 9da7549 d9ddb92
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 19:26:23 2025 +0200
+
+    Merge pull request #62 from Itsayannick03/sessionCheck
+    
+    Session check
+
+commit d9ddb9265821ce7d285e9fc6eef40251342413d0
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 19:20:18 2025 +0200
+
+    Added login check and redirect
+
+commit 33004cf9735454cb2188a62a5d54436e3547e384
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 17:13:16 2025 +0200
+
+    Added sweet alert if user is not logged in when trying to access booking
+
+commit bad0b7b86dfba9bc9ea6b601c0989594fc100af1
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 15:50:53 2025 +0200
+
+    Added right path to booking button
+
+commit 53edbd0d8942c73348d0bc9a16736f8a346ed165
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 15:43:29 2025 +0200
+
+    Added redirect to login
+
+commit f3412049f75bb9c83236417ef0cd0fafc6e61f32
+Merge: 58af45e 9da7549
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 13 11:26:20 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into bookingConfirmation
+
+commit 58af45e7048da886111c6b3d6c66e41963e62efc
+Merge: 0336ae0 1295bc1
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 13 11:26:12 2025 +0200
+
+    merge fixed
+
+commit 9da7549d9c32ba3c9304f2ac618c6ad97a010322
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 11:23:54 2025 +0200
+
+    Fixed reference fault in homepage
+
+commit 1295bc1b3590fb8d08eff49cf195751e87ae45db
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Oct 13 00:32:59 2025 +0200
+
+    Fixed css import thing
+
+commit 0336ae065c4772940d194862cf7a024abbb79337
+Merge: 2c461a2 282610d
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sun Oct 12 21:05:26 2025 +0200
+
+    confirmation date
+
+commit ba0894deefacb6b3690f80c838e8e144575e1373
+Merge: 282610d 39440b4
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 12 20:18:25 2025 +0200
+
+    Merge pull request #55 from Itsayannick03/Homepage
+    
+    Homepage
+
+commit 39440b42187261460151a8c57b067672fd07b5a4
+Merge: cedfa1b 282610d
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 12 20:14:55 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into Homepage
+
+commit 2c461a24ea6c591a48f66c0593c938c9d442d1f3
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sun Oct 12 19:55:35 2025 +0200
+
+    confirmation
+
+commit 282610d178a0abb9c24b9732458ea7f289aca408
+Merge: f49c7f9 ec58a92
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Oct 12 19:53:56 2025 +0200
+
+    Merge pull request #54 from Itsayannick03/calenderFrontend
+    
+    Calender frontend
+
+commit cedfa1bae057880cbf82b1cc69c39ba2b85df115
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sat Oct 11 17:00:40 2025 +0200
+
+    change the button from going to loginpage to bookingpage
+
+commit 68fcdd5c99ddd446494274a86be92ccf80381a83
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sat Oct 11 16:10:21 2025 +0200
+
+    added styling for the homepage (css)
+
+commit 5a68b84bac420598799286e53bd0ef6eeb5b1f26
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sat Oct 11 14:31:14 2025 +0200
+
+    added the layout of the homepage (jsx)
+
+commit d454aacd0601cc7dbc8988f474f0217b067b2b59
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 10 23:07:28 2025 +0200
+
+    Update README.md
+
+commit e19c19cf23bc53255ba998feb8d9a8cb2f982f6a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 10 23:07:06 2025 +0200
+
+    Update README.md
+
+commit e2fa522435de54c2dc1420c25bacf1be6195e157
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 10 23:03:38 2025 +0200
+
+    Update README.md
+
+commit ec58a923961748300f0075c5f4cfcec50381c5fd
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Oct 10 22:31:57 2025 +0200
+
+    added better css desing for timeslots and confirmation button
+
+commit 03ba0e3f9de4811b23225b07408e229b56c91b2d
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 10 21:46:58 2025 +0200
+
+    Update README.md
+
+commit 9cac54d42bc8efcb2b3b5391defbd7184222bac2
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 10 21:46:27 2025 +0200
+
+    Update README.md
+
+commit 985d85c4c9458d9f9999b6c7a7476ec2970b044a
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Oct 10 21:37:10 2025 +0200
+
+    notification name fixed
+
+commit 5adf906418df8c1fc7f52483fb23244d3827074d
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Oct 10 20:07:59 2025 +0200
+
+    Added homepage route
+
+commit da65d0cc2590b3337a7df130e2489e875d6c4d6a
+Merge: bc396e9 f49c7f9
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Oct 10 19:11:49 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into Homepage
+
+commit 670ce30fa962e8e4c0d9d4d629e31440f6765b50
+Merge: 2bfd978 f49c7f9
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Oct 10 09:48:52 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into bookingConfirmation
+
+commit ff9d442f0629d76bbc2d9cfe065807dd6d094161
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 23:36:08 2025 +0200
+
+    debug select date function
+
+commit 0fd202ff3d068dc1fc2a5aa8fcbf1051c962cc70
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 22:10:35 2025 +0200
+
+    Added confirm function to confirm button
+
+commit 84521b6d1d73b5fd624306b0044c6ad835c5d4ef
+Merge: 484769e f49c7f9
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 21:49:36 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into calenderFrontend
+
+commit 2bfd9786526bfccae576e30cf6ef977f9932725b
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 9 21:40:48 2025 +0200
+
+    notification fixed
+
+commit 76ca804454c3d082a81b5cc5f1b70865ad5466d7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 9 20:27:33 2025 +0200
+
+    I do seriously have no clue, but here you go giiiiiiiirl
+
+commit 25b45ddfafd9e46e8a6636c9ed971b10c29298e5
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 9 11:48:14 2025 +0200
+
+    Added service endpoints for confirmation process
+
+commit f49c7f9865a6d32c156a4d8800390fc2d3af6042
+Merge: b3d45fc 3473921
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 9 11:26:39 2025 +0200
+
+    Merge pull request #52 from Itsayannick03/service
+    
+    services changed
+
+commit b3d45fc2b09eead0ef1ef3832bd1d07a5379006e
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 9 11:21:43 2025 +0200
+
+    Update README.md
+
+commit 6e1d9ba293186eaea0df4fbc3ffc02708b5fa8ac
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 11:09:20 2025 +0200
+
+    Update README.md
+
+commit bc396e9ddc0218be8705babe5f1ed63511292d32
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 10:26:12 2025 +0200
+
+    Added componnent Homepage
+
+commit 484769ea084e36b9b603136745d128dc023ad51c
+Merge: a8faf40 f25cf63
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 9 10:03:11 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into calenderFrontend
+
+commit f25cf639ab0ba38c859ec6e006c286a723572a11
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 9 10:02:11 2025 +0200
+
+    Update README.md
+
+commit a8faf4085f054853a9de521d2bf3af90fe0cd7df
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 8 21:46:31 2025 +0200
+
+    feat(calendar): added confirm function and getAllTimeSlots function
+
+commit 34739217976bcbd12b8f36bf92b405c91e3f5cb5
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Oct 8 19:10:37 2025 +0200
+
+    services changed
+
+commit 24018e91eb72bc60df4d4fcd03e5b08ace61d6fe
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 17:49:39 2025 +0200
+
+    cookie bug
+
+commit 722187101393ba225e7393d1b87835255950d421
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 8 16:36:51 2025 +0200
+
+    added usestate
+
+commit 77ce94107f11b0dc56e0ab63f2e8799dcf686547
+Merge: 9ca26ad a87851c
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 12:25:54 2025 +0200
+
+    Merge branch 'main' of github.com:waal22el/Webb into bookingConfirmation
+
+commit 9ca26adcc76bf2711b268c6ba5db5cb7f321e220
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 12:07:13 2025 +0200
+
+    Added booking confirmation frontend
+
+commit 7ab6d869f5a44ce4f99affb795be1d0c135f8cc4
+Merge: cde1328 a87851c
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 8 10:33:58 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into calenderFrontend
+
+commit cde1328745c5df92d0a3e1dd2630fd6f7bf566ff
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Oct 8 03:24:25 2025 +0200
+
+    feat(calendar): added fetch bookings and filter booked time slots
+
+commit a87851c14b291a4b6b6b667cd00901edf60fb466
+Merge: ad46fb7 1576465
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 01:05:13 2025 +0200
+
+    Merge pull request #48 from Itsayannick03/calendarBackend
+    
+    Calendar backend
+
+commit 1576465fc76713e67b3a009663045711f69ce1eb
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 01:00:54 2025 +0200
+
+    Added check to avoid duplicates
+
+commit 6ac011bffc1c2bee7825bc9ce2b5ac9011df8255
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Oct 8 00:56:40 2025 +0200
+
+    Added create booking endpoint and route
+
+commit a2180378aeac8029f0b90db9a5a5db7d06a01d40
+Merge: b83e460 be7cc64
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Tue Oct 7 23:52:14 2025 +0200
+
+    commit
+
+commit be7cc64fd107fb9587a1a473d80149684b417afc
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 23:41:36 2025 +0200
+
+    added booking get route
+
+commit ad46fb725273c3771d6ec1549415837159308b03
+Merge: 5e7eeac dcb40b2
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:24:37 2025 +0200
+
+    Merge pull request #47 from Itsayannick03/fixService
+    
+    fixed route in booking
+
+commit dcb40b2a6e7314bb2fc585685e45bad5c45b4147
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:23:26 2025 +0200
+
+    fixed route in booking
+
+commit 5e7eeac231666c951e034592863e88f93df14185
+Merge: 19a65a1 aada396
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:18:07 2025 +0200
+
+    Merge pull request #46 from Itsayannick03/service
+    
+    Service
+
+commit aada3963da59e795745aaa3af3ef5d92cf8d55a5
+Merge: eaf1275 19a65a1
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:17:22 2025 +0200
+
+    Merge branch 'main' into service
+
+commit 19a65a1febe093f56f21797ef8356d40f2c90bd1
+Merge: 5e012a3 f2e29d8
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:02:16 2025 +0200
+
+    Merge pull request #45 from Itsayannick03/Itsayannick03-patch-1
+    
+    Create eslintBackend.yml
+
+commit f2e29d85484a5dbc3f70fa8c9649bdccc6b3e501
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:01:40 2025 +0200
+
+    Create eslintBackend.yml
+
+commit 5e012a386a2b4e40dbed91c673bac4dd610ccdd6
+Merge: 096d908 668261f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 22:00:14 2025 +0200
+
+    Merge pull request #44 from Itsayannick03/eslintBackend
+    
+    eslint backend init
+
+commit 668261f125fc248140663519be09bfedecf2f547
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 21:56:14 2025 +0200
+
+    eslint backend init
+
+commit eaf1275d73d3c6df77ae9f68e87b7fbb542828b8
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 21:39:18 2025 +0200
+
+    updated routes in REST style
+
+commit bb34a57d52e9ccca43f306380c9b6f451260b5e2
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 21:15:05 2025 +0200
+
+    Changed service routes
+
+commit 25b94f95a6a6f3fa64f8904c4e52890c7244e795
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Oct 7 20:56:55 2025 +0200
+
+    Fixed booking controller
+
+commit b83e4601643dd33d892a07d26bae9c1cdce60885
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Oct 6 22:32:20 2025 +0200
+
+    added timeslots
+
+commit 3aa2788888a1150f9efd6b6be7a03e9d715dd79f
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 6 21:03:36 2025 +0200
+
+    service backend
+
+commit acae8ee5694ea71553a5761163fab951c3f4a0e9
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Oct 6 20:10:37 2025 +0200
+
+    services fixed
+
+commit 206192c5764b4a5c882589273a1f15f9af414adb
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Oct 6 15:12:48 2025 +0200
+
+    idk
+
+commit 0af0441ec81b173acfd45164d3490deb798a8f74
+Merge: e4967c9 096d908
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Oct 6 10:36:01 2025 +0200
+
+    commit
+
+commit 19dc6301f6d6f2996145ae2f81054962c829dde6
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Oct 6 09:43:09 2025 +0200
+
+    init
+
+commit 31ce07d6ad1a367094307203bfd83d9174ffc9a1
+Merge: 45ae9bf 77f631d
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 22:46:47 2025 +0200
+
+    Merge pull request #38 from Itsayannick03/serviceDB
+    
+    Service db
+
+commit 77f631d77b7aa9bf5403a48f11d0fcff17685116
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 22:45:36 2025 +0200
+
+    Created service controller and shit
+
+commit d87d98cd31dfbd80bfb05d5218b9e8f64f3e446a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 21:59:01 2025 +0200
+
+    Added service things
+
+commit 35a4042e2a1f12b735812cb7aa66309f84f1d1b1
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 21:55:30 2025 +0200
+
+    Added service things
+
+commit 45ae9bfe6b4f3511d22ecafb7e28e7835736af00
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sun Oct 5 21:02:10 2025 +0200
+
+    services backend kinda
+
+commit 47fa8acf27e40aa9a62328d329bb55f26c8752ea
+Merge: a4714b2 096d908
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sun Oct 5 20:12:39 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into service
+
+commit 096d90869485d6adb38a46689ea3c52fdb3c81a0
+Merge: d08de69 a074cf4
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 19:51:17 2025 +0200
+
+    Merge pull request #37 from Itsayannick03/bookingApi
+    
+    Booking api
+
+commit a074cf4e2dafd13e12fb85c35e3bcb1afcc1f75e
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 19:32:25 2025 +0200
+
+    Created booking endpoint in api
+
+commit 5f57b0d103109bdcef0a57831091a1fb9c593183
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 18:32:46 2025 +0200
+
+    Created createService api endpoint
+
+commit d08de69173ab3ff326a4506d7505879924e475fa
+Merge: 87c2ffc 494151f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 17:22:07 2025 +0200
+
+    Merge pull request #36 from Itsayannick03/profile
+    
+    Profile
+
+commit 494151fecf46ca70bfe248c84d03a11fc5f71889
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 17:21:10 2025 +0200
+
+    Email in use check
+
+commit 0d5ae30c44a650024f0e635972f5030de45beb17
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 17:10:12 2025 +0200
+
+    Finnished password section
+
+commit 6c5fd0abcd4ad161dbae3dad8329c3d9a5dccde2
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Oct 5 16:53:08 2025 +0200
+
+    pause
+
+commit e4967c9a5a1d1ef4d485a019c604ba63a242f116
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sat Oct 4 23:35:01 2025 +0200
+
+    feat(calendar): added dynamic week/year and prev/next navigation and weekend styling
+
+commit 412ce640db495f506e0fd3582a7ec6bdb869ac6c
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sat Oct 4 23:00:54 2025 +0200
+
+    before skibidi
+
+commit a4714b2ac8685a68bd5871b2d3ee19c46bf716fc
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Oct 4 21:00:06 2025 +0200
+
+    service site utdated
+
+commit 9358f243a8896bb105447c377b0329933a7b430a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sat Oct 4 19:15:52 2025 +0200
+
+    tweaked logout button color
+
+commit e178912ba6a5a530c2c23b6b8e3a5700dcec7654
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sat Oct 4 19:12:43 2025 +0200
+
+    Finnished personal info part
+
+commit ecfa8cc734b70a41c400ae81b4fb16961081d3f2
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sat Oct 4 17:36:37 2025 +0200
+
+    feat(profile): Added logic to display user name and email in profile header
+
+commit 33c3a310aed5d9bd27bb8a3f410ff8eed0ce10cb
+Merge: 2814496 87c2ffc
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Oct 3 20:33:13 2025 +0200
+
+    service site
+
+commit 805dd61425188b0752403a2d85f67831aafd486a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 3 15:38:20 2025 +0200
+
+    Loggout button
+
+commit 172417061f3a0594e9fd8b257b84e3efdc68fa60
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 3 15:24:32 2025 +0200
+
+    Added post request to server.js
+
+commit 2814496917d52774b67c774842afa787f004c41e
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Oct 3 15:13:35 2025 +0200
+
+    service site fixed
+
+commit 163d86ef13392c86df6fbe8e2cada5f02d06b400
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Oct 3 14:19:22 2025 +0200
+
+    feat(api): added logout endpoint to api
+
+commit 61c8a419ce68416596b69b2c7daa64d9a667739b
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 2 23:43:32 2025 +0200
+
+    feat(calendar): initial TSX structure + navigation with react - icons – CSS to follow
+
+commit 055851594696f6c056df4ffec3a2e65e5eb9d26c
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Oct 2 16:29:52 2025 +0200
+
+    added calender folder and files
+
+commit 9c019b35620832dade02cb41927b7b30516f40b4
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 16:21:33 2025 +0200
+
+    Finished logout container
+
+commit 28d18c97bda262414b6f5deeb48b254694617a33
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 15:08:08 2025 +0200
+
+    Finished Password container
+
+commit 5444b15ba6c07ec0e5bdda68bf8ae9b7a6087ef9
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 14:46:54 2025 +0200
+
+    Finished Personal info part
+
+commit 45588863f344d5358fc4ab99c6276663790ccc6b
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 13:37:27 2025 +0200
+
+    Made getUser function return all user data
+
+commit 95edeeac8db8714d3900161584bff04bcc7b4ba6
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 12:33:46 2025 +0200
+
+    Added toast message to password mismatch
+
+commit ab272393619fcc5d56f8e6a4220fe9ca5095d2bc
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 12:22:33 2025 +0200
+
+    Made profile button link to profile page
+
+commit 87c2ffc55a599c65eb3e5ac763c32dfef7144b4b
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Oct 2 12:16:58 2025 +0200
+
+    fixed package-lock
+
+commit 42120216a2548583c05be22812dd8fbb3f356545
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 01:47:00 2025 +0200
+
+    Begginings of profile page
+
+commit 2fe3843d92db33deddec76423809f3692277d247
+Merge: 1dc21c9 6e075d7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Oct 2 00:00:33 2025 +0200
+
+    Merge branch 'main' of github.com:waal22el/Webb into profile
+
+commit 6e075d727afed82af752ba09d10c46abf10e53ab
+Merge: 49e5d7a b512bfa
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 23:59:37 2025 +0200
+
+    Merge pull request #35 from Itsayannick03/mainPage
+    
+    Main page
+
+commit b512bfa5b03b6b4b0b10057d9b9d28d59698818b
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 23:58:38 2025 +0200
+
+    Finished front page placeholder
+
+commit 9f04c57a05f1d1cdebdb77385bb597b45493361e
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:40:30 2025 +0200
+
+    fixed placeholder frontpage
+
+commit 1dc21c92e24685b722fc81cd615638c6a3614fc9
+Merge: 99174b8 49e5d7a
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:27:48 2025 +0200
+
+    fixed everything
+
+commit 49e5d7ac923acb29bfc36e2211dddc822afe476e
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:24:09 2025 +0200
+
+    removed login 2
+
+commit 3899cbfa205def83d1b66122e5b4441e5ccd7367
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:23:36 2025 +0200
+
+    configured time on succesfull login
+
+commit 99174b8614658ea73e38a3a0f507327105c80636
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:08:34 2025 +0200
+
+    idk
+
+commit d6140a030f0117d1d21c059b5e097dc49ce01c69
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 13:03:02 2025 +0200
+
+    fixed shit
+
+commit 932d36da6b543e652f6d2cff12e293a65aba49db
+Merge: a2dc727 647838f
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 12:08:37 2025 +0200
+
+    Merge branch 'test'
+
+commit 647838f7cfc3c022ad94dab935fbaa86a2dc0b59
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Oct 1 12:08:25 2025 +0200
+
+    fixed the login redreict thing
+
+commit 93986a1bc56ff6506c723d95fe477d5430279117
+Merge: 1e5a1c6 a2dc727
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 16:25:00 2025 +0200
+
+    Merge branch 'main' of github.com:waal22el/Webb into profile
+
+commit a2dc72770527b978b88784a6e9f753fca9040549
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:26:12 2025 +0200
+
+    Update eslint.yml
+
+commit fb4c59983725885bcafad0631ce2c1fbc237f14b
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:24:47 2025 +0200
+
+    Update eslint.yml
+
+commit 3c5cf53280da958733c45728307848cdf7f1d8f0
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:19:40 2025 +0200
+
+    Update eslint.yml
+
+commit f1f0e07b511815120a5175761f03d7de21575401
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:16:35 2025 +0200
+
+    Update eslint.yml
+
+commit 22e0a9277940a6a57b6e068a9133f2527257c41b
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:10:33 2025 +0200
+
+    Update eslint.yml
+
+commit 4e1d61d02368d87fe4f9d6bf8ababdf61c8ebcee
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:06:07 2025 +0200
+
+    Update eslint.yml
+
+commit ed999989857b4375f5456b0381b5d109be4d78bd
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 12:03:45 2025 +0200
+
+    Update eslint.yml
+
+commit 9308c3c2c72f92786974964dbd562676a0d91ffe
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 11:59:21 2025 +0200
+
+    Update eslint.yml
+
+commit 0a268d975d8b554a838df88370d9a889c552a0d4
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 11:56:40 2025 +0200
+
+    Update eslint.yml
+
+commit f3c8f0c9fa9d6adac484517195ab0a523407fc6c
+Merge: 4ad9a6c 07216ba
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 11:51:39 2025 +0200
+
+    Merge pull request #34 from Itsayannick03/viteCI
+    
+    chore: add ESLint flat config with React settings
+
+commit 4ad9a6ccead616387e8bf999fbf05bd9958187cd
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 11:50:33 2025 +0200
+
+    Create eslint.yml
+
+commit 07216ba3248399d26ff0fb22cf034e1396a90527
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 30 11:46:48 2025 +0200
+
+    chore: add ESLint flat config with React settings
+
+commit 1e5a1c65c019b8246c97d1cd577b7e83b19caba4
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 19:48:43 2025 +0200
+
+    feat(login): styling
+
+commit 83470dad163faadc8f3e2fa5dcea9a793844cb6a
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 14:51:11 2025 +0200
+
+    feat(Header): made profile show Login when user is not logged in and username when user is logged in
+
+commit 86c0524ccd07084ac726a05b9470f893c54df04e
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 10:31:56 2025 +0200
+
+    fix(login): fixed cookie creation upon login
+
+commit 905cb35ac237479ad10054e0e97e6d74da84b464
+Merge: ddd6c7b ae97316
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 10:25:09 2025 +0200
+
+    Merge branch 'main' of github.com:waal22el/Webb into profile
+
+commit ae97316459b0f0497b909b4946795d089a7f30a1
+Merge: 4fc0030 5eefa7c
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 10:23:38 2025 +0200
+
+    Merge pull request #33 from Itsayannick03/navigate
+    
+    Navigate
+
+commit 5eefa7cc7f97ea2dd11c194a4ce07a25082038ec
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 10:22:57 2025 +0200
+
+    feat(registration & login): Made page navigate to / and refrech after sucessfull login/registration
+
+commit 4f08c511447db4a15718d69565b89930ea013313
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 10:14:35 2025 +0200
+
+    Feat(login): Navigate to root after sucessfull login
+
+commit ddd6c7bc642a6e66976f459c9541927f7f7fbe0f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 29 00:22:55 2025 +0200
+
+    Added basic profile bar with name to header
+
+commit 4fc003030362f5322704aaad1a4246a55f464eff
+Merge: d96e2ae a5f6ce4
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:35:50 2025 +0200
+
+    Merge pull request #31 from Itsayannick03/LoginController
+    
+    Login controller
+
+commit a5f6ce46602f647edb3f8136aa9598574267f4cd
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:34:58 2025 +0200
+
+    feat: update loginController and add toast icons for responses
+
+commit ef6a68c1ffd572521692cfb18307ffeb1644e721
+Merge: 3103cc7 9ac258f
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:33:26 2025 +0200
+
+    Merge branch 'LoginController' of github.com:Itsayannick03/Webb into LoginController
+
+commit 3103cc7551d8c08e26ffc017a1ab22a96fdcfeba
+Merge: 5da3482 d96e2ae
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:05:53 2025 +0200
+
+    Merge branch 'main' of github.com:Itsayannick03/Webb into LoginController
+
+commit d96e2aed31d2abfa816394a763665ac6b5687ce7
+Merge: 0fb369f 468e060
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:02:25 2025 +0200
+
+    Merge pull request #30 from Itsayannick03/customerController
+    
+    Customer controller
+
+commit 468e0606aaa98ce94987f10e5669cd3e6f89eebb
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 19:01:43 2025 +0200
+
+    Added toast  icons
+
+commit 8202b3f3db90a9b05ecfc8edaa9767606ce951e5
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 18:31:59 2025 +0200
+
+    minor changes
+
+commit 8005154e6e5759c2bfc19147e93bf56c7c8750f9
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 18:22:06 2025 +0200
+
+    fix: make registration form inputs controlled and send all fields
+
+commit aa2555446a88e78c3e8da12f674afc04b54a25e1
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 28 17:14:45 2025 +0200
+
+    Fixed cookie creation
+
+commit 9ac258f5a52475013d214031fa2b05213ad6e149
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Sep 27 17:02:50 2025 +0200
+
+    login
+
+commit 06bd0263fcc1b599e33a99828dd974e590048581
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Sep 27 16:58:27 2025 +0200
+
+    registration fix
+
+commit 5da348203b1641fa263aaf6b4b5115bdc4d13a4c
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Sep 26 23:17:21 2025 +0200
+
+    add Login submit button wired to attemptLogin
+
+commit 0e21264bf7b76312e2a2d654121ef11be77c626c
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Sep 26 22:01:16 2025 +0200
+
+    registration
+
+commit ba88f6b8ae365d3fbbf2a16682cf3783a3b38a56
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Sep 26 17:55:27 2025 +0200
+
+    feat(login): switch login handling to server error text (data.error)
+
+commit fac3a26a95a9914238baf415d845b7b181b310a0
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Sep 26 16:43:21 2025 +0200
+
+    registration
+
+commit f81e3212f13b2634b8ffb2b90075c3e576b466a3
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Sep 26 00:05:08 2025 +0200
+
+    feat: useState for login
+
+commit b24f12bcdac163f4f26c0080ad139a77f9863c2a
+Merge: 8aa2275 0fb369f
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Thu Sep 25 10:22:47 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit 5ed76fcae16454278eb8b65c3e24e83ba385dcf7
+Merge: ea79d30 0fb369f
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 25 09:39:34 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into customerController
+
+commit 0fb369f5813d526195870c287661e0de9f5c9aaa
+Merge: d286eec 2c6c8af
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:28:40 2025 +0200
+
+    Merge pull request #29 from Itsayannick03/controllers
+    
+    Controllers
+
+commit 2c6c8afd0ca73e350fb55db18c52fdc1774ea392
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:27:21 2025 +0200
+
+    refactor(server): remove list users endpoint
+
+commit 4a918c0cecae6d9f4b0b8a1fa66efcc3e1bad2ad
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:25:32 2025 +0200
+
+    refactor(auth): move register and login logic into controller
+
+commit d286eece297bee48cbeb07922e6f3c90d264a927
+Merge: 775c4b0 3978202
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:07:35 2025 +0200
+
+    Merge pull request #28 from Itsayannick03/endpoints
+    
+    Endpoints
+
+commit 39782025f1ca79574d059bac8fa158edd10c8c42
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:06:20 2025 +0200
+
+    fix(auth) changed satus(200) to status(201)
+
+commit 18addaa2d521c211c6caee0de9017cf6ea638180
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Thu Sep 25 02:05:02 2025 +0200
+
+    feat(auth): rewrite registration endpoint with validation, bcrypt hashing, and secure cookie
+
+commit ea79d30abc6ae9e54145ed9d13d36e5e67b408e2
+Merge: 5d822c6 775c4b0
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Sep 24 20:47:46 2025 +0200
+
+    merge colfict solved
+
+commit a65c6ed4b66964979c09e551e58c51db6a2b3c0f
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Sep 24 15:55:48 2025 +0200
+
+    Modified login endpoint
+
+commit 8aa2275bb59da7a5e3c6d01995a4dd892b94e002
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 22 22:30:08 2025 +0200
+
+    feat(login) started with inlog function
+
+commit 367caf5fddbc2c417ae31709100e5fbe4a0afb93
+Merge: 514e35d 775c4b0
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 22 21:54:59 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit 775c4b0d1eaf7ad6f7443f3e10d689b8749ebf80
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 21:54:50 2025 +0200
+
+    Fixed more syntax misstakes
+
+commit 514e35d4761ec36cb91bb086840f4d10e5618ed0
+Merge: 51ed6aa 8841db0
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 22 21:50:01 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit 8841db06d0fbc30d6bd2d048666df22e88ab71aa
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 21:49:46 2025 +0200
+
+    fixed spelling misstake in server api
+
+commit 51ed6aa660797b037111f743e424fe6d78b0a20f
+Merge: b11bf2e e98c04c
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 22 21:48:08 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit e98c04c3e1ec326a3b073667ea2d269bf6017b53
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 21:47:37 2025 +0200
+
+    Added passwordcheck and email check endpoint to server
+
+commit 5d822c62275b3252e31fd9814fa2729c6d82c07f
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 22 21:24:17 2025 +0200
+
+    registration backend
+
+commit b11bf2ee169323855c3916576f0edbf20990a5cf
+Merge: 9750e37 4ac4a35
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 22 21:00:15 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit 0ff871d3f7773e81df01c07d45877a81541d09bc
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 17:52:58 2025 +0200
+
+    Added function to check with api if email still is in use
+
+commit 314c95447a7244d5f35ccccf6959e6d3169b9562
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 17:26:34 2025 +0200
+
+    Added check if email exists endpoint
+
+commit 7edf9f91c5556c91d35f3507b6b8e1f0c0a328de
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 22 16:49:50 2025 +0200
+
+    registration kinda backend
+
+commit 05ae7f3594ae02d01128ccb8b8635d787c1b7b87
+Merge: 05caea9 4ac4a35
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 22 16:13:09 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into customerController
+
+commit 05caea94e8d09f63c25d268a3e61910e600754d1
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 12:21:09 2025 +0200
+
+    Wrote comment in registration code
+
+commit 4ac4a3549377cc68dc2110d114ddad3ca5000c2a
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 22 12:13:24 2025 +0200
+
+    Changed login and header/footer background color
+
+commit 9750e378b6d5c010615709e8aeff27eea2da9930
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Sep 21 02:21:58 2025 +0200
+
+    feat(controller) : added login function
+
+commit a0ea1c6fde1e5b713a781d8025302dd85c95ba26
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Sep 20 21:28:14 2025 +0200
+
+    customercontroller
+
+commit dc21e32f6e9ec0288633448ed6ab430798ae4a6d
+Merge: 74b72ba 14f5cbf
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sat Sep 20 21:20:14 2025 +0200
+
+    Merge branch 'customerController' of https://github.com/Itsayannick03/Webb into LoginController
+
+commit 4b34c8d69de88c80b068e0321bf154698dba1428
+Merge: b93be58 62e5a3d
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sat Sep 20 21:04:07 2025 +0200
+
+    Merge pull request #23 from Itsayannick03/headerEffects
+    
+    Header effects
+
+commit 14f5cbf32af3e48b3aee32aa8857482e69b36dc7
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Sep 20 20:15:37 2025 +0200
+
+    customerController
+
+commit 364f76b44f5eee6e2c57a7320bd75929eeb7be8c
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Sep 19 15:02:48 2025 +0200
+
+    booking site fixed
+
+commit 26087613fe3bf8d501405406d2db0542b6c7f79d
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Sep 19 10:37:06 2025 +0200
+
+    booking site fixed
+
+commit b188c461997eb77405800e6d2660ad9c96316cbf
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 18 21:57:56 2025 +0200
+
+    booking site
+
+commit ca560238679803a6d70390699ec4c9390d28d3d4
+Merge: 044b3cd b93be58
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 18 19:54:59 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into service
+
+commit 044b3cd88295b08442b78fad509032531d40cddf
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 18 19:49:52 2025 +0200
+
+    registration fixed
+
+commit 62e5a3d1b8ae1ca33cad27e45aea4a1cc999df41
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Sep 18 10:58:08 2025 +0200
+
+    changed header/footer color
+
+commit f2a230479898c2f59091381d0c943e2c96e09de4
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Sep 18 10:00:25 2025 +0200
+
+    Changed background color in header and footer
+
+commit 91ddf85f0bb58d18fbefe3e4b52bf7f3dd16cc59
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Sep 18 09:51:00 2025 +0200
+
+    Made fotoer border lighter
+
+commit 3601c5db651dd52eeac965e06127a58eb029d8a5
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Sep 18 09:39:29 2025 +0200
+
+    Added smoother transition to text transform
+
+commit a996455ac03f24c090ac883a726f7c332fa93049
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Thu Sep 18 09:17:39 2025 +0200
+
+    Added hover size transform effect to hamburger button and text
+
+commit 74b72bab990d62dfcef178d9473827c447b8a15e
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Sep 17 15:43:30 2025 +0200
+
+    New folder service
+
+commit 5d84e8598747e99c98d699e0b3e57d61025e09bf
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Wed Sep 17 14:12:17 2025 +0200
+
+    cleaned up
+
+commit b93be584b0f81fbd490af47bd395f631d95384f8
+Merge: bd1ebe4 f2ea5f1
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Sep 17 13:53:18 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb
+
+commit 65ef0d5e61c9c238e9f8d603c46456936aff9302
+Merge: 8e873df f2ea5f1
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Sep 16 18:07:24 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into registration
+
+commit 8e873df3f441500e85bf7d84c85ba6c17d858788
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Tue Sep 16 18:06:46 2025 +0200
+
+    border registration
+
+commit f2ea5f1a632953e04301c75f065e0662f6c733ec
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 16 12:16:57 2025 +0200
+
+    Added fading background, hover shadow to button and underline to link
+
+commit d460126337701683eef78b83faf5c2686e0758aa
+Merge: f6fd627 6fdbf7a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Tue Sep 16 12:05:02 2025 +0200
+
+    Merge pull request #22 from Itsayannick03/loginPageFrontend
+    
+    Login page frontend
+
+commit f6fd627b1915e78b02666aca034e047c5b213fd0
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 16 11:30:51 2025 +0200
+
+    Added dropshadow hover effect to addres link
+
+commit 573249be6e6aca624428c1b843510410a1193637
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 16 11:24:52 2025 +0200
+
+    Made addres in footer a link to address on maps
+
+commit d0f180f4fa0849a9bbb10d0ceb0fa6408505a705
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 16 11:17:29 2025 +0200
+
+    Added hover shadow to header text
+
+commit 6fdbf7a40febc8115426d939bbd25681ff2e7562
+Merge: 2435186 417fa74
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Tue Sep 16 11:09:04 2025 +0200
+
+    Merge branch 'main' into loginPageFrontend
+
+commit 24351863b158ee2fc657ac82c0d6e78207114911
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 15 23:47:20 2025 +0200
+
+    feat(login) : card + centrering + styling+link to registration page
+
+commit 417fa74e12bd6b554cf1645674bfaca6227131e5
+Merge: a55db3f a6595e8
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 20:43:59 2025 +0200
+
+    Merge pull request #21 from Itsayannick03/registration
+    
+    Registration
+
+commit a6595e8c5b968471f014ce9e67c22e7185bc071a
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 15 20:40:40 2025 +0200
+
+    icons
+
+commit a55db3f1fb5c21c8708442ba753230d692962531
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 18:24:42 2025 +0200
+
+    Changed header/footer color to cold beer
+
+commit bd1ebe40fc838a83b563bbcd0f54003aa3507c2a
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 15 17:22:01 2025 +0200
+
+    current stage
+
+commit 8c181286161147caf3d4b1cab092cc3e785b41b3
+Merge: cebc387 aa1cdf5
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 17:08:41 2025 +0200
+
+    Merge branch 'main' of github.com:Itsayannick03/Webb into registration
+
+commit aa1cdf5cab6a8895949be73e40fed05ffcc761b1
+Merge: b3fd82a 7b787b8
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 14:44:19 2025 +0200
+
+    Merge pull request #20 from Itsayannick03/header
+    
+    Header
+
+commit 7b787b8a7c4626f821bd8f356f1d4710411aab00
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 14:35:43 2025 +0200
+
+    Added About us button
+
+commit 5c584be11ac06d754ca079e34f900640d92a4194
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 14:13:53 2025 +0200
+
+    Changed primary color to beige
+
+commit b3fd82a4613390bf2fe0fdfa4b02008663109ab7
+Merge: 0316f43 5685514
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 12:39:06 2025 +0200
+
+    Merge pull request #18 from Itsayannick03/footer
+    
+    Fixed footer to the bottom of the page
+
+commit 5685514cb61c676b0a5cfad5eca4164a33b9e179
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 12:37:09 2025 +0200
+
+    Fixed footer to the bottom of the page
+
+commit 0316f433ce6cb5d43fb1802e1056d87ccab20f8a
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 11:53:14 2025 +0200
+
+    Changed text color to black
+
+commit c46fd48ea1469a02c6019e5a8dad4af635668ad8
+Merge: 1845035 606c66e
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 11:29:19 2025 +0200
+
+    Merge pull request #17 from Itsayannick03/fixPaths
+    
+    Fixed paths to local paths
+
+commit cebc3872eefa4900b0438d32750190cbc909bc15
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 15 11:23:42 2025 +0200
+
+    fixed stuff
+
+commit 606c66ea42c85641947e3fcfb0bc567c36f40957
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Sep 15 11:22:07 2025 +0200
+
+    Fixed paths to local paths
+
+commit 05e33747cb67f7649af089eaa9826f35fb15aee3
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 15 11:16:28 2025 +0200
+
+    feat(login) Added css styling and react-icon
+
+commit 322fc9d79d19e34929b1265282e334bd8f520db9
+Merge: 11349e8 1845035
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Mon Sep 15 10:27:34 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into registration
+
+commit ff94bb725ccab8759e943bc0d52e483153a2961b
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 15 02:01:48 2025 +0200
+
+    chore: regenerate lockfile
+
+commit 646d61bc30785fbf81c9b4b0fc9f82120da69f92
+Merge: 544849e 1845035
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 15 01:11:51 2025 +0200
+
+    Merge branch 'main' of https://github.com/Itsayannick03/Webb into loginPageFrontend
+
+commit 1845035fe879c8e3f3ca02bd4fe8fc5cca1ce1c3
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 22:22:11 2025 +0200
+
+    Update test.yml
+
+commit 78f3f305a906b710075f01083ca97d719e374508
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 22:20:27 2025 +0200
+
+    Add CI tests with github actions
+
+commit 434acdac01ffe4b565fe6b22f7de796b49a03213
+Merge: f66ceff 1a28e77
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 21:54:41 2025 +0200
+
+    Merge pull request #16 from Itsayannick03/footer
+    
+    Footer
+
+commit 1a28e77be9074b07357a0658cab065e0cf5568b4
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 21:53:50 2025 +0200
+
+    Centered logos besides text
+
+commit 81b9e3530100f32dffbd9e07ee6fae2074474776
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 21:07:18 2025 +0200
+
+    modified styling of footer
+
+commit f547d0b269fc5b50238f1074a03a6823754d7944
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 20:51:07 2025 +0200
+
+    Added dropshadow to header and added basic footer
+
+commit f66ceff5946d1c6d81e1d35bc2ef6b8ee80b069a
+Merge: d556bd9 715190c
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 18:19:16 2025 +0200
+
+    Merge pull request #15 from Itsayannick03/header
+    
+    Header
+
+commit 715190c50ce0bac347b6e721ce02085e9d34e792
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 18:17:25 2025 +0200
+
+    Linked Home button and Logn button to their respective sites
+
+commit fdb7a6b0df37ca8b576ca10c07d2e710204ec2cd
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 17:52:06 2025 +0200
+
+    Fixed styling
+
+commit 755441123adeb0b80d21186feb74c838d094e390
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 17:35:14 2025 +0200
+
+    Centered text, added menu bar and changed background color
+
+commit a5d753d3163ad86e04ccaea0759944b3240c6399
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Sun Sep 14 17:14:34 2025 +0200
+
+    Create simple page Header
+
+commit 11349e87ea2d400e56ab8254177222d8cdd98f82
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sun Sep 14 12:19:42 2025 +0200
+
+    style.css
+
+commit 544849e9c8fad30c5b2ad1f96bdd522bb7c3b708
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Sun Sep 14 00:27:05 2025 +0200
+
+    feat(login): add basic React login page
+
+commit c72374addf54e13d201cc6986979028eaf9cc935
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Sat Sep 13 20:12:31 2025 +0200
+
+    Registration page
+
+commit d556bd9632e368982eb0d679243009d5f19d75bf
+Merge: fcef5eb 3d77e1a
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Sep 12 13:54:05 2025 +0200
+
+    Merge pull request #11 from Itsayannick03/setup
+    
+    Setup login and registration pages and routes
+
+commit 3d77e1a3010d621166d3d56fe74cde0a40293ac7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Fri Sep 12 13:51:55 2025 +0200
+
+    Setup login and registration pages and routes
+
+commit fcef5ebe6a4e5dca80772bbf684925622d3f8f36
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Wed Sep 10 20:27:06 2025 +0200
+
+    Added user schema models to server backend
+
+commit ff59b430b5b30ae539d515e14e5fc2ea034f0139
+Author: Itsyannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Sep 10 19:45:39 2025 +0200
+
+    add backend project structure and db connectionn
+
+commit 6fcc8850c502d6b2adf2b832478e9c2f9bedcfe7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Sep 10 17:21:56 2025 +0200
+
+    Added the database skelaton
+
+commit 019d818e0a0fe729c4014895f7b3e1e7dc90bbf7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Sep 10 16:04:16 2025 +0200
+
+    Renamed mane-attraction to Frontend
+
+commit 5b27abeee5da58f0d9139bdb29aaa0dda1e8f3b7
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Tue Sep 9 11:15:26 2025 +0200
+
+    Added Frontend and Backend Files
+
+commit aa59fd890ec8835f43cec72769d5fa0e0e50091b
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Mon Sep 8 14:04:50 2025 +0200
+
+    feat: add React app (Mane attraction) .gitignore
+
+commit 035f5be89c7e95d750d483ffcbf24c4cd294da31
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 4 16:01:34 2025 +0200
+
+    Update README.md
+
+commit aa5db2b01fee3c8bfc740f45daffa16e0fba38b6
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Thu Sep 4 15:45:52 2025 +0200
+
+    Initial commit
